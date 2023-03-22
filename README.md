@@ -9,8 +9,6 @@
 
 * Alejandro Toso
 
-* Angel Vinet
-
 * Juan Pablo Rodriguez
 
 * Santiago D'Addona
