@@ -19,3 +19,5 @@
 * Alejandro Dieguez
 
 * Fabián Cárdenas  
+
+* Natalia Gabriela Chehda
