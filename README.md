@@ -5,6 +5,8 @@
 
 * Exequiel Portero
 
+* Ezequiel Sanchez
+
 ### Back-End
 
 * Alejandro Toso
