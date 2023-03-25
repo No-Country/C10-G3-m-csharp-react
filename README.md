@@ -7,6 +7,8 @@
 
 * Ezequiel Sanchez
 
+* Gerson Flores 
+
 ### Back-End
 
 * Alejandro Toso
