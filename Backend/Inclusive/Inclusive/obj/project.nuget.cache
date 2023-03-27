@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qe0jo6eQcE/CckIjV+nEtvG5ztttZASfVO0UkVWLA/QYmASZOf6THxudjGfokDOnXBHxZL8wN5ZbikrzYwnwbg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\jp_rz\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\jp_rz\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\jp_rz\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\jp_rz\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
