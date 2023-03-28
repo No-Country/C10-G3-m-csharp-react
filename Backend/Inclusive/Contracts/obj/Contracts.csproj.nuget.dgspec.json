@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj": {}
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj": {
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj",
-        "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Contracts\\obj\\",
+        "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Desarrollo\\NET\\FairPay\\NugPkg": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

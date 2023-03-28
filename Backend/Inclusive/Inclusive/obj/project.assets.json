@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Humanizer.Core/2.8.26": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.15": {
         "type": "package",
         "compile": {
@@ -158,6 +171,26 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Design/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Humanizer.Core": "2.8.26",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.15"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/6.0.15": {
@@ -938,6 +971,22 @@
     }
   },
   "libraries": {
+    "Humanizer.Core/2.8.26": {
+      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "type": "package",
+      "path": "humanizer.core/2.8.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.8.26.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.15": {
       "sha512": "Vbz5FvG1T5i4Y/gdHRmrWxtrLNNGkQvbs+tq1yivdwI1idXAX1JmVrwX0m060OClOTcjgwEzE5ljWz9grkMtHQ==",
       "type": "package",
@@ -1187,6 +1236,21 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.6.0.15.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Design/6.0.15": {
+      "sha512": "fpK/x5BgGYxO0Uz1E8X/eiCZulsIvkWCPhFDaM54jiiRwlkWzE5mW+tzXpPWy7oY6rrd5JKXmvo2AqkRsNjKhQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/6.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.6.0.15.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.15": {
@@ -2329,24 +2393,25 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.15",
       "Repository >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jp_rz\\.nuget\\packages\\": {}
+    "C:\\Users\\Alex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
+      "projectUniqueName": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
       "projectName": "Inclusive",
-      "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
-      "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\obj\\",
+      "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
+      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+      "outputPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2354,14 +2419,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\Desarrollo\\NET\\FairPay\\NugPkg": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj"
+            "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj"
             }
           }
         }
@@ -2376,6 +2442,12 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.15, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"
@@ -2400,7 +2472,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

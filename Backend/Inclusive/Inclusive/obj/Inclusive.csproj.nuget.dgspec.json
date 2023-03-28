@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj": {}
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
+        "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Desarrollo\\NET\\FairPay\\NugPkg": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,21 +62,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj": {
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
         "projectName": "Inclusive",
-        "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
-        "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive\\obj\\",
+        "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\Inclusive.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Inclusive\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,14 +84,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Desarrollo\\NET\\FairPay\\NugPkg": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj"
+              "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj"
               }
             }
           }
@@ -105,6 +107,12 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -129,21 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
+    "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Repository\\obj\\",
+        "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -151,14 +159,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Desarrollo\\NET\\FairPay\\NugPkg": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\jp_rz\\Desktop\\Portfolio\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj"
+              "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Desarrollo\\Portfolio\\NoCountry\\C10-G3-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj"
               }
             }
           }
@@ -204,7 +213,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
