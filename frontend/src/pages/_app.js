@@ -1,6 +1,5 @@
-import Head from 'next/head'
-import MainLayout from './components/layout/layout';
-import "@/styles/globals.sass";
+import '@/styles/globals.css'
+import '../scss/base/_generales.scss';
 
 export default function App({ Component, pageProps }) {
   return (
