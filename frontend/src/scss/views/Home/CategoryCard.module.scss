@@ -1,0 +1,39 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+
+.card {
+    height: 80px;
+    background-color: $blue-100;
+    display: flex;
+  
+    .img {
+      background-color: $grey;
+      height: 100%;
+      width: 47.43%;
+    }
+  
+    .text {
+      flex-grow: 1;
+      padding: 8px 16px;
+      display: flex;
+      flex-direction: column;
+  
+      h3 {
+        color: $blue-500;
+        font-weight: 700;
+      }
+  
+      p {
+        font-weight: 600;
+        font-size: 12px;
+        color: $blue-300;
+      }
+  
+      a {
+        font-weight: 400;
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+  }
+  
