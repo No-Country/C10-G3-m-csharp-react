@@ -1,30 +1,22 @@
 ﻿using Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository
 {
     public class RepositoryManager : IRepositoryManager
     {
-        private readonly RepositoryContext _context;
-        private readonly Lazy<IUserRepository> _userRepository;
+        private readonly RepositoryContext _repositoryContext;
+        private readonly Lazy<ICategoryRepository> _categoryRepository;
 
-        public RepositoryManager(RepositoryContext context)
+        public RepositoryManager(RepositoryContext repositoryContext)
         {
-            _context = context;
-            _userRepository = new Lazy<IUserRepository>(()=>new UserRepository(_context));
+            _repositoryContext = repositoryContext;
+            _categoryRepository = new Lazy<ICategoryRepository>(() => new CategoryRepository(_repositoryContext));
         }
 
-        public IUserRepository UserRepository => _userRepository.Value;
+        public ICategoryRepository Categories => _categoryRepository.Value;
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        public void Dispose() => _repositoryContext.Dispose();
 
-        public void SaveAsync() => _context.SaveChangesAsync();
+        public Task SaveAsync() => _repositoryContext.SaveChangesAsync();
     }
 }

@@ -5,18 +5,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using Entities.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 
 namespace Services
 {
     public class ServiceManager : IServiceManager
     {
-        private readonly Lazy<IUserService> _userService;
+        private readonly Lazy<ICategoryService> _categoryService;
+        private readonly Lazy<IAuthenticationService> _authenticationService;
 
-        public ServiceManager(IRepositoryManager repositoryManager)
+        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager loggerManager, IMapper mapper,
+            UserManager<User> userManager, IConfiguration configuration)
         {
-            _userService = new Lazy<IUserService>(()=> new UserService(repositoryManager));
+            _categoryService =
+                new Lazy<ICategoryService>(() => new CategoryService(repositoryManager, mapper, loggerManager));
+            _authenticationService = new Lazy<IAuthenticationService>(() =>
+                new AuthenticationService(loggerManager, mapper, userManager, configuration));
         }
 
-        public IUserService UserService => _userService.Value;
+        public ICategoryService CategoryService => _categoryService.Value;
+        public IAuthenticationService AuthenticationService => _authenticationService.Value;
     }
 }
