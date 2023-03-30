@@ -8,6 +8,8 @@
   gap: 24px;
 
   .title {
+    display: flex;
+    justify-content: space-between;
     background-color: $yellow;
     color: $white;
     font-family: $font-inter;

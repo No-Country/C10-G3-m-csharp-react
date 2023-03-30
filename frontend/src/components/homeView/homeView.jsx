@@ -2,11 +2,15 @@ import CategoryCard from "../categoryCard/categoryCard";
 import FeaturedCard from "../featuredCard/featuredCard";
 import NearYouCard from "../nearYouCard/nearYouCard";
 import styles from "../../scss/views/Home/Home.module.scss";
+import CloseLogo from "../closeLogo/closeLogo";
 
 function HomeView() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>CATEGORÍAS</h2>
+      <div className={styles.title}>
+        <h2>CATEGORÍAS</h2>
+        <CloseLogo />
+      </div>
 
       <ul className={styles.list}>
         {["", "", "", "", "", "", "", ""].map((e, idx) => {
@@ -20,7 +24,7 @@ function HomeView() {
           <FeaturedCard />
         </li>
         <li className={styles.nearyou}>
-          <NearYouCard/>
+          <NearYouCard />
         </li>
       </ul>
     </div>
