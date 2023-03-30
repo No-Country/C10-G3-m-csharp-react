@@ -1,5 +1,5 @@
 import '@/scss/styles/globals.scss';
-import '../scss/base/_generales.scss';
+import '../scss/base/barrel.scss';
 
 import Head from 'next/head';
 import MainLayout from '@/components/layout/layout';
