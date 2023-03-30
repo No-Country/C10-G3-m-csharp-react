@@ -21,8 +21,17 @@
   }
 
   .list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 32px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .featured {
+    grid-row-start: 5;
+  }
+
+  .nearyou {
+    grid-row-start: 10;
   }
 }
