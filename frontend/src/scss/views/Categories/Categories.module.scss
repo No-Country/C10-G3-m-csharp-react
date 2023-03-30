@@ -1,0 +1,32 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .title {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue-500;
+    color: $white;
+    font-family: $font-inter;
+    height: 35px;
+    line-height: 19px;
+    font-weight: 700;
+    margin-block: 12px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .list {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}

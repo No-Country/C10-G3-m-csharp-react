@@ -8,7 +8,7 @@ function CategoryCard() {
       <div className={styles.text}>
         <h3>RESTAURANTES</h3>
         <p>15 establecimientos</p>
-        <Link href="/category/1234">Ver listado</Link>
+        <Link href="/category/restaurantes">Ver listado</Link>
       </div>
     </div>
   );
