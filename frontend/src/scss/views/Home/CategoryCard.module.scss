@@ -1,8 +1,9 @@
 @use "../../utilities/_colors" as *;
 @use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
 
 .card {
-    height: 80px;
+    height: f.toRem(80px);
     background-color: $blue-100;
     display: flex;
   
@@ -14,7 +15,7 @@
   
     .text {
       flex-grow: 1;
-      padding: 8px 16px;
+      padding: f.toRem(8px) f.toRem(16px);
       display: flex;
       flex-direction: column;
   
@@ -25,13 +26,13 @@
   
       p {
         font-weight: 600;
-        font-size: 12px;
+        font-size: f.toRem(12px);
         color: $blue-300;
       }
   
       a {
         font-weight: 400;
-        font-size: 12px;
+        font-size: f.toRem(12px);
         text-align: right;
       }
     }

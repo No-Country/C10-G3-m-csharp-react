@@ -1,13 +1,14 @@
 @use "../../utilities/_colors" as *;
 @use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
 
 .finalRating {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: f.toRem(3px);
 
   p {
-    font-size: 10px;
+    font-size: f.toRem(10px);
   }
 
   span {

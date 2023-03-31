@@ -1,11 +1,12 @@
 @use "../../utilities/_colors" as *;
 @use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
 
 .container {
-  padding: 24px;
+  padding: f.toRem(24px);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: f.toRem(24px);
 
   .title {
     text-transform: uppercase;
@@ -14,18 +15,18 @@
     background-color: $blue-500;
     color: $white;
     font-family: $font-inter;
-    height: 35px;
-    line-height: 19px;
+    height: f.toRem(35px);
+    line-height: f.toRem(19px);
     font-weight: 700;
-    margin-block: 12px;
+    margin-block: f.toRem(12px);
     width: 100%;
-    padding: 8px;
+    padding: f.toRem(8px);
     border-radius: 6px;
   }
 
   .list {
     display: grid;
-    gap: 32px;
+    gap: f.toRem(32px);
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
