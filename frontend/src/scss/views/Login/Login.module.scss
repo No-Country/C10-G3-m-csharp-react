@@ -1,7 +1,10 @@
+@use '../../utilities/colors' as *;
+@use '../../utilities/gradients' as *;
+@use '../../utilities/functions' as *;
 
 
 .container{
-    background: conic-gradient(from 182.3deg at 52.08% 24.13%, #0056DB 0deg, #2E83FF 98.84deg, #69A8FF 151.72deg, #0056DB 360deg);
+    background: $bg-gradient;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -9,9 +12,9 @@
 }
 
 .loginImageCenter{
-    width: 202.19px;
-    height: 244.68px; 
-    margin-top: 104px;   
+    width: toRem(202.19);
+    height: toRem(244.68); 
+    margin-top: toRem(104);   
 }
 
 .loginButtonsContainer{
@@ -20,15 +23,4 @@
     margin-top: 25% ;
     margin-bottom: 5%;
     align-items: center;
-    
-
-}
-
-.loginButtonOutlined{
-    width: 202px;
-    height: 62px;
-    border-radius: 6px;
-    color: #FFFFFF;
-    border: 2px solid rgba(255, 255, 255, 1); 
-    margin: 5%;   
 }

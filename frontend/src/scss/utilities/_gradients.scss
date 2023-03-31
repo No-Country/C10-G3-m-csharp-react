@@ -1,0 +1,9 @@
+@use './colors' as *;
+
+$bg-gradient: conic-gradient(
+  from 182.3deg at 52.08% 24.13%,
+  $blue-500 0deg,
+  $blue-400 98.84deg,
+  $blue-200 151.72deg,
+  $blue-500 360deg
+);
