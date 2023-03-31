@@ -16,12 +16,13 @@ public class CategoryRepository : RepositoryBase<Category>,
     public async Task<PagedList<Category>> GetCategoriesAsync(CategoryParameters parameters,
         bool trackChanges)
     {
-        var categorys = await FindAll(trackChanges)
+        var categories = await FindAll(trackChanges)
+            .Include(c => c.CategoryImages)
             .Search(parameters.SearchColumn, parameters.SearchTerm)
             .Sort(parameters.SortColumn, parameters.SortOrder)
             .ToListAsync();
 
-        return PagedList<Category>.ToPagedList(categorys,
+        return PagedList<Category>.ToPagedList(categories,
             parameters.PageNumber,
             parameters.PageSize);
     }
@@ -30,6 +31,7 @@ public class CategoryRepository : RepositoryBase<Category>,
         bool trackChanges) =>
         await FindByCondition(d => d.Id.Equals(id),
                 trackChanges)
+            .Include(c => c.CategoryImages)
             .SingleOrDefaultAsync();
 
     public void CreateCategory(Category category) =>

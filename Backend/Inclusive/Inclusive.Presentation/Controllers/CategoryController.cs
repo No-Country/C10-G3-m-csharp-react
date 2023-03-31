@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Inclusive.Presentation.ActionFilters;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
@@ -12,10 +13,12 @@ namespace Inclusive.Presentation.Controllers;
 public class CategoryController : ControllerBase
 {
     private readonly IServiceManager _service;
+    private readonly IWebHostEnvironment _webHostEnvironment;
 
-    public CategoryController(IServiceManager service)
+    public CategoryController(IServiceManager service, IWebHostEnvironment webHostEnvironment)
     {
         _service = service;
+        _webHostEnvironment = webHostEnvironment;
     }
 
     [HttpGet(Name = "GetCategories")]
@@ -36,10 +39,14 @@ public class CategoryController : ControllerBase
 
     [HttpPost(Name = "CreateCategory")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
+    public async Task<IActionResult> CreateCategory([FromForm] CategoryForCreationDto category)
     {
-        var createCategory = await _service.CategoryService.CreateCategoryAsync(category);
-        return CreatedAtRoute("GetCategoryById", new { id = createCategory.Id }, createCategory);
+        var path = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+        var createdCategory = await _service.CategoryService.CreateCategoryAsync(category);
+        await _service.FileService.UploadFileAsync(createdCategory.Id, category.CategoryImages, "category",
+            path);
+
+        return CreatedAtRoute("GetCategoryById", new { id = createdCategory.Id }, createdCategory);
     }
 
     [HttpDelete("{id:guid}", Name = "DeleteCategory")]

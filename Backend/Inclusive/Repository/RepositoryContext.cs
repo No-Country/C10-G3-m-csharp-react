@@ -25,6 +25,7 @@ namespace Repository
             builder.ApplyConfiguration(new RoleConfiguration());
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category>? Categories { get; set; }
+        public DbSet<CategoryImage>? CategoryImages { get; set; }
     }
 }
