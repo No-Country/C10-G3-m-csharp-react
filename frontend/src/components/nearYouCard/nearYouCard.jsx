@@ -2,6 +2,7 @@ import styles from "../../scss/views/Home/NearYouCard.module.scss";
 import AddressLogo from "../addressLogo/addressLogo";
 import CalendarLogo from "../calendarLogo/calendarLogo";
 import WheelChairLogo from "../wheelChairLogo/wheelChairLogo";
+import CheckLogo from "../checkLogo/checkLogo";
 
 function NearYouCard() {
   return (
@@ -24,10 +25,28 @@ function NearYouCard() {
           </div>
           <p>Abierto. 11:30am - 11:00pm</p>
         </div>
+
         <div className={styles.mobilityTag}>
-          <WheelChairLogo />
-          <p>Apto - Movilidad Reducida</p>
+          <div className={styles.mobilityTag__title}>
+            <WheelChairLogo />
+            <p>Movilidad Reducida</p>
+          </div>
+
+          <ul>
+            <li>
+              <CheckLogo /> <p>Pasillos amplios</p>
+            </li>
+            <li>
+              <CheckLogo />
+              <p>Baños acondicionados</p>
+            </li>
+            <li>
+              <CheckLogo />
+              <p>Antideslizante y barras de apoyo</p>
+            </li>
+          </ul>
         </div>
+
       </div>
     </div>
   );

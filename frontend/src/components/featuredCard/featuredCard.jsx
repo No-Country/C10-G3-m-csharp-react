@@ -1,6 +1,7 @@
 import styles from "../../scss/views/Home/FeaturedCard.module.scss";
 import AddressLogo from "../addressLogo/addressLogo";
 import CalendarLogo from "../calendarLogo/calendarLogo";
+import CheckLogo from "../checkLogo/checkLogo";
 import WheelChairLogo from "../wheelChairLogo/wheelChairLogo";
 
 function FeaturedCard() {
@@ -25,8 +26,24 @@ function FeaturedCard() {
           <p>Abierto. 11:30am - 11:00pm</p>
         </div>
         <div className={styles.mobilityTag}>
-          <WheelChairLogo />
-          <p>Apto - Movilidad Reducida</p>
+          <div className={styles.mobilityTag__title}>
+            <WheelChairLogo />
+            <p>Movilidad Reducida</p>
+          </div>
+
+          <ul>
+            <li>
+              <CheckLogo /> <p>Pasillos amplios</p>
+            </li>
+            <li>
+              <CheckLogo />
+              <p>Baños acondicionados</p>
+            </li>
+            <li>
+              <CheckLogo />
+              <p>Antideslizante y barras de apoyo</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
