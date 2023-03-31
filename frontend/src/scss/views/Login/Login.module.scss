@@ -1,0 +1,26 @@
+@use '../../utilities/colors' as *;
+@use '../../utilities/gradients' as *;
+@use '../../utilities/functions' as *;
+
+
+.container{
+    background: $bg-gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.loginImageCenter{
+    width: toRem(202.19);
+    height: toRem(244.68); 
+    margin-top: toRem(104);   
+}
+
+.loginButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25% ;
+    margin-bottom: 5%;
+    align-items: center;
+}
