@@ -42,7 +42,7 @@ function PlaceCard() {
             <p>VALÓRANOS</p>
             { [...Array(5)].map((e, idx) => {
               return (
-                <RatingStars key={idx}/>
+                <button onClick={() => { console.log(idx+1) }} key={idx}><RatingStars /></button>
               )
             })}
             <FinalRating rating={3}/>

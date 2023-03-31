@@ -44,7 +44,6 @@
   position: relative;
 
   .showMore__header {
-
     .showMore__img {
       background-color: grey;
       width: 100%;
@@ -97,6 +96,22 @@
 
     p {
       font-size: f.toRem(10px);
+    }
+
+    button {
+      svg {
+        path {
+          transition: all ease 200ms;
+        }
+      }
+    }
+
+    button:hover {
+      svg {
+        path {
+          fill: $blue-500;
+        }
+      }
     }
   }
 }
