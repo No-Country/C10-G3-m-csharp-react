@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vYNZdmN7C8qJjusxtXi0IhU/Q21/ot+9CANHGIKp1aBSaJNWntgEMlra73lqs3/vbwlIir1YR++A0MOmbgBTVA==",
+  "dgSpecHash": "2v6cioOnF1LtLzZAYacgWCcL2v5zH43ttIRKA5RUiA6DEAaRrsNVAoT3gNg3SsjBRPWJz9R6KMaza/Wom8YNPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.15\\microsoft.aspnetcore.cryptography.internal.6.0.15.nupkg.sha512",
     "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.15\\microsoft.aspnetcore.cryptography.keyderivation.6.0.15.nupkg.sha512",

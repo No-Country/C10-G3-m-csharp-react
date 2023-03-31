@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PM/v1PzAeO5HiDtVYzGt6Dg/cnpN2zePeEGtIppZ60sUwylz8P3Cvt0jLp4ou7TCpHW/0q4jsRNnejSykXe//g==",
+  "dgSpecHash": "4WHy8u4gUe6EJ9clGkVOxb7H+ggA4whGW/ARKvPpfMgoxnSPUYwGcObjGO0dO9Y4VDTblaRefE156a1l0iZTFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Services\\Services.csproj",
+  "projectFilePath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jp_rz\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\jp_rz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

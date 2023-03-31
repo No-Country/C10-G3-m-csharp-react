@@ -26,6 +26,5 @@ namespace Repository
         }
 
         public DbSet<Category>? Categories { get; set; }
-        public DbSet<CategoryImage>? CategoryImages { get; set; }
     }
 }

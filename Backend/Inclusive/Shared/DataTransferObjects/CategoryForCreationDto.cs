@@ -4,5 +4,5 @@ namespace Shared.DataTransferObjects;
 
 public record CategoryForCreationDto : CategoryForManipulationDto
 {
-    public IEnumerable<IFormFile>? CategoryImages { get; set; }
+    public IFormFile? Image { get; set; }
 }

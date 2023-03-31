@@ -43,10 +43,9 @@ public class CategoryController : ControllerBase
     {
         var path = Path.Combine(_webHostEnvironment.WebRootPath, "images");
         var createdCategory = await _service.CategoryService.CreateCategoryAsync(category);
-        await _service.FileService.UploadFileAsync(createdCategory.Id, category.CategoryImages, "category",
-            path);
+        var res = await _service.FileService.UploadCategoryFileAsync(createdCategory.Id, category.Image, path);
 
-        return CreatedAtRoute("GetCategoryById", new { id = createdCategory.Id }, createdCategory);
+        return CreatedAtRoute("GetCategoryById", new { id = res?.Id ?? createdCategory.Id }, res);
     }
 
     [HttpDelete("{id:guid}", Name = "DeleteCategory")]
@@ -58,9 +57,12 @@ public class CategoryController : ControllerBase
 
     [HttpPut("{id:guid}", Name = "UpdateCategory")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> UpdateCategory(Guid id, [FromBody] CategoryForUpdateDto category)
+    public async Task<IActionResult> UpdateCategory(Guid id, [FromForm] CategoryForUpdateDto category)
     {
+        var path = Path.Combine(_webHostEnvironment.WebRootPath, "images");
         await _service.CategoryService.UpdateCategoryAsync(id, category, true);
-        return NoContent();
+        var res = await _service.FileService.UploadCategoryFileAsync(id, category.Image, path);
+
+        return CreatedAtRoute("GetCategoryById", new { id = res?.Id ?? id }, res == null ? category : res);
     }
 }

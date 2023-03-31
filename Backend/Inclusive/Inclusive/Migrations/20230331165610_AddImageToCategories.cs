@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Inclusive.Migrations
 {
-    public partial class addCategoryImagesModel : Migration
+    public partial class AddImageToCategories : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,66 +24,49 @@ namespace Inclusive.Migrations
                 keyColumn: "CategoryId",
                 keyValue: new Guid("6b3a469c-02b6-4cbe-9d22-5aaf81ec96d7"));
 
-            migrationBuilder.CreateTable(
-                name: "CategoryImages",
-                columns: table => new
-                {
-                    CategoryImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryImages", x => x.CategoryImageId);
-                    table.ForeignKey(
-                        name: "FK_CategoryImages_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.AddColumn<string>(
+                name: "Image",
+                table: "Categories",
+                type: "nvarchar(500)",
+                maxLength: 500,
+                nullable: true);
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "f66a035f-56df-4295-8f4b-fef59716d477", "d406adff-fd00-4c38-9b66-979c8f197e1d", "User", "USER" });
+                values: new object[] { "332070ca-83b7-4d85-a35a-871e76382d15", "53028da6-523e-4c1f-9a22-546c67ba3f88", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "fc805b0d-5c6b-4a2b-bd1e-a4106f8f71f3", "f21a30f8-32f6-4514-b7d3-a900837d4121", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "53ad8000-e70d-45da-91d2-28ccfa79fbc3", "28d89096-e595-41f9-8314-01791381f9cf", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Description", "Name" },
-                values: new object[] { new Guid("fc8f8241-3b51-4216-a8ed-71ae40d4e73b"), "Restaurantes de comidas rápidas y fáciles", "Restaurantes" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryImages_CategoryId",
-                table: "CategoryImages",
-                column: "CategoryId");
+                columns: new[] { "CategoryId", "Description", "Image", "Name" },
+                values: new object[] { new Guid("8273b2ce-4258-4ac8-868d-4872be838801"), "Restaurantes de comidas rápidas y fáciles", null, "Restaurantes" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "CategoryImages");
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: "332070ca-83b7-4d85-a35a-871e76382d15");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "f66a035f-56df-4295-8f4b-fef59716d477");
-
-            migrationBuilder.DeleteData(
-                table: "AspNetRoles",
-                keyColumn: "Id",
-                keyValue: "fc805b0d-5c6b-4a2b-bd1e-a4106f8f71f3");
+                keyValue: "53ad8000-e70d-45da-91d2-28ccfa79fbc3");
 
             migrationBuilder.DeleteData(
                 table: "Categories",
                 keyColumn: "CategoryId",
-                keyValue: new Guid("fc8f8241-3b51-4216-a8ed-71ae40d4e73b"));
+                keyValue: new Guid("8273b2ce-4258-4ac8-868d-4872be838801"));
+
+            migrationBuilder.DropColumn(
+                name: "Image",
+                table: "Categories");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",

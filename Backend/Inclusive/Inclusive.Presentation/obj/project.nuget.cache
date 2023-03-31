@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ydK9aYkjHlwSuk0J3kp/BDDIGmyxkkt9Y/1DfUbvrFQkeKp0rKsz27dHYlwIAhqGApCwnXzTMGh8GZE+Qjg1vg==",
+  "dgSpecHash": "6XunGh8o8NPPRASP2rMlQNZkOU1y8SFpWlIXoCu59E21uO1mFkQyZFYl1vOsW/0w/YYo+lqLBUVPE0z0bCO6sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
+  "projectFilePath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\jp_rz\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

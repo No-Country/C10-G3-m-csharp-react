@@ -12,8 +12,8 @@ using Repository;
 namespace Inclusive.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230330171915_addCategoryImagesModel")]
-    partial class addCategoryImagesModel
+    [Migration("20230331165610_AddImageToCategories")]
+    partial class AddImageToCategories
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,6 +35,10 @@ namespace Inclusive.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<string>("Image")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
@@ -47,33 +51,10 @@ namespace Inclusive.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fc8f8241-3b51-4216-a8ed-71ae40d4e73b"),
+                            Id = new Guid("8273b2ce-4258-4ac8-868d-4872be838801"),
                             Description = "Restaurantes de comidas rápidas y fáciles",
                             Name = "Restaurantes"
                         });
-                });
-
-            modelBuilder.Entity("Entities.Models.CategoryImages", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CategoryImageId");
-
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("CategoryImages");
                 });
 
             modelBuilder.Entity("Entities.Models.User", b =>
@@ -178,15 +159,15 @@ namespace Inclusive.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fc805b0d-5c6b-4a2b-bd1e-a4106f8f71f3",
-                            ConcurrencyStamp = "f21a30f8-32f6-4514-b7d3-a900837d4121",
+                            Id = "332070ca-83b7-4d85-a35a-871e76382d15",
+                            ConcurrencyStamp = "53028da6-523e-4c1f-9a22-546c67ba3f88",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "f66a035f-56df-4295-8f4b-fef59716d477",
-                            ConcurrencyStamp = "d406adff-fd00-4c38-9b66-979c8f197e1d",
+                            Id = "53ad8000-e70d-45da-91d2-28ccfa79fbc3",
+                            ConcurrencyStamp = "28d89096-e595-41f9-8314-01791381f9cf",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -298,17 +279,6 @@ namespace Inclusive.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Models.CategoryImages", b =>
-                {
-                    b.HasOne("Entities.Models.Category", "Category")
-                        .WithMany("CategoryImages")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -358,11 +328,6 @@ namespace Inclusive.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Entities.Models.Category", b =>
-                {
-                    b.Navigation("CategoryImages");
                 });
 #pragma warning restore 612, 618
         }

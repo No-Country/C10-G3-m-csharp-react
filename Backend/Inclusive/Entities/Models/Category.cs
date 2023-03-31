@@ -14,5 +14,6 @@ public class Category
     [MaxLength(255, ErrorMessage = "Description must be less than 255 characters")]
     public string? Description { get; set; }
 
-    public ICollection<CategoryImage>? CategoryImages { get; set; }
+    [MaxLength(500, ErrorMessage = "Image must be less than 500 characters")]
+    public string? Image { get; set; }
 }

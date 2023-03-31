@@ -27,4 +27,10 @@
     <Folder Include="wwwroot\images" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\images\category\discord.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\category\insta.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\category\next-arrow.png" />
+  </ItemGroup>
+
 </Project>

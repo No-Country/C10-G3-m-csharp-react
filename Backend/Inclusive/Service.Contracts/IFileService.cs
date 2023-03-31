@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Entities.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Service.Contracts;
 
 public interface IFileService
 {
-    Task UploadFileAsync(Guid fatherId, IEnumerable<IFormFile>? files, string folderName, string path);
+    Task<Category?> UploadCategoryFileAsync(Guid fatherId, IFormFile? file, string path);
 }

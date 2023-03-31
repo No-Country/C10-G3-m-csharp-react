@@ -19,38 +19,32 @@ public class FileService : IFileService
         _logger = logger;
     }
 
-    public async Task UploadFileAsync(Guid fatherId, IEnumerable<IFormFile>? files, string folderName, string path)
+    public async Task<Category?> UploadCategoryFileAsync(Guid fatherId, IFormFile? file, string path)
     {
-        if (files == null)
-            return;
+        if (file == null)
+            return null;
 
-        foreach (var file in files)
+        if (string.IsNullOrEmpty(file.FileName))
+            return null;
+
+        var directoryPath = Path.Combine(path, "categories", fatherId.ToString());
+
+        if (Directory.Exists(directoryPath))
+            Directory.Delete(directoryPath, true);
+
+        Directory.CreateDirectory(directoryPath);
+
+        var dir = Path.Combine(directoryPath, file.FileName);
+
+        using (var stream = new FileStream(dir, FileMode.Create))
         {
-            if (string.IsNullOrEmpty(file.FileName))
-                break;
-            if (!Directory.Exists(Path.Combine(path, folderName)))
-                Directory.CreateDirectory(Path.Combine(path, folderName));
-
-            var dir = Path.Combine(path, folderName, file.FileName);
-
-            using (var stream = new FileStream(dir, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-                stream.Close();
-            }
-
-            await SaveImageToDbAsync(fatherId, file.FileName, dir, "category");
+            await file.CopyToAsync(stream);
+            stream.Close();
         }
-    }
 
-    private async Task SaveImageToDbAsync(Guid fatherId, string fileName, string filePath, string type)
-    {
-        if (type.Equals("category"))
-            _repository.CategoryImages.CreateCategoryImage(fatherId,
-                new CategoryImage { ImageName = fileName, ImagePath = filePath });
-        if (type.Equals("categoryImage"))
-            return;
-        
+        var categoryEntity = await _repository.Categories.GetCategoryByIdAsync(fatherId, true);
+        categoryEntity.Image = dir;
         await _repository.SaveAsync();
+        return await _repository.Categories.GetCategoryByIdAsync(fatherId, true);
     }
 }

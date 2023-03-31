@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj": {}
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj": {
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
         "projectName": "Inclusive.Presentation",
-        "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
+        "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\Inclusive.Presentation.csproj",
         "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\obj\\",
+        "outputPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Inclusive.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj": {
-                "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj"
+              "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj": {
+                "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj"
               }
             }
           }
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj": {
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
         "projectName": "Service.Contracts",
-        "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
+        "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\Service.Contracts.csproj",
         "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Service.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,11 +158,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj"
+              "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj"
+              "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj"
               }
             }
           }
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj": {
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",

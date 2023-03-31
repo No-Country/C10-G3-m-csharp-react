@@ -10,9 +10,11 @@ public class MappingProfile : Profile
     {
         CreateMap<Category, CategoryDto>();
         CreateMap<CategoryForCreationDto, Category>()
-            .ForMember(c => c.CategoryImages,
+            .ForMember(c => c.Image,
                 opt => opt.Ignore());
-        CreateMap<CategoryImage, CategoryImageDto>();
+        CreateMap<CategoryForUpdateDto, Category>()
+            .ForMember(c => c.Image,
+                opt => opt.Ignore());
 
         CreateMap<UserForRegistrationDto, User>();
     }

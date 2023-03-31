@@ -15,7 +15,6 @@ namespace Services
     public class ServiceManager : IServiceManager
     {
         private readonly Lazy<ICategoryService> _categoryService;
-        private readonly Lazy<ICategoryImageService> _categoryImageService;
         private readonly Lazy<IFileService> _fileService;
         private readonly Lazy<IAuthenticationService> _authenticationService;
 
@@ -24,16 +23,12 @@ namespace Services
         {
             _categoryService =
                 new Lazy<ICategoryService>(() => new CategoryService(repositoryManager, mapper, loggerManager));
-            _categoryImageService =
-                new Lazy<ICategoryImageService>(
-                    () => new CategoryImageService(repositoryManager, mapper, loggerManager));
             _fileService = new Lazy<IFileService>(() => new FileService(repositoryManager, mapper, loggerManager));
             _authenticationService = new Lazy<IAuthenticationService>(() =>
                 new AuthenticationService(loggerManager, mapper, userManager, configuration));
         }
 
         public ICategoryService CategoryService => _categoryService.Value;
-        public ICategoryImageService CategoryImageService => _categoryImageService.Value;
         public IFileService FileService => _fileService.Value;
         public IAuthenticationService AuthenticationService => _authenticationService.Value;
     }

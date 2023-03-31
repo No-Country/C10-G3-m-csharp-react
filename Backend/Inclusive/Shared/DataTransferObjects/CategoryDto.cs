@@ -8,5 +8,5 @@ public class CategoryDto
 
     public string? Description { get; set; }
 
-    public IEnumerable<CategoryImageDto> CategoryImages { get; set; }
+    public string? Image { get; set; }
 }

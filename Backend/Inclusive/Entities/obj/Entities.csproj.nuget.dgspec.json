@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {}
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
+    "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\jp_rz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jp_rz\\Source\\Repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\jp_rz\\source\\repos\\C10-G3-m-csharp-react\\Backend\\Inclusive\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jp_rz\\AppData\\Roaming\\NuGet\\NuGet.Config",
