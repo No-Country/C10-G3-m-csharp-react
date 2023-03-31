@@ -81,11 +81,24 @@
 
     .showMore__mobilityTag {
       display: flex;
-      gap: f.toRem(8px);
+      flex-direction: column;
       background-color: $blue-100;
       border: 1px solid $blue-400;
       border-radius: 0px 0px 6px 6px;
       padding: f.toRem(9px) f.toRem(11px);
+
+      .mobilityTag__title {
+        display: flex;
+        gap: f.toRem(8px);
+        margin-bottom: f.toRem(12px);
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: f.toRem(3px);
+        font-size: f.toRem(12px);
+      }
     }
   }
 

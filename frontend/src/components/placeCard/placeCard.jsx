@@ -5,6 +5,7 @@ import styles from "../../scss/views/Categories/PlaceCard.module.scss";
 import { useState } from "react";
 import RatingStars from "../ratingStars/ratingStars";
 import FinalRating from "../finalRating/finalRating";
+import CheckLogo from "../checkLogo/checkLogo";
 
 function PlaceCard() {
   const [showMore, setShowMore] = useState(false);
@@ -34,18 +35,43 @@ function PlaceCard() {
             </div>
             <p>Abierto. 11:30am - 11:00pm</p>
           </div>
+
           <div className={styles.showMore__mobilityTag}>
-            <WheelChairLogo />
-            <p>Apto - Movilidad Reducida</p>
+            <div className={styles.mobilityTag__title}>
+              <WheelChairLogo />
+              <p>Movilidad Reducida</p>
+            </div>
+
+            <ul>
+              <li>
+                <CheckLogo /> <p>Pasillos amplios</p>
+              </li>
+              <li>
+                <CheckLogo />
+                <p>Baños acondicionados</p>
+              </li>
+              <li>
+                <CheckLogo />
+                <p>Antideslizante y barras de apoyo</p>
+              </li>
+            </ul>
           </div>
+
           <div className={styles.showMore__rating}>
             <p>VALÓRANOS</p>
-            { [...Array(5)].map((e, idx) => {
+            {[...Array(5)].map((e, idx) => {
               return (
-                <button onClick={() => { console.log(idx+1) }} key={idx}><RatingStars /></button>
-              )
+                <button
+                  onClick={() => {
+                    console.log(idx + 1);
+                  }}
+                  key={idx}
+                >
+                  <RatingStars />
+                </button>
+              );
             })}
-            <FinalRating rating={3}/>
+            <FinalRating rating={3} />
           </div>
         </div>
       </div>
