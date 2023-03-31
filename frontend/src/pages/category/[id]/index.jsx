@@ -16,7 +16,7 @@ function Category() {
       </div>
 
     <ul className={styles.list}>
-    {["", "", "", "", "", "", "", ""].map((e, idx) => {
+    {[...Array(8)].map((e, idx) => {
           return (
             <li key={idx}>
               <PlaceCard />

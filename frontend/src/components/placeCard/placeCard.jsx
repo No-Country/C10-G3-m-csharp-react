@@ -40,7 +40,7 @@ function PlaceCard() {
           </div>
           <div className={styles.showMore__rating}>
             <p>VALÓRANOS</p>
-            { ['','','','',''].map((e, idx) => {
+            { [...Array(5)].map((e, idx) => {
               return (
                 <RatingStars key={idx}/>
               )
