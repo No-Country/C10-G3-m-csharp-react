@@ -6,6 +6,6 @@ const {loginButtonOutlined} = styles
 
 export default function Button(props) {
   return (
-    <button  className={loginButtonOutlined}>{props.value}</button>
+    <button type={props.type} className={loginButtonOutlined}>{props.value}</button>
   )
 }

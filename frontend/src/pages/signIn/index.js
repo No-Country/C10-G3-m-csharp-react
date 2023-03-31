@@ -12,9 +12,9 @@ const {
   signInLogoSized,
   signInTitleBold,
   logoAndTitleContainer,
-  signInInputContainer,
+  inputContainer,
   signInInputOutlined,
-  signInText,
+  subTitleh5,
   signInBoxRestoreAndButton,
   signInFastContainer,
   fastSignInButtonsCtn
@@ -27,7 +27,7 @@ export default function index() {
         <Image src={Logo} className={signInLogoSized} />
         <h4 className={signInTitleBold}>INICIAR SESIÓN</h4>
       </div>
-      <div className={signInInputContainer}>
+      <div className={inputContainer}>
         <input
           type="text"
           placeholder="Correo electrónico"
@@ -40,13 +40,13 @@ export default function index() {
         />
       </div>
       <div className={signInBoxRestoreAndButton}>
-        <h5 className={signInText}>¿Olvidó su contraseña?</h5>
+        <h5 className={subTitleh5}>¿Olvidó su contraseña?</h5>
         <Button value="Ingresar" />
       </div>
       <Image src={Blockline} alt="blockline" />
 
       <div className={signInFastContainer}>
-        <h5 className={signInText}>Inicia sesión con:</h5>
+        <h5 className={subTitleh5}>Inicia sesión con:</h5>
         <div className={fastSignInButtonsCtn}>
           <GoogleButton />
           <AppleButton />

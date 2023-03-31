@@ -19,10 +19,11 @@
   margin-bottom: 5%;
 }
 
-.signInInputContainer {
+.inputContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .signInLogoSized {
@@ -52,8 +53,9 @@
 }
 
 
-.signInText{
+.subTitleh5{
   color:$lightWhite;
+  text-align: center;
 }
 
 .signInBoxRestoreAndButton{
@@ -76,3 +78,19 @@
   justify-content: space-around;
   flex-direction: row;
 }
+
+
+/* register style */
+
+.termsBox{
+  display: flex;
+  justify-content: center;
+  gap: toRem(15);
+  color:$white;
+  margin-top: toRem(12);  
+}
+
+.checkRounded{
+  border-radius: 50%;
+}
+
