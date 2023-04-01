@@ -9,10 +9,9 @@
   gap: f.toRem(24);
 
   .title {
-    text-transform: uppercase;
     display: flex;
     justify-content: space-between;
-    background-color: $blue-500;
+    background-color: $yellow;
     color: $white;
     font-family: $font-inter;
     height: f.toRem(35);
@@ -24,7 +23,7 @@
     border-radius: 6px;
 
     svg {
-      width: fit-content;
+        width: fit-content;
     }
   }
 
@@ -33,5 +32,13 @@
     gap: f.toRem(32);
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
+
+  .featured {
+    grid-row-start: 5;
+  }
+
+  .nearyou {
+    grid-row-start: 10;
   }
 }

@@ -3,9 +3,9 @@
 @use "../../utilities/functions" as f;
 
 .featuredCard {
-  border-radius: f.toRem(6px);
+  border-radius: f.toRem(6);
   background-color: $blue-400;
-  padding: f.toRem(8px);
+  padding: f.toRem(8);
   position: relative;
 
   .header {
@@ -23,17 +23,17 @@
     .img {
       background-color: grey;
       width: 100%;
-      height: f.toRem(178px);
+      height: f.toRem(178);
     }
   }
 
   .text {
     background-color: $white;
-    padding: f.toRem(16px) f.toRem(11px);
+    padding: f.toRem(16) f.toRem(11);
     font-family: $font-montserrat;
     display: flex;
     flex-direction: column;
-    gap: f.toRem(11px);
+    gap: f.toRem(11);
 
     h3 {
       font-weight: 900;
@@ -44,10 +44,10 @@
     .time,
     .address {
       display: flex;
-      gap: f.toRem(8px);
+      gap: f.toRem(8);
 
       div {
-        width: f.toRem(25px);
+        width: f.toRem(25);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -60,19 +60,26 @@
       background-color: $blue-100;
       border: 1px solid $blue-400;
       border-radius: 0px 0px 6px 6px;
-      padding: f.toRem(9px) f.toRem(11px);
+      padding: f.toRem(9) f.toRem(11);
+      svg {
+        width: fit-content;
+      }
 
       .mobilityTag__title {
         display: flex;
-        gap: f.toRem(8px);
-        margin-bottom: f.toRem(12px);
+        gap: f.toRem(8);
+        margin-bottom: f.toRem(12);
       }
 
       li {
         display: flex;
         align-items: center;
-        gap: f.toRem(3px);
-        font-size: f.toRem(12px);
+        gap: f.toRem(3);
+        font-size: f.toRem(12);
+
+        svg {
+          width: fit-content;
+        }
       }
     }
   }

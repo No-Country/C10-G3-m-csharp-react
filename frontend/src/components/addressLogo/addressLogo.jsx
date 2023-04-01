@@ -1,6 +1,7 @@
 function AddressLogo() {
   return (
     <svg
+    style={{borderColor: "#8BB9FF", fill: "transparent"}}
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -10,6 +11,7 @@ function AddressLogo() {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
+        style={{borderColor: "#8BB9FF", fill: "#8BB9FF"}}
         d="M14.5 10.5005C14.5 9.11924 13.3808 8 12.0005 8C10.6192 8 9.5 9.11924 9.5 10.5005C9.5 11.8808 10.6192 13 12.0005 13C13.3808 13 14.5 11.8808 14.5 10.5005Z"
         stroke="#8BB9FF"
         strokeWidth="1.5"

@@ -5,10 +5,10 @@
 .finalRating {
   display: flex;
   align-items: center;
-  gap: f.toRem(3px);
+  gap: f.toRem(3);
 
   p {
-    font-size: f.toRem(10px);
+    font-size: f.toRem(10);
   }
 
   span {
