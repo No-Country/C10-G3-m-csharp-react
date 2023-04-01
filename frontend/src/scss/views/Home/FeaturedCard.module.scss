@@ -1,0 +1,79 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.featuredCard {
+  border-radius: f.toRem(6px);
+  background-color: $blue-400;
+  padding: f.toRem(8px);
+  position: relative;
+
+  .header {
+    h2 {
+      background-color: $blue-400;
+      border: 8px solid $blue-400;
+      color: $white;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 6px;
+    }
+
+    .img {
+      background-color: grey;
+      width: 100%;
+      height: f.toRem(178px);
+    }
+  }
+
+  .text {
+    background-color: $white;
+    padding: f.toRem(16px) f.toRem(11px);
+    font-family: $font-montserrat;
+    display: flex;
+    flex-direction: column;
+    gap: f.toRem(11px);
+
+    h3 {
+      font-weight: 900;
+      color: $blue-500;
+      letter-spacing: 0.03em;
+    }
+
+    .time,
+    .address {
+      display: flex;
+      gap: f.toRem(8px);
+
+      div {
+        width: f.toRem(25px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .mobilityTag {
+      display: flex;
+      flex-direction: column;
+      background-color: $blue-100;
+      border: 1px solid $blue-400;
+      border-radius: 0px 0px 6px 6px;
+      padding: f.toRem(9px) f.toRem(11px);
+
+      .mobilityTag__title {
+        display: flex;
+        gap: f.toRem(8px);
+        margin-bottom: f.toRem(12px);
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: f.toRem(3px);
+        font-size: f.toRem(12px);
+      }
+    }
+  }
+}
