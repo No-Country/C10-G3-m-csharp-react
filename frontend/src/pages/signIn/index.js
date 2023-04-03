@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../../../public/Logo.png";
+import Logo from '../../../public/img/loginSingIn/Logo.png';
 import Image from "next/image";
 import styles from "../../scss/views/barrel_views.module.scss";
 import Button from "@/components/Buttons/Button";
-import Blockline from "../../../public/Blockline.png";
+import Blockline from "../../../public/img/loginSingIn/Blockline.png"
 import GoogleButton from "@/components/Buttons/GoogleButton";
 import AppleButton from "@/components/Buttons/AppleButton";
 
