@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Shared.DataTransferObjects;
+namespace Shared.DataTransferObjects.CategoryDtos;
 
 public record CategoryForCreationDto : CategoryForManipulationDto
 {
-    public IFormFile? Image { get; set; }
+    public IFormFile? Image { get; init; }
 }

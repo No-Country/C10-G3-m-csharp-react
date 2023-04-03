@@ -9,6 +9,9 @@ namespace Contracts
     public interface IRepositoryManager : IDisposable
     {
         ICategoryRepository Categories { get; }
+        IOwnerRepository Owners { get; }
+        IEstablishmentRepository Establishments { get; }
+        IReviewRepository Reviews { get; }
         Task SaveAsync();
     }
 }
