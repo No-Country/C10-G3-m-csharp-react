@@ -9,11 +9,11 @@ using Repository;
 
 #nullable disable
 
-namespace Repository.Migrations
+namespace Inclusive.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230401113826_Initial")]
-    partial class Initial
+    [Migration("20230403200646_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,7 @@ namespace Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dce119c3-4671-4d67-bf48-0b40dd39f059"),
+                            Id = new Guid("39c9261a-6393-4a8a-b770-31ad71b3898e"),
                             Description = "Restaurantes de comidas rápidas y fáciles",
                             Name = "Restaurantes"
                         });
@@ -74,11 +74,13 @@ namespace Repository.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -130,7 +132,7 @@ namespace Repository.Migrations
                         {
                             Id = "D6C8B4EF-4926-472C-84B7-6BF2300CE8A5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fc3aee92-ae61-4134-87a0-f0ce55f2b8e0",
+                            ConcurrencyStamp = "09ca773c-afc7-4897-b935-b3204a8f4878",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
@@ -138,9 +140,9 @@ namespace Repository.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN1bYhNGNXe3cYvPVzlCBqW2X9SuP42uIcOFbr/LfELsPHPd1RDOAVqx/PzGWFctXw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIiqBqFYp5DwqOb0DL/oGCqe2mcULdNC83Z5ranJYOpaEn0NotFUlMzhW19DmbRW5A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1a300a6f-884d-40cd-84ba-cb655aa12ca2",
+                            SecurityStamp = "afee09e0-27c7-4ff9-bada-aba76c667567",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -148,7 +150,7 @@ namespace Repository.Migrations
                         {
                             Id = "29516888-6214-4FBB-A20B-7509B07F25CD",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "51197111-51dc-4ac0-addd-2b35bd827671",
+                            ConcurrencyStamp = "d122bad7-dc1e-4ba2-b5de-a3679ce78733",
                             Email = "juanperez@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "Juan",
@@ -156,9 +158,9 @@ namespace Repository.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUANPEREZ@LOCALHOST.COM",
                             NormalizedUserName = "JUANPEREZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOr8S/xEwani+4nSTJ6NDrl5YGcU/EQmL7KGVeWBRGcweC2+YXiMyewFu6Q9dPIPMQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGMDMg7BzNreFxEhnududk6C6vcQ/FBGAdZh02f4e3nqmTqXhJfXi9LBJhgL5MyUPg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "12518e1e-45da-4ac3-9a03-1cfcd9d5fb9e",
+                            SecurityStamp = "3605ced8-ff76-4479-ad77-ab53dbfc674f",
                             TwoFactorEnabled = false,
                             UserName = "juanperez"
                         });
@@ -194,14 +196,14 @@ namespace Repository.Migrations
                         new
                         {
                             Id = "A5051E62-875D-4169-B97B-5488F9EA54F2",
-                            ConcurrencyStamp = "6feb3a98-2bf8-4489-a91a-e72940fed577",
+                            ConcurrencyStamp = "8cf3d3da-55b7-4d18-9083-8bbe0181b1c1",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "A6EB18A6-5135-4951-8445-617BF404486A",
-                            ConcurrencyStamp = "4dddbc2d-4ecc-48fd-bdb0-f973c2cff86a",
+                            ConcurrencyStamp = "dc041f2b-6adf-4c8e-ab4f-6f2bbb5b4bb5",
                             Name = "User",
                             NormalizedName = "USER"
                         });

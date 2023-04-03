@@ -18,6 +18,7 @@ namespace Services
     {
         private readonly Lazy<ICategoryService> _categoryService;
         private readonly Lazy<IAuthenticationService> _authenticationService;
+        private readonly Lazy<IUserService> _userService;
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager loggerManager, IMapper mapper,
             UserManager<User> userManager, IConfiguration configuration, IOptions<JWTSettings> jWTSettings)
@@ -26,11 +27,12 @@ namespace Services
                 new Lazy<ICategoryService>(() => new CategoryService(repositoryManager, mapper, loggerManager));
             _authenticationService = new Lazy<IAuthenticationService>(() =>
                 new AuthenticationService(loggerManager, mapper, userManager, jWTSettings));
-
-            //new AuthenticationService(loggerManager, mapper, userManager, configuration));
+            _userService = new Lazy<IUserService>(() =>
+                new UserService(loggerManager, mapper, userManager));
         }
 
         public ICategoryService CategoryService => _categoryService.Value;
         public IAuthenticationService AuthenticationService => _authenticationService.Value;
+        public IUserService UserService => _userService.Value;
     }
 }

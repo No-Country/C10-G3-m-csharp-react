@@ -1,7 +1,7 @@
 ﻿using Inclusive.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.User;
 
 namespace Inclusive.Presentation.Controllers;
 
@@ -9,11 +9,11 @@ namespace Inclusive.Presentation.Controllers;
 [ApiController]
 public class AuthenticationController : ControllerBase
 {
-    private readonly IServiceManager _serviceManager;
+    private readonly IServiceManager _service;
 
-    public AuthenticationController(IServiceManager serviceManager)
+    public AuthenticationController(IServiceManager service)
     {
-        _serviceManager = serviceManager;
+        _service = service;
     }
 
     [HttpPost("register")]
@@ -22,7 +22,7 @@ public class AuthenticationController : ControllerBase
         userForRegistration)
     {
         var result = await
-            _serviceManager.AuthenticationService.RegisterUser(userForRegistration);
+            _service.AuthenticationService.RegisterUser(userForRegistration);
         if (!result.Succeeded)
         {
             foreach (var error in result.Errors)
@@ -43,11 +43,11 @@ public class AuthenticationController : ControllerBase
     {
         // *** preguntar JP si no no se sabe q esta mal ingresado
         // "Authentication failed. Wrong username or password."
-        if (!await _serviceManager.AuthenticationService.ValidateUser(user))
+        if (!await _service.AuthenticationService.ValidateUser(user))
             return Unauthorized("Authentication failed. Wrong username or password.");
         return Ok(new
         {
-            Token = await _serviceManager.AuthenticationService.CreateToken()
+            Token = await _service.AuthenticationService.CreateToken()
         });
     }
 }

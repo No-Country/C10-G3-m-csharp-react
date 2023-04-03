@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Repository.Migrations
+namespace Inclusive.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,8 +28,8 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -174,8 +174,8 @@ namespace Repository.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "A5051E62-875D-4169-B97B-5488F9EA54F2", "6feb3a98-2bf8-4489-a91a-e72940fed577", "Administrator", "ADMINISTRATOR" },
-                    { "A6EB18A6-5135-4951-8445-617BF404486A", "4dddbc2d-4ecc-48fd-bdb0-f973c2cff86a", "User", "USER" }
+                    { "A5051E62-875D-4169-B97B-5488F9EA54F2", "8cf3d3da-55b7-4d18-9083-8bbe0181b1c1", "Administrator", "ADMINISTRATOR" },
+                    { "A6EB18A6-5135-4951-8445-617BF404486A", "dc041f2b-6adf-4c8e-ab4f-6f2bbb5b4bb5", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -183,14 +183,14 @@ namespace Repository.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "29516888-6214-4FBB-A20B-7509B07F25CD", 0, "51197111-51dc-4ac0-addd-2b35bd827671", "juanperez@localhost.com", true, "Juan", "Perez", false, null, "JUANPEREZ@LOCALHOST.COM", "JUANPEREZ", "AQAAAAEAACcQAAAAEOr8S/xEwani+4nSTJ6NDrl5YGcU/EQmL7KGVeWBRGcweC2+YXiMyewFu6Q9dPIPMQ==", null, false, "12518e1e-45da-4ac3-9a03-1cfcd9d5fb9e", false, "juanperez" },
-                    { "D6C8B4EF-4926-472C-84B7-6BF2300CE8A5", 0, "fc3aee92-ae61-4134-87a0-f0ce55f2b8e0", "admin@localhost.com", true, "Admin", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN", "AQAAAAEAACcQAAAAEN1bYhNGNXe3cYvPVzlCBqW2X9SuP42uIcOFbr/LfELsPHPd1RDOAVqx/PzGWFctXw==", null, false, "1a300a6f-884d-40cd-84ba-cb655aa12ca2", false, "admin" }
+                    { "29516888-6214-4FBB-A20B-7509B07F25CD", 0, "d122bad7-dc1e-4ba2-b5de-a3679ce78733", "juanperez@localhost.com", true, "Juan", "Perez", false, null, "JUANPEREZ@LOCALHOST.COM", "JUANPEREZ", "AQAAAAEAACcQAAAAEGMDMg7BzNreFxEhnududk6C6vcQ/FBGAdZh02f4e3nqmTqXhJfXi9LBJhgL5MyUPg==", null, false, "3605ced8-ff76-4479-ad77-ab53dbfc674f", false, "juanperez" },
+                    { "D6C8B4EF-4926-472C-84B7-6BF2300CE8A5", 0, "09ca773c-afc7-4897-b935-b3204a8f4878", "admin@localhost.com", true, "Admin", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN", "AQAAAAEAACcQAAAAEIiqBqFYp5DwqOb0DL/oGCqe2mcULdNC83Z5ranJYOpaEn0NotFUlMzhW19DmbRW5A==", null, false, "afee09e0-27c7-4ff9-bada-aba76c667567", false, "admin" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "Description", "Name" },
-                values: new object[] { new Guid("dce119c3-4671-4d67-bf48-0b40dd39f059"), "Restaurantes de comidas rápidas y fáciles", "Restaurantes" });
+                values: new object[] { new Guid("39c9261a-6393-4a8a-b770-31ad71b3898e"), "Restaurantes de comidas rápidas y fáciles", "Restaurantes" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

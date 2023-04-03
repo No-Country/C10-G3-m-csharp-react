@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Contracts;
-using Entities;
 using Entities.Models;
 using LoggerService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Repository;
@@ -65,8 +65,6 @@ namespace Inclusive.Extensions
             // ***
             var jWTSettings = configuration.GetSection("JWTSettings").Get<JWTSettings>();
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
-
-            //var jwtSettings = configuration.GetSection("JwtSettings");
 
             services.AddAuthentication(opt =>
                 {

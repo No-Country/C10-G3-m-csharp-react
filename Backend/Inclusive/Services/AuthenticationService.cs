@@ -5,12 +5,11 @@ using AutoMapper;
 using Contracts;
 using Entities.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Service.Contracts;
 using Services.Models;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.User;
 using Shared.Helper;
 
 namespace Services;
@@ -21,8 +20,6 @@ public sealed class AuthenticationService : IAuthenticationService
     private readonly IMapper _mapper;
     private readonly UserManager<User> _userManager;
     private readonly JWTSettings _jWTSettings;
-
-    //private readonly IConfiguration _configuration;
 
     private User? _user;
 
@@ -35,26 +32,11 @@ public sealed class AuthenticationService : IAuthenticationService
         _mapper = mapper;
         _userManager = userManager;
         _jWTSettings = jWTSettings.Value;
-        //_configuration = configuration;
     }
 
     public async Task<IdentityResult> RegisterUser(UserForRegistrationDto
         userForRegistration)
     {
-
-        // ver si es necesario validar o si y alo valida el ModelState
-        //var existingUser = await _userManager.FindByNameAsync(userForRegistration.UserName);
-        //if (existingUser != null)
-        //{
-        //    throw new Exception("El username ya existe");
-        //}
-
-        //var existingEmail = await _userManager.FindByEmailAsync(userForRegistration.Email);
-        //if (existingEmail != null)
-        //{
-        //    throw new Exception("El email ya existe");
-        //}
-
         var user = _mapper.Map<User>(userForRegistration);
         // user.EmailConfirmed = true
 
@@ -87,9 +69,6 @@ public sealed class AuthenticationService : IAuthenticationService
 
     private SigningCredentials GetSigningCredentials()
     {
-        //var jwtSettings = _configuration.GetSection("JwtSettings");
-        //var key = Encoding.UTF8.GetBytes(jwtSettings["secretKey"]);
-
         var key = Encoding.UTF8.GetBytes(_jWTSettings.SecretKey);
         var secret = new SymmetricSecurityKey(key);
         return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
@@ -118,23 +97,11 @@ public sealed class AuthenticationService : IAuthenticationService
         .Union(userClaims)
         .Union(roleClaims);
 
-
-        //var claims = new List<Claim>
-        //{
-        //    new Claim(ClaimTypes.Name, _user.UserName)
-        //};
-        //var roles = await _userManager.GetRolesAsync(_user);
-        //foreach (var role in roles)
-        //{
-        //    claims.Add(new Claim(ClaimTypes.Role, role));
-        //}
-
         return claims;
     }
 
     private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, IEnumerable<Claim> claims)
     {
-        //var jwtSettings = _configuration.GetSection("JwtSettings");
         var tokenOptions = new JwtSecurityToken
         (
             issuer: _jWTSettings.ValidIssuer,
