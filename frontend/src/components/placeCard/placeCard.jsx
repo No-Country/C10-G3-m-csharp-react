@@ -6,6 +6,7 @@ import { useState } from "react";
 import RatingStars from "../ratingStars/ratingStars";
 import FinalRating from "../finalRating/finalRating";
 import CheckLogo from "../checkLogo/checkLogo";
+import MapCard from "../map/CardMap";
 
 function PlaceCard() {
   const [showMore, setShowMore] = useState(false);
@@ -19,7 +20,9 @@ function PlaceCard() {
       <div className={styles.showMoreCard}>
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}></div>
-          <div className={styles.showMore__img}></div>
+          <div className={styles.showMore__img}>
+            <MapCard/>
+          </div>
         </div>
         <div className={styles.showMore__text}>
           <h3>LOS PLATITOS</h3>

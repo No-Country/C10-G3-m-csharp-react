@@ -1,0 +1,8 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.mapContainer {
+    height: 11rem;
+    width: 100%;
+}
