@@ -21,7 +21,7 @@ const {
   checkRounded,
 } = styles;
 
-export default function index() {
+export default function Register() {
   return (
     <div className={container}>
       <div className={logoAndTitleContainer}>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "../.././../public/Logo.png";
 import Button from "@/components/Buttons/Button";
 
-const { container, loginImageCenter, loginButtonOutlined,loginButtonsContainer } = styles;
+const { container, loginImageCenter,loginButtonsContainer } = styles;
 
 export default function Login() {
   return (
