@@ -45,10 +45,22 @@
 
   .showMore__header {
     .showMore__img {
+      position: relative;
       background-color: grey;
       width: 100%;
       height: f.toRem(178);
       border-radius: 6px;
+
+      .showMore__spinnerContainer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        line-height: f.toRem(178);
+      }
     }
   }
 

@@ -7,6 +7,7 @@ import RatingStars from "../ratingStars/ratingStars";
 import FinalRating from "../finalRating/finalRating";
 import CheckLogo from "../checkLogo/checkLogo";
 import MapCard from "../map/CardMap";
+import { CircularProgress } from "@mui/material";
 
 function PlaceCard() {
   const [showMore, setShowMore] = useState(false);
@@ -21,7 +22,10 @@ function PlaceCard() {
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}></div>
           <div className={styles.showMore__img}>
-            <MapCard center={[-34.64933554688625, -58.625932984654476]}/>
+            <div className={styles.showMore__spinnerContainer}>
+              <CircularProgress />
+            </div>
+            <MapCard center={[-34.64933554688625, -58.625932984654476]} />
           </div>
         </div>
         <div className={styles.showMore__text}>
