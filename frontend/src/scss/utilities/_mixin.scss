@@ -1,0 +1,43 @@
+@use './colors' as *;
+@use './functions' as *;
+
+//mixin para los inputs
+
+@mixin Inputs {
+
+    background-color: $white;
+    opacity: 0.75;
+    width: 19.5rem;
+    border: 1px solid $blue-200;
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+    height: 3rem;
+    color: $blue-200;
+
+}
+
+@mixin Selects {
+
+    width: 8rem;
+    height: 3rem;
+    border: 1px solid $blue-200;
+    opacity: 0.75;
+    border-radius: 0.3rem;
+    text-align: center;
+    color: $blue-200;
+    
+
+}
+
+@mixin SelectDias {
+
+    padding: toRem(10px);
+    width: toRem(312px);
+    height: toRem(48px);
+    background-color: $white;
+    opacity: 0.75;
+    color: $colorInputs;
+    border-radius: toRem(6px);
+    border: toRem(1.6px) solid $blue-200;
+
+}

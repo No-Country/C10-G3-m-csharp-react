@@ -1,0 +1,18 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.finalRating {
+  display: flex;
+  align-items: center;
+  gap: f.toRem(3);
+
+  p {
+    font-size: f.toRem(10);
+  }
+
+  span {
+    font-weight: 700;
+    color: $blue-400;
+  }
+}
