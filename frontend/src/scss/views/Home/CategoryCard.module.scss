@@ -7,13 +7,19 @@
     background-color: $blue-100;
     display: flex;
   
-    .img {
+    .img, .skeleton__img {
       background-color: $grey;
       height: 100%;
       width: 47.43%;
     }
+
+    .skeleton__img, .skeleton__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   
-    .text {
+    .text, .skeleton__text {
       flex-grow: 1;
       padding: f.toRem(8) f.toRem(16);
       display: flex;

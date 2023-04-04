@@ -3,6 +3,7 @@ import FeaturedCard from "../featuredCard/featuredCard";
 import NearYouCard from "../nearYouCard/nearYouCard";
 import styles from "../../scss/views/Home/Home.module.scss";
 import CloseLogo from "../closeLogo/closeLogo";
+import CategoryList from "../categoryList/categoryList";
 
 function HomeView() {
   return (
@@ -13,13 +14,9 @@ function HomeView() {
       </div>
 
       <ul className={styles.list}>
-        {[...Array(8)].map((e, idx) => {
-          return (
-            <li key={idx}>
-              <CategoryCard />
-            </li>
-          );
-        })}
+
+        <CategoryList/>
+
         <li className={styles.featured}>
           <FeaturedCard />
         </li>
