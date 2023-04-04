@@ -6,11 +6,13 @@ using LoggerService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Repository;
 using Service.Contracts;
 using Services;
+using Services.Models;
 
 namespace Inclusive.Extensions
 {
@@ -61,7 +63,9 @@ namespace Inclusive.Extensions
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration
             configuration)
         {
-            var jwtSettings = configuration.GetSection("JwtSettings");
+            // ***
+            var jWTSettings = configuration.GetSection("JWTSettings").Get<JWTSettings>();
+            services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
 
             services.AddAuthentication(opt =>
                 {
@@ -76,10 +80,11 @@ namespace Inclusive.Extensions
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = jwtSettings["validIssuer"],
-                        ValidAudience = jwtSettings["validAudience"],
+                        ClockSkew = TimeSpan.Zero,
+                        ValidIssuer = jWTSettings.ValidIssuer, //  jwtSettings["validIssuer"],
+                        ValidAudience = jWTSettings.ValidAudience, // jwtSettings["validAudience"],   jwtSettings["secretKey"]
                         IssuerSigningKey = new
-                            SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["secretKey"]))
+                            SymmetricSecurityKey(Encoding.UTF8.GetBytes(jWTSettings.SecretKey))
                     };
                 });
         }

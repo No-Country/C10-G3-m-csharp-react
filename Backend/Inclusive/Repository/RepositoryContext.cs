@@ -26,6 +26,8 @@ namespace Repository
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new OwnerConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
         }
 
         public DbSet<Category>? Categories { get; set; }

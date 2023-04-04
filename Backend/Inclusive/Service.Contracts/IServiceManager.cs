@@ -12,5 +12,6 @@ namespace Service.Contracts
         IOwnerService OwnerService { get; }
         IAuthenticationService AuthenticationService { get; }
         IFileService FileService { get; }
+        IUserService UserService { get; }
     }
 }

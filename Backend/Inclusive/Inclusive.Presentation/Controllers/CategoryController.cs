@@ -26,6 +26,7 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> GetCategories([FromQuery] CategoryParameters parameters)
     {
         var pagedResult = await _service.CategoryService.GetCategoriesAsync(parameters, false);
+
         Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
         return Ok(pagedResult.categories);
     }

@@ -2,6 +2,7 @@
 using Entities.Models;
 using Shared.DataTransferObjects;
 using Shared.DataTransferObjects.CategoryDtos;
+using Shared.DataTransferObjects.UserDtos;
 
 namespace Inclusive;
 
@@ -18,5 +19,7 @@ public class MappingProfile : Profile
                 opt => opt.Ignore());
 
         CreateMap<UserForRegistrationDto, User>();
+        CreateMap<UserForUpdateDto, User>();
+        CreateMap<User, UserDto>();
     }
 }
