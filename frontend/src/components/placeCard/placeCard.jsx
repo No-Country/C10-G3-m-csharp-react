@@ -21,7 +21,7 @@ function PlaceCard() {
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}></div>
           <div className={styles.showMore__img}>
-            <MapCard/>
+            <MapCard center={[-34.64933554688625, -58.625932984654476]}/>
           </div>
         </div>
         <div className={styles.showMore__text}>
