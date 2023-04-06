@@ -42,9 +42,9 @@ public class OwnerController : ControllerBase
 
     [HttpPost(Name = "CreateOwner")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateOwner([FromForm] OwnerForCreationDto ownerDto)
+    public async Task<IActionResult> CreateOwner(Guid categoryId, [FromForm] OwnerForCreationDto ownerDto)
     {
-        var owner = await _services.OwnerService.CreateOwnerAsync(ownerDto);
+        var owner = await _services.OwnerService.CreateOwnerAsync(categoryId, ownerDto);
         return CreatedAtRoute("GetOwnerById",
             new
             {
