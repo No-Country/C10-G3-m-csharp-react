@@ -8,6 +8,7 @@ import FinalRating from "../finalRating/finalRating";
 import CheckLogo from "../checkLogo/checkLogo";
 import MapCard from "../map/CardMap";
 import { CircularProgress } from "@mui/material";
+import Image from "next/image";
 
 function PlaceCard() {
   const [showMore, setShowMore] = useState(false);
@@ -20,7 +21,9 @@ function PlaceCard() {
     return (
       <div className={styles.showMoreCard}>
         <div className={styles.showMore__header}>
-          <div className={styles.showMore__img}></div>
+          <div className={styles.showMore__img}>
+            <Image alt={`place photo`} src={``} width={140} height={80} />
+          </div>
           <div className={styles.showMore__img}>
             <div className={styles.showMore__spinnerContainer}>
               <CircularProgress />
