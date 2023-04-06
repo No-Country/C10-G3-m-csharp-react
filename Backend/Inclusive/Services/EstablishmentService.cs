@@ -51,20 +51,26 @@ public class EstablishmentService : IEstablishmentService
         return _mapper.Map<EstablishmentDto>(establishmentEntity);
     }
 
-    public Task DeleteEstablishmentAsync(Guid ownerId,
+    public async Task DeleteEstablishmentAsync(Guid ownerId,
         Guid id,
         bool trackChanges)
     {
-        throw new NotImplementedException();
+        await CheckIfOwnerExists(ownerId, trackChanges);
+        var establishment = await GetEstablishmentForOwnerAndCheckIfItExists(id, trackChanges);
+        _repository.Establishments.DeleteEstablishment(establishment);
+        await _repository.SaveAsync();
     }
 
-    public Task UpdateEstablishmentAsync(Guid ownerId,
+    public async Task UpdateEstablishmentAsync(Guid ownerId,
         Guid id,
         EstablishmentForUpdateDto establishment,
         bool ownerTrackChanges,
         bool trackChanges)
     {
-        throw new NotImplementedException();
+        await CheckIfOwnerExists(ownerId, ownerTrackChanges);
+        var establishmentEntity = await GetEstablishmentForOwnerAndCheckIfItExists(id, trackChanges);
+        _mapper.Map(establishment, establishmentEntity);
+        await _repository.SaveAsync();
     }
     private async Task CheckIfOwnerExists(Guid ownerId,
         bool trackChanges)
