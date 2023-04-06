@@ -1,6 +1,4 @@
-﻿using Shared.DataTransferObjects.ReviewDtos;
-
-namespace Shared.DataTransferObjects.EstablishmentDtos;
+﻿namespace Shared.DataTransferObjects.EstablishmentDtos;
 
 public record EstablishmentDto
 {

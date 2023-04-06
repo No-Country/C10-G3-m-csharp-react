@@ -21,6 +21,7 @@ namespace Services
         private readonly Lazy<IFileService> _fileService;
         private readonly Lazy<IAuthenticationService> _authenticationService;
         private readonly Lazy<IUserService> _userService;
+        private readonly Lazy<IReviewService> _reviewService;
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager loggerManager, IMapper mapper,
             UserManager<User> userManager, IConfiguration configuration, IOptions<JWTSettings> jWTSettings)
@@ -34,6 +35,8 @@ namespace Services
                 new AuthenticationService(loggerManager, mapper, userManager, jWTSettings));
             _userService = new Lazy<IUserService>(() =>
                 new UserService(loggerManager, mapper, userManager));
+            _reviewService = new Lazy<IReviewService>(() =>
+                new ReviewService(repositoryManager, mapper, loggerManager));
         }
 
         public ICategoryService CategoryService => _categoryService.Value;
@@ -41,5 +44,6 @@ namespace Services
         public IFileService FileService => _fileService.Value;
         public IAuthenticationService AuthenticationService => _authenticationService.Value;
         public IUserService UserService => _userService.Value;
+        public IReviewService ReviewService => _reviewService.Value;
     }
 }

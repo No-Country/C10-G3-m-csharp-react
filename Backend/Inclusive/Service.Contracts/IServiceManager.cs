@@ -13,5 +13,6 @@ namespace Service.Contracts
         IAuthenticationService AuthenticationService { get; }
         IFileService FileService { get; }
         IUserService UserService { get; }
+        IReviewService ReviewService { get; }
     }
 }

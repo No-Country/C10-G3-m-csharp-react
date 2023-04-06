@@ -1,10 +1,16 @@
-﻿namespace Shared.DataTransferObjects.ReviewDtos;
+﻿namespace Shared.DataTransferObjects;
 
-public record ReviewDto
+public class ReviewDto
 {
     public Guid Id { get; set; }
 
-    public int? Rating { get; set; }
+    public Guid Stablishment { get; set; }
+
+    public Guid UserId { get; set; }
+
+    public int Rating { get; set; }
 
     public string? Comment { get; set; }
+
+    public DateTime? Created { get; set; }
 }

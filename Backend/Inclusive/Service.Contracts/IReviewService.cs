@@ -1,4 +1,4 @@
-﻿using Shared.DataTransferObjects.ReviewDtos;
+﻿using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 
 namespace Service.Contracts;
