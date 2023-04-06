@@ -18,6 +18,7 @@ public class OwnerController : ControllerBase
         _services = services;
     }
 
+
     [HttpGet(Name = "GetOwners")]
     public async Task<IActionResult> GetOwners([FromQuery] OwnerParameters ownerParameters)
     {
@@ -28,6 +29,7 @@ public class OwnerController : ControllerBase
         return Ok(pagedResult.ownerDtos);
     }
 
+
     [HttpGet("{id:guid}",
         Name = "GetOwnerById")]
     public async Task<IActionResult> GetOwnerById(Guid id)
@@ -36,6 +38,7 @@ public class OwnerController : ControllerBase
             false);
         return Ok(owner);
     }
+
 
     [HttpPost(Name = "CreateOwner")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
@@ -49,6 +52,15 @@ public class OwnerController : ControllerBase
             },
             owner);
     }
+
+
+    [HttpDelete("{id:guid}", Name = "DeleteOwner")]
+    public async Task<IActionResult> DeleteOwner(Guid id)
+    {
+        await _services.OwnerService.DeleteOwnerAsync(id, false);
+        return NoContent();
+    }
+
 
     [HttpPut]
     [ServiceFilter(typeof(ValidationFilterAttribute))]

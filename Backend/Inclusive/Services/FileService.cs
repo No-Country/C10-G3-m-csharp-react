@@ -3,6 +3,7 @@ using Contracts;
 using Entities.Models;
 using Microsoft.AspNetCore.Http;
 using Service.Contracts;
+using static System.IO.Directory;
 
 namespace Services;
 
@@ -18,38 +19,26 @@ public class FileService : IFileService
         _mapper = mapper;
         _logger = logger;
     }
+
     public void DeleteFile(string path, Guid id)
     {
-        var dir = Path.Combine(path,"images", "categories", id.ToString());
-        Directory.Delete(dir, true);
+        var dir = Path.Combine(path, "images", "categories", id.ToString());
+        if (Exists(dir)) Delete(dir, true);
     }
 
     public async Task<Category?> UploadCategoryFileAsync(Guid fatherId, IFormFile? file, string path, string imagePath)
     {
-        if (file == null)
-            return null;
-
-        if (string.IsNullOrEmpty(file.FileName))
-            return null;
-
+        if (string.IsNullOrEmpty(file?.FileName)) return null;
         var directoryPath = Path.Combine(path, "images", "categories", fatherId.ToString());
-
-        if (Directory.Exists(directoryPath))
-            Directory.Delete(directoryPath, true);
-
-        Directory.CreateDirectory(directoryPath);
-
+        if (Exists(directoryPath)) Delete(directoryPath, true);
+        CreateDirectory(directoryPath);
         var dir = Path.Combine(directoryPath, file.FileName);
         var urlPath = $"{imagePath}/images/categories/{fatherId.ToString()}/{file.FileName}";
-
-        using (var stream = new FileStream(dir, FileMode.Create))
-        {
-            await file.CopyToAsync(stream);
-            stream.Close();
-        }
-
+        await using var stream = new FileStream(dir, FileMode.Create);
+        await file.CopyToAsync(stream);
+        stream.Close();
         var categoryEntity = await _repository.Categories.GetCategoryByIdAsync(fatherId, true);
-        categoryEntity.Image = urlPath;
+        categoryEntity!.Image = urlPath;
         await _repository.SaveAsync();
         return await _repository.Categories.GetCategoryByIdAsync(fatherId, true);
     }
