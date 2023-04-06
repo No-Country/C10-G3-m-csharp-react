@@ -1,9 +1,13 @@
+import Header from "../Header/Header"
+import Navbar from "../Navbar/Navbar";
+
+
 function MainLayout({ children }) {
   return (
     <>
-      <header>Header</header>
+      <Header/>
       <main>{children}</main>
-      {/* <footer>Footer</footer> */}
+      <footer>footer</footer>
     </>
   );
 }

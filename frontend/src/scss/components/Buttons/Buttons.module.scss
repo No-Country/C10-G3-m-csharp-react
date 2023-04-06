@@ -15,11 +15,17 @@
 .fastSignInButton{
     display: flex;
     justify-content: center;
-    gap: toRem(3);
+    gap: toRem(5);
     align-items: center;
     width: toRem(148) ;
     height: toRem(45);
     color: $blue-200;
     border: toRem(1.5) solid $blue-200;
     margin: toRem(5);
+}
+
+
+.imgStyled{
+    width: toRem(19);
+    height: toRem(22);
 }

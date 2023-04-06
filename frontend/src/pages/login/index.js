@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../../scss/views/barrel_views.module.scss";
 import Image from "next/image";
-import Logo from "../.././../public/Logo.png";
+import Logo from '../../../public/img/loginSingIn/Logo.png';
 import Button from "@/components/Buttons/Button";
 
-const { container, loginImageCenter, loginButtonOutlined,loginButtonsContainer } = styles;
+const { container, loginImageCenter,loginButtonsContainer } = styles;
 
 export default function Login() {
   return (
