@@ -1,76 +1,72 @@
 /* Navegacion */
 
-
-
-$ItemsColor: #001C7E;
-$Close: #63A3FD;
+$ItemsColor: #001c7e;
+$Close: #63a3fd;
 $White: #fff;
 
-
-
-
 .items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    background-color: $ItemsColor;
-    width: 281px;
-    height: 620px;
-    left: 95px;
-    transform: translateX(100%);
-    transition: 0.3s ease all;
-    top: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: $ItemsColor;
+  width: 281px;
+  height: 620px;
+  left: 62px;
+  transform: translateX(100%);
+  transition: 0.3s ease all;
+  top: 132px;
+  opacity: 0;
 }
 
 .items.open {
-    transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .ContainerClose {
-    width: 32px;
-    height: 32px;
-    background-color: $Close;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    margin: 20px auto;
-
+  width: 32px;
+  height: 32px;
+  background-color: $Close;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  margin: 20px auto;
 }
 
 .itemsListas {
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    top: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    color: $White;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: $White;
 }
 
 .Hamburger {
-    position: relative;
+  position: relative;
 }
 
 .Cortina {
-    background-color: rgba(180, 178, 178, 0.37);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    display: none;
+  background-color: rgba(180, 178, 178, 0.37);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: none;
 }
 
 .Cortina.remove {
-    display: block;
+  display: block;
 }
 
 .Ayuda {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
