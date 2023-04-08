@@ -17,11 +17,14 @@ export default function Navbar() {
             </div>
 
             <div className={`items ${isopen && "open"}`}>
-                 
+            </div>
+            
+                <div className={`CloseClose  ${isopen && "open"} `}  onClick={Cambio}  > 
                 <div className={`ContainerClose ${isopen && "open"}`} onClick={Cambio} >
-                    <Image width={18.63} height={18.63} src="./images/close.svg" alt="close" />
+                    <Image className="Close" width={18.63} height={18.63} src="./images/close.svg" alt="close" />
                 </div>
-                <ul className="itemsListas">
+               
+                  <ul className="itemsListas">
                     <li>
                        <Link href="/"> Perfil de usuario </Link>
 
@@ -47,7 +50,9 @@ export default function Navbar() {
                         <Link href="/"> Cerrar sesión </Link>
                     </li>
                 </ul>
-            </div>
+                </div>
+                
+         
            
 
         </div>
