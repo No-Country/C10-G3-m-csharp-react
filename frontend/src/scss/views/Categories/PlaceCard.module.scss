@@ -44,7 +44,8 @@
   position: relative;
 
   .showMore__header {
-    .showMore__img {
+    .showMore__img,
+    .showMore__map {
       position: relative;
       background-color: grey;
       width: 100%;
@@ -145,6 +146,34 @@
           fill: $blue-500;
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-inline: 240px;
+
+    .showMore__header {
+      grid-column: span 2;
+      display: flex;
+      gap: 16px;     
+
+      .showMore__img,
+      .showMore__map {
+        height: 100%;
+
+        .showMore__spinnerContainer {
+          line-height: f.toRem(300);
+        }
+      }
+    }
+
+    .showMore__text {
+      grid-column: 3 / 4;
+      border-radius: 6px;
+      justify-content: space-between;
     }
   }
 }

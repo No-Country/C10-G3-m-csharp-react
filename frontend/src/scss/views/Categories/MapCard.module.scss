@@ -5,4 +5,10 @@
 .mapContainer {
     height: 11rem;
     width: 100%;
+
+
+    @media screen and (min-width: 800px) {
+        height: f.toRem(351);
+        border-radius: 6px;
+    }
 }

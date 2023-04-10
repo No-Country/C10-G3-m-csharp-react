@@ -22,9 +22,9 @@ function PlaceCard() {
       <div className={styles.showMoreCard}>
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}>
-            <Image alt={`place photo`} src={``} width={140} height={80} />
+            {/* <Image alt={`place photo`} src={``} width={140} height={80} /> */}
           </div>
-          <div className={styles.showMore__img}>
+          <div className={styles.showMore__map}>
             <div className={styles.showMore__spinnerContainer}>
               <CircularProgress />
             </div>
