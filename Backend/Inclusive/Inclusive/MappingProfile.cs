@@ -41,5 +41,9 @@ public class MappingProfile : Profile
         CreateMap<Accessibility, AccessibilityDto>();
         CreateMap<AccessibilityForCreationDto, Accessibility>();
         CreateMap<AccessibilityForUpdateDto, Accessibility>();
+
+        CreateMap<ReviewForCreationDto, Review>();
+        CreateMap<Review, ReviewDto>();
+        CreateMap<ReviewForUpdateDto, Review>();
     }
 }

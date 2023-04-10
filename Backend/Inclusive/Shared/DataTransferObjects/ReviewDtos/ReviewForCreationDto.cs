@@ -1,3 +1,7 @@
-﻿namespace Shared.DataTransferObjects.ReviewDtos;
+﻿using Shared.DataTransferObjects.ReviewDtos;
 
-public record ReviewForCreationDto : ReviewForManipulationDto{}
+namespace Shared.DataTransferObjects;
+
+public record ReviewForCreationDto : ReviewForManipulationDto
+{
+}
