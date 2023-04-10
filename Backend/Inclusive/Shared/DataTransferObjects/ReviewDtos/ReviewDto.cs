@@ -4,7 +4,7 @@ public class ReviewDto
 {
     public Guid Id { get; set; }
 
-    public Guid Stablishment { get; set; }
+    public Guid EstablishmentId { get; set; }
 
     public Guid UserId { get; set; }
 

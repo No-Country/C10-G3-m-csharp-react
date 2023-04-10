@@ -26,7 +26,7 @@ public class ReviewController: ControllerBase
         var pagedResult = await _service.ReviewService.GetReviewsAsync(parameters, false);
 
         Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
-        return Ok(pagedResult);
+        return Ok(pagedResult.reviewDtos); //Los elementos estan en pagedResult.reviewDtos
     }
 
     [HttpGet("{id:guid}", Name = "GetReviewById")]
@@ -38,17 +38,17 @@ public class ReviewController: ControllerBase
 
     [HttpPost(Name = "CreateReview")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateReview(Guid establishmentId, string userId, [FromBody] ReviewForCreationDto review, bool trackChanges )
+    public async Task<IActionResult> CreateReview(Guid establishmentId, string userId, [FromBody] ReviewForCreationDto review )
     {
-        var createReview = await _service.ReviewService.CreateReviewAsync(establishmentId, userId, review, trackChanges);
+        var createReview = await _service.ReviewService.CreateReviewAsync(establishmentId, userId, review, false);
         return CreatedAtRoute("GetReviewById", new { id = createReview.Id }, createReview);
     }
 
     [HttpPut("{id:guid}", Name = "UpdateReview")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> UpdateReview(Guid establishmentId, string userId, Guid id, ReviewForUpdateDto review, bool establishmentTrackChanges, bool trackChanges)
+    public async Task<IActionResult> UpdateReview(Guid id, ReviewForUpdateDto review)
     {
-        await _service.ReviewService.UpdateReviewAsync(establishmentId, userId, id, review, establishmentTrackChanges, trackChanges);
+        await _service.ReviewService.UpdateReviewAsync(id, review, true);
         return NoContent();
     }
 }

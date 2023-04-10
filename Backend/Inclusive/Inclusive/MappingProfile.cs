@@ -21,5 +21,9 @@ public class MappingProfile : Profile
         CreateMap<UserForRegistrationDto, User>();
         CreateMap<UserForUpdateDto, User>();
         CreateMap<User, UserDto>();
+
+        CreateMap<ReviewForCreationDto, Review>();
+        CreateMap<Review, ReviewDto>();
+        CreateMap<ReviewForUpdateDto, Review>();
     }
 }

@@ -31,27 +31,27 @@ public class ReviewService : IReviewService
 
     async Task<ReviewDto> IReviewService.GetReviewByIdAsync(Guid id, bool trackChanges)
     {
-        var review = await GetReviewAndCheckIfItExists(id: id, trackChanges: trackChanges);
+        var review = await GetReviewAndCheckIfItExists(id, trackChanges);
         return _mapper.Map<ReviewDto>(review);
     }
 
     public async Task<ReviewDto> CreateReviewAsync(Guid establishmentId, string userId, ReviewForCreationDto review, bool trackChanges)
     {
         var reviewEntity = _mapper.Map<Review>(review);
-        reviewEntity.Date = DateTime.UtcNow;                    //Preguntar (Esta bien hacerlo aca? y esta bien el tipo?)
+        reviewEntity.Created = DateTime.UtcNow;                    //Preguntar (Esta bien hacerlo aca? y esta bien el tipo?)
         _repository.Reviews.CreateReview(establishmentId, userId, reviewEntity);         //AGREGADO daba problemas en IReviewRepository
         await _repository.SaveAsync();
         return _mapper.Map<ReviewDto>(reviewEntity);
     }
 
-    public async Task DeleteReviewAsync(Guid establishmentId, string userId, Guid id, bool trackChanges)
+    public async Task DeleteReviewAsync(Guid id, bool trackChanges)
     {
-        var review = await GetReviewAndCheckIfItExists(id: id, trackChanges: trackChanges);
+        var review = await GetReviewAndCheckIfItExists(id, trackChanges);
         _repository.Reviews.DeleteReview(review);
         await _repository.SaveAsync();
     }
 
-    public async Task UpdateReviewAsync(Guid establishmentId, string userId, Guid id, ReviewForUpdateDto review, bool establishmentTrackChanges, bool trackChanges)
+    public async Task UpdateReviewAsync(Guid id, ReviewForUpdateDto review, bool trackChanges)
     {
         var reviewEntity = await GetReviewAndCheckIfItExists(id, trackChanges);
         _mapper.Map(review, reviewEntity);
