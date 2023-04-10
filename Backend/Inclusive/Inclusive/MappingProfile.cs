@@ -2,7 +2,7 @@
 using Entities.Models;
 using Entities.Models.Establishments;
 using Entities.Models.Owners;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.AccessibilityDtos;
 using Shared.DataTransferObjects.CategoryDtos;
 using Shared.DataTransferObjects.EstablishmentDtos;
 using Shared.DataTransferObjects.OwnerDtos;
@@ -37,5 +37,9 @@ public class MappingProfile : Profile
         CreateMap<EstablishmentForUpdateDto, Establishment>()
             .ForMember(e=> e.Image,
                 opt=> opt.Ignore());
+
+        CreateMap<Accessibility, AccessibilityDto>();
+        CreateMap<AccessibilityForCreationDto, Accessibility>();
+        CreateMap<AccessibilityForUpdateDto, Accessibility>();
     }
 }

@@ -9,6 +9,9 @@ namespace Repository
         private readonly Lazy<IOwnerRepository> _ownerRepository;
         private readonly Lazy<IEstablishmentRepository> _establishmentRepository;
         private readonly Lazy<IReviewRepository> _reviewRepository;
+        private readonly Lazy<IAccessibilityRepository> _accessibilityRepository;
+        
+
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -18,6 +21,7 @@ namespace Repository
             _establishmentRepository =
                 new Lazy<IEstablishmentRepository>(() => new EstablishmentRepository(_repositoryContext));
             _reviewRepository = new Lazy<IReviewRepository>(() => new ReviewRepository(_repositoryContext));
+            _accessibilityRepository = new Lazy<IAccessibilityRepository>(() => new AccessibilityRepository(_repositoryContext));
         }
 
         public ICategoryRepository Categories =>
@@ -28,6 +32,8 @@ namespace Repository
 
         public IEstablishmentRepository Establishments => _establishmentRepository.Value;
         public IReviewRepository Reviews => _reviewRepository.Value;
+
+        public IAccessibilityRepository Accessibilitys => _accessibilityRepository.Value;
 
         public void Dispose() =>
             _repositoryContext.Dispose();

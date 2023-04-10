@@ -14,5 +14,6 @@ namespace Shared.Helper
     {
         public const string Administrator = "Administrator";
         public const string User = "User";
+        public const string AdministratorOrUser = Administrator + "," + User;
     }
 }

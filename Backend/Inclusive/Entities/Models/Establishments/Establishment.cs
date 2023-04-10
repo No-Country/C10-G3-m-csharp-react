@@ -42,5 +42,6 @@ public class Establishment
     [ForeignKey(nameof(Category))] public Guid CategoryId { get; set; }
     public Category? Category { get; set; }
 
+    public ICollection<EstablishmentAccessibility>? EstablishmentAccessibility { get; set; }
     public ICollection<Review>? Reviews { get; set; }
 }

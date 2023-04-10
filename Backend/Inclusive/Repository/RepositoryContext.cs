@@ -23,6 +23,8 @@ namespace Repository
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<EstablishmentAccessibility>().HasKey(ea => new { ea.EstablishmentId, ea.AccessibilityId});
+
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new OwnerConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
@@ -34,5 +36,7 @@ namespace Repository
         public DbSet<Owner>? Owners { get; set; }
         public DbSet<Establishment>? Establishments { get; set; }
         public DbSet<Review>? Reviews { get; set; }
+        public DbSet<Accessibility> Accessibilitys { get; set; }
+        public DbSet<EstablishmentAccessibility> EstablishmentsAccessibilitys { get; set; }
     }
 }

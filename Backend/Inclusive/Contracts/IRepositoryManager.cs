@@ -12,6 +12,7 @@ namespace Contracts
         IOwnerRepository Owners { get; }
         IEstablishmentRepository Establishments { get; }
         IReviewRepository Reviews { get; }
+        IAccessibilityRepository Accessibilitys { get; }
         Task SaveAsync();
     }
 }
