@@ -44,10 +44,63 @@
 
       li {
         border: 1px solid $lightGrey;
+        border-bottom: none;
         padding: f.toRem(10);
         text-align: center;
         line-height: f.toRem(14);
       }
     }
   }
+}
+
+.welcome {
+    position: relative;
+    
+    .img {
+        z-index: 0;
+    }
+
+    h1 {
+        position: absolute;
+        bottom: f.toRem(24);
+        z-index: 1;
+        font-family: $font-inter;
+        font-size: f.toRem(45);
+        font-weight: 900;
+        line-height: f.toRem(50);
+        margin-left: f.toRem(26);
+        color: #FFF3F3;
+        text-shadow: 0px 1px 4px #00000066;
+    }
+
+    .form {
+        position: absolute;
+        top: f.toRem(27);
+        left: f.toRem(24);
+        right: f.toRem(24);
+        z-index: 1;
+    }
+
+    input {
+        position: absolute;
+        z-index: 1;
+        height: f.toRem(48);
+        padding: f.toRem(14.5) f.toRem(10);
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    input::placeholder {
+        color: #8BB9FF;
+        font-size: f.toRem(16);
+    }
+
+    svg {
+        width: fit-content;
+        position: absolute;
+        right: f.toRem(15);
+        top: f.toRem(15);
+        z-index: 1;
+    }
+
 }
