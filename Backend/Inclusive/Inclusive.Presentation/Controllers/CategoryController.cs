@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects.CategoryDtos;
+using Shared.Helper;
 using Shared.RequestFeatures;
 
 namespace Inclusive.Presentation.Controllers;
@@ -53,7 +54,7 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id:guid}", Name = "DeleteCategory")]
     public async Task<IActionResult> DeleteCategory(Guid id)
     {
-        _service.FileService.DeleteFile(Path.Combine(_webHostEnvironment.WebRootPath), id);
+        await _service.FileService.DeleteFile(Path.Combine(_webHostEnvironment.WebRootPath), FilePath.Categories, id);
         await _service.CategoryService.DeleteCategoryAsync(id, false);
         return NoContent();
     }

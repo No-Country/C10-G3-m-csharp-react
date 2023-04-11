@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\categories\**" />
+    <Content Remove="wwwroot\images\categories\**" />
+    <EmbeddedResource Remove="wwwroot\images\categories\**" />
+    <None Remove="wwwroot\images\categories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.15">
       <PrivateAssets>all</PrivateAssets>
@@ -24,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\categories\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

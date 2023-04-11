@@ -2,6 +2,7 @@
 using Entities.Models;
 using Entities.Models.Establishments;
 using Entities.Models.Owners;
+using Shared.DataTransferObjects;
 using Shared.DataTransferObjects.AccessibilityDtos;
 using Shared.DataTransferObjects.CategoryDtos;
 using Shared.DataTransferObjects.EstablishmentDtos;
@@ -30,13 +31,14 @@ public class MappingProfile : Profile
         CreateMap<OwnerForCreationDto, Owner>();
         CreateMap<OwnerForUpdateDto, Owner>();
 
-        CreateMap<Establishment, EstablishmentDto>();
+        CreateMap<Establishment, EstablishmentDto>()
+            .ForMember(e => e.Accessibilitys, opt => opt.MapFrom(MapEstablishmentsAccessibilitys));
         CreateMap<EstablishmentForCreationDto, Establishment>()
-            .ForMember(e=> e.Image,
-                opt=> opt.Ignore());
+            .ForMember(e => e.Image, opt => opt.Ignore())
+            .ForMember(e => e.EstablishmentsAccessibilitys, opt => opt.MapFrom(MapEstablishmentsAccessibilitys));
         CreateMap<EstablishmentForUpdateDto, Establishment>()
-            .ForMember(e=> e.Image,
-                opt=> opt.Ignore());
+            .ForMember(e => e.Image, opt => opt.Ignore())
+            .ForMember(e => e.EstablishmentsAccessibilitys, opt => opt.MapFrom(MapEstablishmentsAccessibilitys));
 
         CreateMap<Accessibility, AccessibilityDto>();
         CreateMap<AccessibilityForCreationDto, Accessibility>();
@@ -45,5 +47,54 @@ public class MappingProfile : Profile
         CreateMap<ReviewForCreationDto, Review>();
         CreateMap<Review, ReviewDto>();
         CreateMap<ReviewForUpdateDto, Review>();
+    }
+
+    private List<EstablishmentAccessibility> MapEstablishmentsAccessibilitys(
+        EstablishmentForCreationDto establishmentForCreationDto, Establishment establishment)
+    {
+        var result = new List<EstablishmentAccessibility>();
+
+        if (establishmentForCreationDto.AccessibilityIds == null) { return result; }
+
+        foreach (var accessibilityId in establishmentForCreationDto.AccessibilityIds)
+        {
+            result.Add(new EstablishmentAccessibility() { AccessibilityId = accessibilityId });
+        }
+
+        return result;
+    }
+
+    private List<EstablishmentAccessibility> MapEstablishmentsAccessibilitys(
+    EstablishmentForUpdateDto establishmentForCreationDto, Establishment establishment)
+    {
+        var result = new List<EstablishmentAccessibility>();
+
+        if (establishmentForCreationDto.AccessibilityIds == null) { return result; }
+
+        foreach (var accessibilityId in establishmentForCreationDto.AccessibilityIds)
+        {
+            result.Add(new EstablishmentAccessibility() { AccessibilityId = accessibilityId });
+        }
+
+        return result;
+    }
+
+
+    private List<AccessibilityDto> MapEstablishmentsAccessibilitys(Establishment establishment, EstablishmentDto establishmentDto)
+    {
+        var result = new List<AccessibilityDto>();
+        if(establishment.EstablishmentsAccessibilitys  == null ) { return result; }
+
+        foreach (var establishmentAccessibility in establishment.EstablishmentsAccessibilitys)
+        {
+            result.Add(new AccessibilityDto()
+            {
+                Id = establishmentAccessibility.AccessibilityId,
+                Name= establishmentAccessibility.Accessibility!.Name,
+                OrderNumber= establishmentAccessibility.OrderNumber
+            });
+        }
+
+        return result;
     }
 }

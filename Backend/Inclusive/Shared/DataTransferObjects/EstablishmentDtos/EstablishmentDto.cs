@@ -1,4 +1,6 @@
-﻿namespace Shared.DataTransferObjects.EstablishmentDtos;
+﻿using Shared.DataTransferObjects.AccessibilityDtos;
+
+namespace Shared.DataTransferObjects.EstablishmentDtos;
 
 public record EstablishmentDto
 {
@@ -25,6 +27,11 @@ public record EstablishmentDto
     public DateTime ApprovedDate { get; init; }
 
     public Guid? ApprovalUserId { get; init; }
+
+    public Guid CategoryId { get; init; }
+
+    public IEnumerable<AccessibilityDto>? Accessibilitys { get; set; }
+    //public List<ActorPeliculaDetalleDTO> Actores { get; set; }
 
     public IEnumerable<ReviewDto>? Reviews { get; init; }
 }

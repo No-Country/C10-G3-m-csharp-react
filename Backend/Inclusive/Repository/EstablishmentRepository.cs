@@ -17,6 +17,8 @@ public class EstablishmentRepository : RepositoryBase<Establishment>,
         bool trackChanges)
     {
         var establishments = await FindAll(trackChanges)
+            .Include(e => e.EstablishmentsAccessibilitys!)
+            .ThenInclude(ea => ea.Accessibility)
             .Include(e => e.Reviews)
             .SearchGeneric(parameters.SearchColumn,
                 parameters.SearchTerm)
@@ -31,8 +33,9 @@ public class EstablishmentRepository : RepositoryBase<Establishment>,
 
     public async Task<Establishment?> GetEstablishmentByIdAsync(Guid id,
         bool trackChanges) =>
-        await FindByCondition(e => e.Id.Equals(id),
-                trackChanges)
+        await FindByCondition(e => e.Id.Equals(id), trackChanges)
+            .Include(e => e.EstablishmentsAccessibilitys!)
+            .ThenInclude(ea => ea.Accessibility)
             .Include(e => e.Reviews)
             .SingleOrDefaultAsync();
 

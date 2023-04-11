@@ -6,6 +6,9 @@ namespace Shared.DataTransferObjects.EstablishmentDtos;
 
 public abstract record EstablishmentForManipulationDto
 {
+    [Required(ErrorMessage = "Category is required")]
+    public Guid CategoryId { get; init; }
+
     [Required(ErrorMessage = "Name is required")]
     [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
     public string? Name { get; init; }
@@ -28,4 +31,6 @@ public abstract record EstablishmentForManipulationDto
     public DateTime? ApprovedDate { get; init; }
     [JsonIgnore]
     public Guid? ApprovalUserId { get; init; }
+
+    public List<Guid>? AccessibilityIds { get; set; }
 }

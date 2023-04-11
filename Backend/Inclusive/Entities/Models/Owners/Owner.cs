@@ -46,4 +46,5 @@ public class Owner
     public char? Pep { get; set; }
 
     public Establishment? Establishment { get; set; }
+    //public ICollection<Establishment>? Establishments { get; set; }
 }

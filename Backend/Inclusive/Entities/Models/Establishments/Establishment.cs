@@ -39,9 +39,9 @@ public class Establishment
     [ForeignKey(nameof(Owner))] public Guid? OwnerId { get; set; }
     public Owner? Owner { get; set; }
 
-    [ForeignKey(nameof(Category))] public Guid CategoryId { get; set; }
+    [ForeignKey(nameof(Category))] public Guid? CategoryId { get; set; }
     public Category? Category { get; set; }
 
-    public ICollection<EstablishmentAccessibility>? EstablishmentAccessibility { get; set; }
+    public ICollection<EstablishmentAccessibility>? EstablishmentsAccessibilitys { get; set; }
     public ICollection<Review>? Reviews { get; set; }
 }

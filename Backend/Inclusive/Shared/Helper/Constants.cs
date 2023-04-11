@@ -16,4 +16,12 @@ namespace Shared.Helper
         public const string User = "User";
         public const string AdministratorOrUser = Administrator + "," + User;
     }
+
+
+    public static class FilePath
+    {
+        public const string Images = "images";
+        public const string Categories = "categories";
+        public const string Establishments = "establishments";
+    }
 }
