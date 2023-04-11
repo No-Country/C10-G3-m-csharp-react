@@ -157,7 +157,8 @@
 
     .showMore__header {
       grid-column: span 2;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;     
 
       .showMore__img,
@@ -168,6 +169,16 @@
           line-height: f.toRem(300);
         }
       }
+
+      .showMore__img {
+        grid-column: 1;
+      }
+
+      .showMore__map {
+        grid-column: 2;
+      }
+
+
     }
 
     .showMore__text {
