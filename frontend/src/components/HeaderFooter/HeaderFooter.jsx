@@ -1,5 +1,6 @@
 export default function LogoHeader () {
     return(
+        <div className="LogoFooter">   
         <svg className="LogoFooter" width="59" height="72" viewBox="0 0 59 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_107_934)">
         <path d="M15.6998 12.5484C15.6718 11.3544 16.7258 10.291 17.9292 10.319C18.5168 10.319 19.0858 10.5522 19.5056 10.972C19.9254 11.3917 20.1586 11.9608 20.1586 12.5484V13.6025C19.4963 13.6305 18.8526 13.7424 18.2183 13.929C17.3228 14.1995 16.474 14.6006 15.6998 15.1416V12.5484Z" fill="white"/>
@@ -46,5 +47,6 @@ export default function LogoHeader () {
         </filter>
         </defs>
         </svg> 
+        </div>
     )
 }

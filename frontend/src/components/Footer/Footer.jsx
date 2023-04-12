@@ -1,14 +1,16 @@
 import Footer from "../../scss/views/Footer/Footer.module.scss"
-import HeaderSvg from "../HeaderLogo/HeaderSvg"
+import HeaderFooter from "../HeaderFooter/HeaderFooter"
 import Facebook from "../Facebook/Facebook"
 import Twiter from "../Twiter/Twiter"
 import Instagram from "../Instagram/Instagram"
 
 export default function isFooter() {
     return (
+        
         <footer className={Footer.Container}>
+           
             <div className={Footer.Container__img}>
-                <HeaderSvg />
+                <HeaderFooter/>
             </div>
             <div className={Footer.Container__texto}>
                 <h4 className={Footer.Container__TextoComplait}>
