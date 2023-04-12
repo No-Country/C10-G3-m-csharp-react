@@ -12,8 +12,8 @@ using Repository;
 namespace Inclusive.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230409124425_add_defaultValuesAccessibilitys")]
-    partial class add_defaultValuesAccessibilitys
+    [Migration("20230412140651_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,7 +74,7 @@ namespace Inclusive.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4777e1bb-f778-4d16-97f7-1a845c52aeb4"),
+                            Id = new Guid("5fea2c38-b4f7-47bb-8285-ce2e869dcec6"),
                             Description = "Restaurantes de comidas rápidas y fáciles",
                             Name = "Restaurantes"
                         });
@@ -99,7 +99,7 @@ namespace Inclusive.Migrations
 
                     b.HasIndex("AccessibilityId");
 
-                    b.HasIndex("OrderNumber")
+                    b.HasIndex("EstablishmentId", "OrderNumber")
                         .IsUnique();
 
                     b.ToTable("EstablishmentsAccessibilitys");
@@ -123,7 +123,7 @@ namespace Inclusive.Migrations
                     b.Property<DateTime?>("ApprovedDate")
                         .HasColumnType("date");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Image")
@@ -161,9 +161,7 @@ namespace Inclusive.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("OwnerId")
-                        .IsUnique()
-                        .HasFilter("[OwnerId] IS NOT NULL");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Establishments");
                 });
@@ -197,9 +195,8 @@ namespace Inclusive.Migrations
                     b.Property<int>("Nationality")
                         .HasColumnType("int");
 
-                    b.Property<string>("Pep")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
+                    b.Property<bool>("Pep")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PhoneCode")
                         .IsRequired()
@@ -226,14 +223,14 @@ namespace Inclusive.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b8c1009e-04fc-4c85-af36-5116e2b914a9"),
-                            BirthDate = new DateTime(2023, 4, 9, 9, 44, 25, 236, DateTimeKind.Local).AddTicks(4661),
+                            Id = new Guid("3707b0ad-68cd-46a4-a0d7-e2f56abf64f8"),
+                            BirthDate = new DateTime(2023, 4, 12, 11, 6, 51, 442, DateTimeKind.Local).AddTicks(7157),
                             Dni = "12345678A",
                             Gender = 0,
                             MaritalStatus = 1,
                             Name = "José",
                             Nationality = 2,
-                            Pep = "A",
+                            Pep = false,
                             PhoneCode = "123",
                             PhoneNumber = "12345678A",
                             SurNames = "Pérez Lopez",
@@ -251,6 +248,9 @@ namespace Inclusive.Migrations
                     b.Property<string>("Comment")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid?>("EstablishmentId")
                         .HasColumnType("uniqueidentifier");
@@ -350,7 +350,7 @@ namespace Inclusive.Migrations
                         {
                             Id = "D6C8B4EF-4926-472C-84B7-6BF2300CE8A5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d65d42e3-8b01-43a2-b6ab-73f8d0041283",
+                            ConcurrencyStamp = "56d93483-4c0d-4cb6-833a-8b637de90a3e",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
@@ -358,9 +358,9 @@ namespace Inclusive.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB6nk7krbg9tubiVuVpq6z4O98JKhYFsBNsjlrC3IpWfee+oC99hS0YfGuLo1EFQAw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELK6/tciIHTKnXoBbnPr8l0sLHppvK521YrCn/DYCcWopdox2Vfr50kXlascVXwKXA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "08684c38-db23-4c13-a955-ce1951ef4949",
+                            SecurityStamp = "ebcde4ed-ff40-47ec-8a47-50df4f12196d",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -368,7 +368,7 @@ namespace Inclusive.Migrations
                         {
                             Id = "29516888-6214-4FBB-A20B-7509B07F25CD",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d3fb6124-903d-4b31-bd7c-ef992df84c68",
+                            ConcurrencyStamp = "21c3b368-da70-42dd-a7a0-6c3cb355505d",
                             Email = "juanperez@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "Juan",
@@ -376,9 +376,9 @@ namespace Inclusive.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUANPEREZ@LOCALHOST.COM",
                             NormalizedUserName = "JUANPEREZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKCBeQaLW1Un44jTig82bK/OWTMg9KPJZk995FlD5BOKuJjKVsP5egCZU17D7nPxrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDIu+flqtWLEcd6Wb4cjKhjILFkO1c2Rg3Pm80HMONc+hxzi2/DsTKA/NOdPxUN4ug==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "888660c9-d959-49ea-87d8-ec76e1620407",
+                            SecurityStamp = "ed8d0178-4880-478a-814c-b9ab20f9c156",
                             TwoFactorEnabled = false,
                             UserName = "juanperez"
                         });
@@ -414,14 +414,14 @@ namespace Inclusive.Migrations
                         new
                         {
                             Id = "A5051E62-875D-4169-B97B-5488F9EA54F2",
-                            ConcurrencyStamp = "1da6b805-fa65-4ff8-990c-601f6fca32b0",
+                            ConcurrencyStamp = "a9207212-eb69-4087-8d69-5750e6645a4f",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "A6EB18A6-5135-4951-8445-617BF404486A",
-                            ConcurrencyStamp = "bfc9748e-07cf-4307-8caa-2b2ea8e29e07",
+                            ConcurrencyStamp = "0865f70a-3c2c-4b6b-a8f2-b1d2b08ca544",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -554,7 +554,7 @@ namespace Inclusive.Migrations
                         .IsRequired();
 
                     b.HasOne("Entities.Models.Establishments.Establishment", "Establishment")
-                        .WithMany("EstablishmentAccessibility")
+                        .WithMany("EstablishmentsAccessibilitys")
                         .HasForeignKey("EstablishmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -568,13 +568,11 @@ namespace Inclusive.Migrations
                 {
                     b.HasOne("Entities.Models.Category", "Category")
                         .WithMany("Establishments")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("Entities.Models.Owners.Owner", "Owner")
-                        .WithOne("Establishment")
-                        .HasForeignKey("Entities.Models.Establishments.Establishment", "OwnerId");
+                        .WithMany("Establishments")
+                        .HasForeignKey("OwnerId");
 
                     b.Navigation("Category");
 
@@ -654,14 +652,14 @@ namespace Inclusive.Migrations
 
             modelBuilder.Entity("Entities.Models.Establishments.Establishment", b =>
                 {
-                    b.Navigation("EstablishmentAccessibility");
+                    b.Navigation("EstablishmentsAccessibilitys");
 
                     b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("Entities.Models.Owners.Owner", b =>
                 {
-                    b.Navigation("Establishment");
+                    b.Navigation("Establishments");
                 });
 #pragma warning restore 612, 618
         }

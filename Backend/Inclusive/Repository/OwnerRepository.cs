@@ -16,7 +16,7 @@ public class OwnerRepository : RepositoryBase<Owner>, IOwnerRepository
         bool trackChanges)
     {
         var owners = await FindAll(trackChanges)
-            .Include(o=>o.Establishment)
+            .Include(o=>o.Establishments)
             .SearchGeneric(parameters.SearchColumn,
                 parameters.SearchTerm)
             .SortGeneric(parameters.SortColumn,
@@ -31,7 +31,7 @@ public class OwnerRepository : RepositoryBase<Owner>, IOwnerRepository
         bool trackChanges) =>
         await FindByCondition(o => o.Id.Equals(id),
                 trackChanges)
-            .Include(o => o.Establishment)
+            .Include(o => o.Establishments)
             .SingleOrDefaultAsync();
 
     public void CreateOwner(Owner owner) =>

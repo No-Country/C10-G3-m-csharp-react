@@ -7,6 +7,6 @@ public interface IEstablishmentRepository
 {
     Task<PagedList<Establishment>> GetEstablishmentAsync(EstablishmentParameters parameters, bool trackChanges);
     Task<Establishment?> GetEstablishmentByIdAsync(Guid id, bool trackChanges);
-    void CreateEstablishment(Guid ownerId, Establishment establishment);
+    void CreateEstablishment(Establishment establishment);
     void DeleteEstablishment(Establishment establishment);
 }

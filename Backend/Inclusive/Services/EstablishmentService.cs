@@ -33,19 +33,17 @@ public class EstablishmentService : IEstablishmentService
         return (establishmentDtos, establishmentsWithDto.MetaData);
     }
 
-    public async Task<EstablishmentDto> GetEstablishmentByIdAsync(Guid id,
-        bool trackChanges)
+    public async Task<EstablishmentDto> GetEstablishmentByIdAsync(Guid id, bool trackChanges)
     {
         var establishment = await _repository.Establishments.GetEstablishmentByIdAsync(id, trackChanges);
         return _mapper.Map<EstablishmentDto>(establishment);
     }
 
-    public async Task<EstablishmentDto> CreateEstablishmentAsync(Guid ownerId,
+    public async Task<EstablishmentDto> CreateEstablishmentAsync(
         EstablishmentForCreationDto establishment,
         bool trackChanges)
     {
-        await CheckIfOwnerExists(ownerId, trackChanges);
-
+    
         if (establishment.AccessibilityIds == null)
         {
             throw new AccessibilityBadRequestException(string.Empty);
@@ -66,25 +64,24 @@ public class EstablishmentService : IEstablishmentService
 
         AssignOrderNumberAccessibilitys(establishmentEntity);
 
-        _repository.Establishments.CreateEstablishment(ownerId, establishmentEntity);
+        _repository.Establishments.CreateEstablishment(establishmentEntity);
         await _repository.SaveAsync();
-        return _mapper.Map<EstablishmentDto>(establishmentEntity);
+
+        return await GetEstablishmentByIdAsync(establishmentEntity.Id, false);
     }
 
-    public async Task DeleteEstablishmentAsync(Guid ownerId,
+    public async Task DeleteEstablishmentAsync(
         Guid id,
         bool trackChanges)
     {
-        await CheckIfOwnerExists(ownerId, trackChanges);
-        var establishment = await GetEstablishmentForOwnerAndCheckIfItExists(id, trackChanges);
+        var establishment = await GetEstablishmentAndCheckIfItExists(id, trackChanges);
         _repository.Establishments.DeleteEstablishment(establishment);
         await _repository.SaveAsync();
     }
 
-    public async Task UpdateEstablishmentAsync(Guid ownerId,
+    public async Task UpdateEstablishmentAsync(
         Guid id,
         EstablishmentForUpdateDto establishment,
-        bool ownerTrackChanges,
         bool trackChanges)
     {
         if (establishment.AccessibilityIds == null)
@@ -92,8 +89,7 @@ public class EstablishmentService : IEstablishmentService
             throw new AccessibilityBadRequestException(string.Empty);
         }
 
-        await CheckIfOwnerExists(ownerId, ownerTrackChanges);
-        var establishmentEntity = await GetEstablishmentForOwnerAndCheckIfItExists(id, trackChanges);
+        var establishmentEntity = await GetEstablishmentAndCheckIfItExists(id, trackChanges);
 
         establishmentEntity = _mapper.Map(establishment, establishmentEntity);
 
@@ -101,17 +97,8 @@ public class EstablishmentService : IEstablishmentService
 
         await _repository.SaveAsync();
     }
-    private async Task CheckIfOwnerExists(Guid ownerId,
-        bool trackChanges)
-    {
-        var owner = await _repository.Owners.GetOwnerByIdAsync(ownerId,
-            trackChanges);
-        if (owner is null)
-            throw new OwnerNotFoundException(ownerId);
-    }
-
-    private async Task<Establishment> GetEstablishmentForOwnerAndCheckIfItExists(Guid id,
-        bool trackChanges)
+                                      
+    private async Task<Establishment> GetEstablishmentAndCheckIfItExists(Guid id, bool trackChanges)
     {
         var establishmentDb = await _repository.Establishments.GetEstablishmentByIdAsync(id,
             trackChanges);

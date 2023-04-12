@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Entities.Models;
+using Entities.Models.Owners;
 using Inclusive.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -40,38 +41,37 @@ public class EstablishmentController : ControllerBase
 
     [HttpPost(Name = "CreateEstablishment")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateEstablishment(Guid ownerId, [FromForm] EstablishmentForCreationDto establishment)
+
+    public async Task<IActionResult> CreateEstablishment([FromForm] EstablishmentForCreationDto establishment)
     {
         var path = Path.Combine(_webHostEnvironment.WebRootPath);
         var urlPath = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 
-        var establishmentCreated = await _service.EstablishmentService.CreateEstablishmentAsync(ownerId, establishment, false);
+        var establishmentCreated = await _service.EstablishmentService.CreateEstablishmentAsync(establishment, false);
 
         var res = await _service.FileService.UploadEstablishmentFileAsync(establishmentCreated.Id, establishment.Image, path, urlPath);
 
         return CreatedAtRoute("GetEstablishmentById", new { id = res?.Id ?? establishmentCreated.Id }, res == null ? establishmentCreated : res);
-        //return CreatedAtRoute("GetEstablishmentById", new { id = establishmentCreated.Id }, establishmentCreated);
     }
 
     [HttpDelete("{id:guid}", Name = "DeleteEstablishment")]
     public async Task<IActionResult> DeleteEstablishment(Guid ownerId, Guid id)
     {
         await _service.FileService.DeleteFile(Path.Combine(_webHostEnvironment.WebRootPath), FilePath.Establishments, id);
-        await _service.EstablishmentService.DeleteEstablishmentAsync(ownerId, id, false);
+        await _service.EstablishmentService.DeleteEstablishmentAsync(id, false);
         return NoContent();
     }
     
     [HttpPut("{id:guid}", Name = "UpdateEstablishment")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> UpdateEstablishment(Guid ownerId, Guid id, [FromForm] EstablishmentForUpdateDto establishment)
+    public async Task<IActionResult> UpdateEstablishment(Guid id, [FromForm] EstablishmentForUpdateDto establishment)
     {
         var path = Path.Combine(_webHostEnvironment.WebRootPath);
         var urlPath = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 
-        //await _service.CategoryService.UpdateCategoryAsync(id, category, true);
-        await _service.EstablishmentService.UpdateEstablishmentAsync(ownerId, id, establishment, false, true);
+        await _service.EstablishmentService.UpdateEstablishmentAsync(id, establishment, true);
 
-        var res = await _service.FileService.UploadCategoryFileAsync(id, establishment.Image, path, urlPath);
+        var res = await _service.FileService.UploadEstablishmentFileAsync(id, establishment.Image, path, urlPath);
 
         return CreatedAtRoute("GetEstablishmentById", new { id = res?.Id ?? id }, res == null ? establishment : res);
     }

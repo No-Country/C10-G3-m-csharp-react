@@ -41,10 +41,9 @@ public class OwnerService : IOwnerService
         return _mapper.Map<OwnerDto>(owner);
     }
 
-    public async Task<OwnerDto> CreateOwnerAsync(Guid categoryId, OwnerForCreationDto owner)
+    public async Task<OwnerDto> CreateOwnerAsync(OwnerForCreationDto owner)
     {
         var ownerEntity = _mapper.Map<Owner>(owner);
-        ownerEntity.Establishment!.CategoryId = categoryId;
         _repository.Owners.CreateOwner(ownerEntity);
         await _repository.SaveAsync();
         return _mapper.Map<OwnerDto>(ownerEntity);

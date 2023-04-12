@@ -30,8 +30,7 @@ public record EstablishmentDto
 
     public Guid CategoryId { get; init; }
 
-    public IEnumerable<AccessibilityDto>? Accessibilitys { get; set; }
-    //public List<ActorPeliculaDetalleDTO> Actores { get; set; }
+    public IEnumerable<AccessibilityDto>? Accessibilitys { get; init; }
 
     public IEnumerable<ReviewDto>? Reviews { get; init; }
 }

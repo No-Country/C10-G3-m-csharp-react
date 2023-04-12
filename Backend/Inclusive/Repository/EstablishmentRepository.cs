@@ -39,10 +39,8 @@ public class EstablishmentRepository : RepositoryBase<Establishment>,
             .Include(e => e.Reviews)
             .SingleOrDefaultAsync();
 
-    public void CreateEstablishment(Guid ownerId,
-        Establishment establishment)
+    public void CreateEstablishment(Establishment establishment)
     {
-        establishment.OwnerId = ownerId;
         Create(establishment);
     }
 

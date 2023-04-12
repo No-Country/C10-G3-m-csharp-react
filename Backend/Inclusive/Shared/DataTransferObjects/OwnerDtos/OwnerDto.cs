@@ -15,6 +15,6 @@ public record OwnerDto
     public string? PhoneCode { get; init; }
     public string? PhoneNumber { get; init; }
     public MaritalStatusEnum MaritalStatus { get; init; }
-    public char? Pep { get; init; }
-    public EstablishmentDto? Establishment { get; init; }
+    public bool Pep { get; init; }
+    public ICollection<EstablishmentDto>? Establishments { get; set; }
 }

@@ -1,11 +1,13 @@
 ﻿using Entities.Models;
 using Entities.Models.Establishments;
+using Entities.Models.Owners;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Intrinsics.X86;
 
 namespace Entities.Models;
 
-[Index(nameof(OrderNumber), IsUnique = true)]
+[Index(nameof(EstablishmentId), nameof(OrderNumber), IsUnique = true)]
 public class EstablishmentAccessibility
 {
     public Guid EstablishmentId { get; set; }

@@ -22,7 +22,7 @@ public class OwnerConfiguration : IEntityTypeConfiguration<Owner>
                 PhoneCode = "123",
                 PhoneNumber = "12345678A",
                 MaritalStatus = MaritalStatusEnum.Single,
-                Pep = 'A'
+                Pep = false
             }
         );
     }

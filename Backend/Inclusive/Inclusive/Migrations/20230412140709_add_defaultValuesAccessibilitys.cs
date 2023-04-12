@@ -45,7 +45,6 @@ namespace Inclusive.Migrations
             GO";
 
             migrationBuilder.Sql(Sql);
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Entities.Models;
 using Inclusive.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
@@ -42,15 +43,11 @@ public class OwnerController : ControllerBase
 
     [HttpPost(Name = "CreateOwner")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateOwner(Guid categoryId, [FromForm] OwnerForCreationDto ownerDto)
+
+    public async Task<IActionResult> CreateOwner([FromBody] OwnerForCreationDto ownerDto)
     {
-        var owner = await _services.OwnerService.CreateOwnerAsync(categoryId, ownerDto);
-        return CreatedAtRoute("GetOwnerById",
-            new
-            {
-                id = owner.Id
-            },
-            owner);
+        var owner = await _services.OwnerService.CreateOwnerAsync(ownerDto);
+        return CreatedAtRoute("GetOwnerById", new{ id = owner.Id}, owner);
     }
 
 

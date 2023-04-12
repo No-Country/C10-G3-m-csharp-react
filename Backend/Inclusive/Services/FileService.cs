@@ -4,6 +4,7 @@ using Entities.Models;
 using Entities.Models.Establishments;
 using Microsoft.AspNetCore.Http;
 using Service.Contracts;
+using Shared.DataTransferObjects.EstablishmentDtos;
 using Shared.Helper;
 using System.ComponentModel;
 using static System.IO.Directory;
@@ -48,10 +49,10 @@ public class FileService : IFileService
         categoryEntity!.Image = urlPath;
         await _repository.SaveAsync();
 
-        return await _repository.Categories.GetCategoryByIdAsync(fatherId, true);
+        return await _repository.Categories.GetCategoryByIdAsync(fatherId, false);
     }
 
-    public async Task<Establishment?> UploadEstablishmentFileAsync(Guid fatherId, IFormFile? file, string path, string imagePath)
+    public async Task<EstablishmentDto?> UploadEstablishmentFileAsync(Guid fatherId, IFormFile? file, string path, string imagePath)
     {
         if (string.IsNullOrEmpty(file?.FileName)) return null;
         var directoryPath = Path.Combine(path, FilePath.Images, FilePath.Establishments, fatherId.ToString());
@@ -68,7 +69,9 @@ public class FileService : IFileService
         establishmentEntity!.Image = urlPath;
         await _repository.SaveAsync();
 
-        return await _repository.Establishments.GetEstablishmentByIdAsync(fatherId, true);
+
+        var establishment = await _repository.Establishments.GetEstablishmentByIdAsync(fatherId, false);
+        return _mapper.Map<EstablishmentDto>(establishment);
     }
 }
 

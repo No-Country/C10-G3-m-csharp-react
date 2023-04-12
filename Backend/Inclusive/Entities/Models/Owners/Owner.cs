@@ -43,8 +43,7 @@ public class Owner
     public MaritalStatusEnum? MaritalStatus { get; set; }
 
     [Required(ErrorMessage = "PEP is required")]
-    public char? Pep { get; set; }
+    public bool Pep { get; set; }
 
-    public Establishment? Establishment { get; set; }
-    //public ICollection<Establishment>? Establishments { get; set; }
+    public ICollection<Establishment>? Establishments { get; set; }
 }
