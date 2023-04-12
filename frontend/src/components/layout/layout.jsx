@@ -1,6 +1,6 @@
 import Header from "../Header/Header"
 import {useRouter} from 'next/router';
-
+import Footer from "../Footer/Footer"
 function MainLayout({ children }) {
 
   //
@@ -11,7 +11,7 @@ function MainLayout({ children }) {
     <>
       {routes.includes(router.pathname) ? "" : <Header/>}
       <main>{children}</main>
-      <footer>footer</footer>
+      <Footer/>
     </>
   );
 }

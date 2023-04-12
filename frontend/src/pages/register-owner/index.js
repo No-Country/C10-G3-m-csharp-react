@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 export default function RegisterOwner() {
 
@@ -11,7 +11,7 @@ export default function RegisterOwner() {
         function getDiasDelMes() {
 
             const fechaActual = new Date();
-          
+
             const diasEnElMes = new Date(
 
                 fechaActual.getFullYear(),
@@ -23,20 +23,20 @@ export default function RegisterOwner() {
             return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
 
         }
-    
+
         function getNombresDeMeses() {
 
-            return ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+            return ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
         }
-    
+
         function getAnios() {
 
             const anioActual = new Date().getFullYear();
             return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
 
         }
-    
+
         setDias(getDiasDelMes());
         setMeses(getNombresDeMeses());
         setAnios(getAnios());
@@ -45,7 +45,7 @@ export default function RegisterOwner() {
 
     return (
         <>
-        
+
             <div className="contenedorPadre__ow">
 
                 <div className="hijoOwner">
@@ -73,13 +73,13 @@ export default function RegisterOwner() {
 
                         <h2 className='contenedorIn__ow-titulo'>Datos de establecimiento</h2>
 
-                        <input type="text" placeholder="Nombre del establecimiento" className='contenedorIn__ow-nombre'/>
+                        <input type="text" placeholder="Nombre del establecimiento" className='contenedorIn__ow-nombre' />
 
-                        <input type="text" placeholder="Dirección" className='contenedorIn__ow-direc'/>
+                        <input type="text" placeholder="Dirección" className='contenedorIn__ow-direc' />
 
                         <div className="contDni__genero">
 
-                            <input type="text" placeholder="DNI" className='input__dni' maxLength="8"/>
+                            <input type="text" placeholder="DNI" className='input__dni' maxLength="8" />
 
                             <select name="genero" id="genero" className="selectGenero">
 
@@ -92,10 +92,10 @@ export default function RegisterOwner() {
                         </div>
 
                         <div className='markContainer'>
-                            <input type="text" placeholder="Número de trámite" className='inputTramite'/>
+                            <input type="text" placeholder="Número de trámite" className='inputTramite' />
                             <span className='icon bx bx-question-mark'></span>
                         </div>
-                        
+
 
                         <h2 className='tituloNacimiento'>Fecha de Nacimiento</h2>
 
@@ -107,17 +107,17 @@ export default function RegisterOwner() {
 
                                     <select name="fecha" id="fecha" className="selectFecha">
 
-                                    {dias.map((dia) => (
+                                        {dias.map((dia) => (
 
-                                        <option key={dia} value={dia}>
+                                            <option key={dia} value={dia}>
 
-                                            {dia}
+                                                {dia}
 
-                                        </option>
+                                            </option>
 
-                                    ))}
+                                        ))}
 
-                                 </select>
+                                    </select>
 
                                     <select name="mes" id="mes" className="selectMes">
 
@@ -140,7 +140,7 @@ export default function RegisterOwner() {
                                             <option key={anio} value={anio}>
 
                                                 {anio}
-                                        
+
                                             </option>
 
                                         ))}
@@ -155,7 +155,7 @@ export default function RegisterOwner() {
                                     <input type="text" className="inputTelefono" placeholder="Teléfono" />
 
                                 </div>
-                            
+
                                 <div className='containerEstado-nacion'>
 
                                     <select name="nacionalidad" id="nacionalidad" className="selectNacionalidad">
@@ -163,7 +163,7 @@ export default function RegisterOwner() {
                                         <option value="argentina">Argentina</option>
                                         <option value="uruguay">Uruguay</option>
                                         <option value="paraguay">Paraguay</option>
-                            
+
                                     </select>
 
                                     <select name="civil" id="civil" className="selectCivil">
@@ -196,10 +196,10 @@ export default function RegisterOwner() {
                         <div className='hijoRadio'>
 
                             <label for="radio1" className='labelRadio'>Si</label>
-                            <input type="radio" name="politica" id="politica" value="Si" className='styleSi'/>
-                            
+                            <input type="radio" name="politica" id="politica" value="Si" className='styleSi' />
+
                             <label for="radio2" className='labelRadio'>No</label>
-                            <input type="radio" name="politica" id="politica" value="No" className='styleNo'/>
+                            <input type="radio" name="politica" id="politica" value="No" className='styleNo' />
 
                         </div>
 
@@ -212,7 +212,7 @@ export default function RegisterOwner() {
                     </div>
 
 
-                    
+
 
                 </div>
 
