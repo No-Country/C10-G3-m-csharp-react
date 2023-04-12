@@ -37,7 +37,7 @@ export default function isFooter() {
                 <div className={Footer.Copyrigth}>
                       
                           <div>
-                          <i class='bx bx-copyright' ></i>
+                          <i className='bx bx-copyright' ></i>
                           </div>
                           <h4>
                             2023 Inclusive Inc
