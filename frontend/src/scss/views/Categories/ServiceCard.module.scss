@@ -1,0 +1,151 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.card {
+  height: f.toRem(80);
+  background-color: $green;
+  display: flex;
+
+  .img {
+    background-color: $grey;
+    height: 100%;
+    width: 47.43%;
+  }
+
+  .text {
+    flex-grow: 1;
+    padding: f.toRem(8) f.toRem(16);
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      color: $blue-500;
+      font-weight: 700;
+      justify-self: flex-start;
+    }
+
+    button {
+      font-weight: 400;
+      font-size: f.toRem(12);
+      text-align: right;
+      color: $blue-500;
+    }
+  }
+}
+
+.showMoreCard {
+  border-radius: 6px;
+  background-color: $blue-400;
+  padding: f.toRem(8);
+  position: relative;
+
+  .showMore__header {
+    .showMore__img,
+    .showMore__map {
+      position: relative;
+      background-color: grey;
+      width: 100%;
+      height: f.toRem(178);
+      border-radius: 6px;
+
+      .showMore__spinnerContainer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        line-height: f.toRem(178);
+      }
+    }
+  }
+
+  .showMore__text {
+    background-color: $white;
+    padding: f.toRem(16) f.toRem(11);
+    font-family: $font-montserrat;
+    display: flex;
+    flex-direction: column;
+    gap: f.toRem(11);
+
+    h3 {
+      font-weight: 900;
+      color: $blue-500;
+      letter-spacing: 0.03em;
+    }
+
+    .showMore__time,
+    .showMore__address {
+      display: flex;
+      gap: f.toRem(8);
+
+      div {
+        width: f.toRem(25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .showMore__mobilityTag {
+      display: flex;
+      flex-direction: column;
+      background-color: $blue-100;
+      border: 1px solid $blue-400;
+      border-radius: 0px 0px 6px 6px;
+      padding: f.toRem(9) f.toRem(11);
+
+      .mobilityTag__title {
+        display: flex;
+        gap: f.toRem(8);
+        margin-bottom: f.toRem(12);
+
+        svg {
+          width: fit-content;
+        }
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: f.toRem(3);
+        font-size: f.toRem(12);
+
+        svg {
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .showMore__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: f.toRem(10);
+    }
+
+    button {
+      svg {
+        path {
+          transition: all ease 200ms;
+        }
+      }
+    }
+
+    button:hover {
+      svg {
+        path {
+          fill: $blue-500;
+        }
+      }
+    }
+  }
+}
