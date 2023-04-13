@@ -40,7 +40,7 @@ const schema = yup
       .required("Este campo es obligatorio"),
     repeat_password: yup
       .string()
-      .oneOf([yup.ref("password"), null], "Las contraseñas no  coinciden")
+      .oneOf([yup.ref("password"), null], "Las contraseñas no coinciden")
       .required("Campo Obligatorio"),
   })
   .required();
