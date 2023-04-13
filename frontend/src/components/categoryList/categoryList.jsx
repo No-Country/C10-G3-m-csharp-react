@@ -8,7 +8,7 @@ function CategoryList() {
     queryKey: ["categories"],
     queryFn: async () => {
       const response = await axios
-        .get("http://wachin93-001-site1.ftempurl.com/api/category")
+        .get("http://www.inclusive.somee.com/api/category")
         .then((res) => res);
 
       return response.data;

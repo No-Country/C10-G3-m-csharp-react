@@ -10,7 +10,7 @@ import MapCard from "../map/CardMap";
 import { CircularProgress } from "@mui/material";
 import Image from "next/image";
 
-function PlaceCard({ fullCard, position, imageSrc, name, address, hours, features, showRating }) {
+function ServiceCard({ fullCard, position, imageSrc, name, address, hours, features, showRating }) {
   const [showMore, setShowMore] = useState(fullCard);
 
   const handleClick = () => {
@@ -97,4 +97,4 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
   );
 }
 
-export default PlaceCard;
+export default ServiceCard;
