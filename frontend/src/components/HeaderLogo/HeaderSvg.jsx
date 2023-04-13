@@ -34,7 +34,7 @@ export default function LogoHeader () {
         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_107_934"/>
         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_107_934" result="shape"/>
         </filter>
-        <filter id="filter1_d_107_934" x="0" y="52.7281" width="59" height="18.3289" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter1_d_107_934" x="0" y="52.7281" width="59" height="18.3289" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="1.5"/>

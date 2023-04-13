@@ -178,3 +178,57 @@
     }
   }
 }
+
+.topten {
+  padding-block: f.toRem(24);
+  background-color: #e5eefb;
+  // overflow: hidden;
+
+  h2 {
+    font-size: f.toRem(30);
+    font-weight: 700;
+    line-height: f.toRem(33);
+    margin-bottom: f.toRem(24);
+    margin-inline: f.toRem(24);
+  }
+
+  h3 {
+    color: #666666;
+    margin-bottom: f.toRem(24);
+    margin-inline: f.toRem(24);
+  }
+
+  .topten_cardcontainer {
+    overflow-x: auto;
+
+    .topten_cardlist {
+      height: f.toRem(140);
+      width: max-content;
+      margin-bottom: f.toRem(16);
+      display: flex;
+      gap: f.toRem(8);
+      overflow: hidden;
+      padding-inline: f.toRem(24);
+
+      .topten_card {
+        width: f.toRem(140);
+        height: 100%;
+        background-color: grey;
+        border-radius: 6px;
+        position: relative;
+
+        .topten_card_label {
+          position: absolute;
+          bottom: 0;
+          padding: f.toRem(8);
+          width:fit-content;
+          background-color: #B042F4;
+          border-radius: 6px;
+          color: white;
+          font-size: f.toRem(12);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

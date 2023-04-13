@@ -93,13 +93,27 @@ function Landing() {
           />
           <div className={styles.explore_text}>
             <h2>
-              Explora por<br/> <strong>categorías</strong>
+              Explora por
+              <br /> <strong>categorías</strong>
             </h2>
             <RightArrowLogo />
           </div>
         </section>
 
-        <section></section>
+        <section className={styles.topten}>
+          <h2>Descubre los lugares mejor valorados</h2>
+          <h3>TOP 10 lugares accesibles cerca de ti</h3>
+          <div className={styles.topten_cardcontainer}>
+            <div className={styles.topten_cardlist}>
+              {[...Array(10)].map((e, idx) => {
+                return <div className={styles.topten_card} key={idx}>
+                  <div className={styles.topten_card_label}>Categoria</div>
+                </div>;
+              })}
+            </div>
+          </div>
+        </section>
+
         <section></section>
         <section></section>
       </div>
