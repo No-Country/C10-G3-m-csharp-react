@@ -28,8 +28,8 @@
     font-size: f.toRem(14);
 
     a {
-        height: fit-content;
-        align-self: center;
+      height: fit-content;
+      align-self: center;
     }
   }
 
@@ -54,53 +54,92 @@
 }
 
 .welcome {
-    position: relative;
-    
-    .img {
-        z-index: 0;
+  position: relative;
+
+  .img {
+    z-index: 0;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: f.toRem(24);
+    z-index: 1;
+    font-family: $font-inter;
+    font-size: f.toRem(45);
+    font-weight: 900;
+    line-height: f.toRem(50);
+    margin-left: f.toRem(26);
+    color: #fff3f3;
+    text-shadow: 0px 1px 4px #00000066;
+  }
+
+  .form {
+    position: absolute;
+    top: f.toRem(27);
+    left: f.toRem(24);
+    right: f.toRem(24);
+    z-index: 1;
+  }
+
+  input {
+    position: absolute;
+    z-index: 1;
+    height: f.toRem(48);
+    padding: f.toRem(14.5) f.toRem(10);
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: #8bb9ff;
+    font-size: f.toRem(16);
+  }
+
+  svg {
+    width: fit-content;
+    position: absolute;
+    right: f.toRem(15);
+    top: f.toRem(15);
+    z-index: 1;
+  }
+}
+
+.intro {
+  padding: f.toRem(24);
+
+  .intro_img {
+    margin: f.toRem(24);
+  }
+
+  .intro_text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 600;
+      font-size: f.toRem(30);
+      margin-bottom: f.toRem(24);
     }
 
-    h1 {
-        position: absolute;
-        bottom: f.toRem(24);
-        z-index: 1;
-        font-family: $font-inter;
-        font-size: f.toRem(45);
-        font-weight: 900;
-        line-height: f.toRem(50);
-        margin-left: f.toRem(26);
-        color: #FFF3F3;
-        text-shadow: 0px 1px 4px #00000066;
+    p {
+      margin-bottom: f.toRem(24);
+      color: #666666;
+      line-height: f.toRem(22);
+
+      strong {
+        font-weight: 600;
+      }
     }
 
-    .form {
-        position: absolute;
-        top: f.toRem(27);
-        left: f.toRem(24);
-        right: f.toRem(24);
-        z-index: 1;
+    button {
+      background-color: #2e83ff;
+      color: white;
+      font-size: f.toRem(16);
+      border: 2px solid #8bb9ff;
+      padding: f.toRem(21) f.toRem(61);
+      border-radius: 6px;
+      width: fit-content;
+      align-self: center;
     }
-
-    input {
-        position: absolute;
-        z-index: 1;
-        height: f.toRem(48);
-        padding: f.toRem(14.5) f.toRem(10);
-        border-radius: 6px;
-        width: 100%;
-    }
-
-    input::placeholder {
-        color: #8BB9FF;
-        font-size: f.toRem(16);
-    }
-
-    svg {
-        width: fit-content;
-        position: absolute;
-        right: f.toRem(15);
-        top: f.toRem(15);
-        z-index: 1;
-    }
-
+  }
 }
