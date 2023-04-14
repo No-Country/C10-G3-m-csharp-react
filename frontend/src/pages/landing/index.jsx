@@ -5,6 +5,7 @@ import InclusiveLogo from "@/components/inclusiveLogo/inclusiveLogo";
 import Img1 from "../../../public/img/landing/landing-img-1.png";
 import Img2 from "../../../public/img/landing/landing-img-2.png";
 import Img3 from "../../../public/img/landing/landing-img-3.png";
+import Img4 from "../../../public/img/landing/landing-img-4.png";
 import SearchLogo from "@/components/searchLogo/searchLogo";
 import RightArrowLogo from "@/components/rightArrowLogo/rightArrowLogo";
 
@@ -106,15 +107,37 @@ function Landing() {
           <div className={styles.topten_cardcontainer}>
             <div className={styles.topten_cardlist}>
               {[...Array(10)].map((e, idx) => {
-                return <div className={styles.topten_card} key={idx}>
-                  <div className={styles.topten_card_label}>Categoria</div>
-                </div>;
+                return (
+                  <div className={styles.topten_card} key={idx}>
+                    <div className={styles.topten_card_label}>Categoria</div>
+                  </div>
+                );
               })}
             </div>
           </div>
         </section>
 
-        <section></section>
+        <section className={styles.contribute}>
+          <div className={styles.contribute_img}>
+            <Image src={Img4} width={312} height={200} alt="hands up" />
+          </div>
+          <div className={styles.contribute_text}>
+            <h2>
+              Agrega nuevos
+              <br /> lugares y colabora
+              <br /> con la comunidad
+            </h2>
+            <p>
+              En <strong>Inclusive</strong>, tú puedes ayudar a hacer que el mundo sea más
+              accesible para todos. Agrega nuevos lugares y colabora con la
+              comunidad compartiendo tus evaluaciones y comentarios. Juntos
+              podemos hacer la diferencia.
+            </p>
+
+            <button>Contribuir</button>
+          </div>
+        </section>
+
         <section></section>
       </div>
     </div>

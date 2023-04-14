@@ -198,6 +198,37 @@
     margin-inline: f.toRem(24);
   }
 
+  .topten_cardcontainer::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .topten_cardcontainer::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .topten_cardcontainer::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 10px;
+    border-radius: 5px;
+  }
+
+  @media screen and (min-width: 500px) {
+    .topten_cardcontainer::-webkit-scrollbar {
+      width: 1px;
+    }
+  
+    .topten_cardcontainer::-webkit-scrollbar-track {
+      background: white;
+      width: 1px;
+    }
+  
+    .topten_cardcontainer::-webkit-scrollbar-thumb {
+      background: grey;
+      width: 1px;
+      border-radius: 6px;
+    }
+  }
+
   .topten_cardcontainer {
     overflow-x: auto;
 
@@ -221,8 +252,8 @@
           position: absolute;
           bottom: 0;
           padding: f.toRem(8);
-          width:fit-content;
-          background-color: #B042F4;
+          width: fit-content;
+          background-color: #b042f4;
           border-radius: 6px;
           color: white;
           font-size: f.toRem(12);
@@ -232,3 +263,45 @@
     }
   }
 }
+
+.contribute {
+  padding: f.toRem(24);
+  background-color: #F4F5F7;
+
+  .contribute_img {
+    margin: f.toRem(24);
+  }
+
+  .contribute_text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 600;
+      font-size: f.toRem(30);
+      margin-bottom: f.toRem(24);
+    }
+
+    p {
+      margin-bottom: f.toRem(24);
+      color: #666666;
+      line-height: f.toRem(22);
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    button {
+      background-color: #2e83ff;
+      color: white;
+      font-size: f.toRem(16);
+      border: 2px solid #8bb9ff;
+      padding: f.toRem(21) f.toRem(61);
+      border-radius: 6px;
+      width: fit-content;
+      align-self: center;
+    }
+  }
+}
+
