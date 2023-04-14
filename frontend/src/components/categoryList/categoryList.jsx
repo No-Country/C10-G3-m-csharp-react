@@ -8,9 +8,8 @@ function CategoryList() {
     queryKey: ["categories"],
     queryFn: async () => {
       const response = await axios
-        .get("http://www.inclusive.somee.com/api/category")
+        .get("https://inclusive-001-site1.atempurl.com/api/category")
         .then((res) => res);
-
       return response.data;
     },
   });

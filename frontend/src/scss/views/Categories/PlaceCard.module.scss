@@ -8,9 +8,15 @@
   display: flex;
 
   .img {
-    background-color: $grey;
+    flex-grow: 0;
+    flex-shrink: 0;
     height: 100%;
-    width: 47.43%;
+    width: f.toRem(140);
+    overflow: hidden;
+
+    img {
+      width: -webkit-fill-available;
+    }
   }
 
   .text {
