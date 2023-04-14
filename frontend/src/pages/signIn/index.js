@@ -24,7 +24,7 @@ export default function index() {
   return (
     <div className={container}>
       <div className={logoAndTitleContainer}>
-        <Image src={Logo} className={signInLogoSized} />
+        <Image src={Logo} className={signInLogoSized} alt="" />
         <h4 className={signInTitleBold}>INICIAR SESIÓN</h4>
       </div>
       <div className={inputContainer}>

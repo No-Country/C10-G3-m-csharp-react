@@ -104,7 +104,7 @@ export default function RegisterService() {
                         <div className="contenedorArchivo">
 
                             <label htmlFor="archivo" className="subirArchivo">Subir Archivo</label>
-                            <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover"/>
+                            <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover" alt=""/>
                             
                         </div>
                         
