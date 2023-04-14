@@ -128,17 +128,28 @@ function Landing() {
               <br /> con la comunidad
             </h2>
             <p>
-              En <strong>Inclusive</strong>, tú puedes ayudar a hacer que el mundo sea más
-              accesible para todos. Agrega nuevos lugares y colabora con la
-              comunidad compartiendo tus evaluaciones y comentarios. Juntos
-              podemos hacer la diferencia.
+              En <strong>Inclusive</strong>, tú puedes ayudar a hacer que el
+              mundo sea más accesible para todos. Agrega nuevos lugares y
+              colabora con la comunidad compartiendo tus evaluaciones y
+              comentarios. Juntos podemos hacer la diferencia.
             </p>
 
             <button>Contribuir</button>
           </div>
         </section>
 
-        <section></section>
+        <section className={styles.faq}>
+          <h2>
+            Preguntas
+            <br /> frecuentes
+          </h2>
+          <p>
+            Encuentra respuestas a tus preguntas sobre <strong>Inclusive</strong>. Aprende cómo
+            agregar nuevos lugares, evaluar su accesibilidad y colaborar con la
+            comunidad.
+          </p>
+          <button>Explorar</button>
+        </section>
       </div>
     </div>
   );
