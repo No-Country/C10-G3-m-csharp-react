@@ -1,9 +1,12 @@
 import CloseLogo from "../../../components/closeLogo/closeLogo";
 import PlaceCard from "@/components/placeCard/placeCard";
 import styles from "../../../scss/views/Categories/Categories.module.scss";
+import useHighWidth from "@/utils/useHighWidth";
 
 function Category(props) {
   const places = props?.category?.establishments;
+
+  const isHighWidth = useHighWidth()
 
   return (
     <div className={styles.container}>
@@ -21,9 +24,10 @@ function Category(props) {
                 imageSrc={e.image}
                 name={e.name}
                 address={e.address}
-                hours={"Abierto. 11:30am - 11:00pm"}
+                hours={"11:30am - 11:00pm"}
                 features={e.accessibilitys}
                 showRating
+                fullCard={isHighWidth}
               />
             </li>
           );

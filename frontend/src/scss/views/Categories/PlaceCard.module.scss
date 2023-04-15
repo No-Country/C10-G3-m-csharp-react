@@ -50,6 +50,10 @@
   position: relative;
 
   .showMore__header {
+    .showMore__img {
+      overflow: hidden;
+    }
+
     .showMore__img,
     .showMore__map {
       position: relative;
@@ -159,13 +163,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-inline: 240px;
+    margin-inline: 17.5%;
 
     .showMore__header {
       grid-column: span 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;     
+      gap: 16px;
+
+      .showMore__img {
+        img {
+          max-width: none;
+        object-fit: cover;
+        height: 100% !important;
+        width: 100%;
+        }
+      }
 
       .showMore__img,
       .showMore__map {
@@ -183,8 +196,6 @@
       .showMore__map {
         grid-column: 2;
       }
-
-
     }
 
     .showMore__text {
