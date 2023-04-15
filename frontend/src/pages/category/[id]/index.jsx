@@ -3,19 +3,17 @@ import PlaceCard from "@/components/placeCard/placeCard";
 import styles from "../../../scss/views/Categories/Categories.module.scss";
 
 function Category(props) {
-  const places = props.category.establishments;
-
-  console.log(props)
+  const places = props?.category?.establishments;
 
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h2>{props.category.name}</h2>
+        <h2>{props?.category?.name}</h2>
         <CloseLogo />
       </div>
 
       <ul className={styles.list}>
-        {places.map((e) => {
+        {places?.map((e) => {
           return (
             <li key={e.id}>
               <PlaceCard
