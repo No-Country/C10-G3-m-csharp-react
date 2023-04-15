@@ -27,7 +27,7 @@ const {
 
 const schema = yup
   .object({
-    name: yup.string().required("Este campo es obligatorio"),
+    firstName: yup.string().required("Este campo es obligatorio"),
     lastName: yup.string().required("Este campo es obligatorio"),
     email: yup.string().required().email("Debe ser un formato válido"),
     userName: yup
@@ -54,7 +54,23 @@ export default function Register() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+
+    console.log(data);
+
+    let endpoint =
+      "https://inclusive-001-site1.atempurl.com/api/Authentication/register";    
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })      
+    };
+
+    
+  
 
   return (
     <div className={container}>
@@ -75,13 +91,15 @@ export default function Register() {
 
         <form className={inputContainer} onSubmit={handleSubmit(onSubmit)}>
           <input
-            {...register("name")}
+            {...register("firstName")}
             aria-invalid={errors.name ? "true" : "false"}
             type="text"
             placeholder="Nombre"
             className={signInInputOutlined}
           />
-          {errors.name && <div className={errorMsg}>{errors.name.message}</div>}
+          {errors.firstName && (
+            <div className={errorMsg}>{errors.firstName.message}</div>
+          )}
           <input
             {...register("lastName")}
             type="text"
@@ -147,113 +165,3 @@ export default function Register() {
     </div>
   );
 }
-
-/* 
-
-<form className={inputContainer} onSubmit={handleSubmit(onSubmit)}>
-          <input
-            {...register("name", {
-              required: {
-                value: true,
-                message: "El nombre es requerido",
-              },
-              minLength: {
-                value: 6,
-                message: "Debe tener al menos 6 carácteres",
-              },
-            })}
-            aria-invalid={errors.name ? "true" : "false"}
-            type="text"
-            placeholder="Nombre"
-            className={signInInputOutlined}
-          />
-          {errors.name && (
-            <div className={errorMsg}>
-              {errors.name.message}
-            </div>
-          )}
-          <input
-            {...register("lastName", {
-              required: {
-                value: true,
-                message: "El apellido es requerido",
-              },
-              minLength: {
-                value: 6,
-                message: "Debe tener al menos 6 carácteres",
-              },
-            })}
-            type="text"
-            placeholder="Apellidos"
-            className={signInInputOutlined}
-          />
-           {errors.lastName && (
-            <div className={errorMsg}>
-              {errors.lastName.message}
-            </div>
-          )}
-          
-          <input
-            {...register("email",{
-              pattern:{
-                value:/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
-                message: 'El formato es incorrecto'
-                }
-            }
-            )}
-            type="text"
-            placeholder="Correo electrónico"
-            className={signInInputOutlined}            
-          />
-             {errors.email && (
-            <div className={errorMsg}>
-              {errors.email.message}
-            </div>
-          )}
-          
-          <input
-            {...register("userName")}
-            type="text"
-            placeholder="Nombre de usuario"
-            className={signInInputOutlined}
-          />
-          <input
-            {...register("password", {
-              required: true,
-              minLength: {
-                value: 8,
-                message: "La contraseña debe tener mínimo 8 carácteres",
-              },
-            })}
-            type="password"
-            placeholder="Contraseña"
-            className={signInInputOutlined}
-          />
-
-          <input
-            {...register("password2", {
-              required: true,
-              minLength: {
-                value: 8,
-                message: "La contraseña debe tener mínimo 8 carácteres",
-              },
-            })}
-            type="password"
-            placeholder="Repetir contraseña"
-            className={signInInputOutlined}
-          />
-          <div className={termsBox}>
-            <input
-              type="radio"
-              id="Acepto los terminos y condiciones"
-              className={checkRounded}
-              {...register("terms")}
-            />
-            <label for="Acepto los terminos y condiciones">
-              Acepto los terminos y condiciones
-            </label>
-          </div>
-          <Button type="submit" value="Aceptar" />
-        </form>
-
-*/
