@@ -23,6 +23,11 @@
     padding: f.toRem(8);
     border-radius: 6px;
 
+    @media screen and (min-width: 750px) {
+      width: f.toRem(310);
+      margin: 0 auto;
+    }
+
     svg {
       width: fit-content;
     }
