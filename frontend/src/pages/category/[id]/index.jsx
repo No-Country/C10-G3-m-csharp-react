@@ -3,7 +3,9 @@ import PlaceCard from "@/components/placeCard/placeCard";
 import styles from "../../../scss/views/Categories/Categories.module.scss";
 
 function Category(props) {
-  const places = props.places;
+  const places = props.category.establishments;
+
+  console.log(props)
 
   return (
     <div className={styles.container}>
@@ -45,15 +47,10 @@ export async function getStaticProps({ params }) {
     `https://inclusive-001-site1.atempurl.com/api/category/${params.id}`
   );
 
-  const placesData = await fetch(
-    `https://inclusive-001-site1.atempurl.com/api/establishment?SearchTerm=${params.id}`
-  );
-
-  const places = await placesData.json();
   const category = await catData.json();
 
   return {
-    props: { category, places },
+    props: { category },
   };
 }
 
