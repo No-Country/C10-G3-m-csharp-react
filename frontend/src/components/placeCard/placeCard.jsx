@@ -10,7 +10,7 @@ import MapCard from "../map/CardMap";
 import { CircularProgress } from "@mui/material";
 import Image from "next/image";
 
-function PlaceCard({ fullCard, position, imageSrc, name, address, hours, features, showRating }) {
+function PlaceCard({ fullCard, position, imageSrc, name, address, hours, features, rating, showRating }) {
   const [showMore, setShowMore] = useState(fullCard);
 
   const handleClick = () => {
@@ -78,7 +78,7 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
                   </button>
                 );
               })}
-              <FinalRating rating={3} />
+              <FinalRating rating={rating} />
             </div>
           )}
         </div>
