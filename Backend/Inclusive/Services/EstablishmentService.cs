@@ -30,13 +30,20 @@ public class EstablishmentService : IEstablishmentService
         var establishmentsWithDto = await _repository.Establishments.GetEstablishmentAsync(parameters, trackChanges);
         var establishmentDtos = _mapper.Map<IEnumerable<EstablishmentDto>>(establishmentsWithDto);
 
+        await _repository.Establishments.GetEstablishmentAverageRatingAsync(establishmentDtos);
+
         return (establishmentDtos, establishmentsWithDto.MetaData);
     }
 
     public async Task<EstablishmentDto> GetEstablishmentByIdAsync(Guid id, bool trackChanges)
     {
         var establishment = await _repository.Establishments.GetEstablishmentByIdAsync(id, trackChanges);
-        return _mapper.Map<EstablishmentDto>(establishment);
+
+        ICollection<EstablishmentDto> establishmentDtos = new List<EstablishmentDto>();
+        establishmentDtos.Add(_mapper.Map<EstablishmentDto>(establishment));
+        await _repository.Establishments.GetEstablishmentAverageRatingAsync(establishmentDtos);
+
+        return establishmentDtos.FirstOrDefault()!;
     }
 
     public async Task<EstablishmentDto> CreateEstablishmentAsync(

@@ -20,7 +20,7 @@ public class AccessibilityController : ControllerBase
         _service = service;
     }
 
-    [Authorize(Roles = UserRoles.AdministratorOrUser)]
+    //[Authorize(Roles = UserRoles.AdministratorOrUser)]
     [HttpGet(Name = "GetAccessibilitys")]
     public async Task<IActionResult> GetAccessibilitys([FromQuery] AccessibilityParameters parameters)
     {
@@ -29,7 +29,7 @@ public class AccessibilityController : ControllerBase
         return Ok(accessibilitys);
     }
 
-    [Authorize(Roles = UserRoles.Administrator)]
+    //[Authorize(Roles = UserRoles.Administrator)]
     [HttpGet("{id:guid}", Name = "GetAccessibilityById")]
     public async Task<IActionResult> GetAccessibilityById(Guid id)
     {
@@ -38,7 +38,7 @@ public class AccessibilityController : ControllerBase
     }
 
     //[AllowAnonymous]
-    [Authorize(Roles = UserRoles.Administrator)]
+    //[Authorize(Roles = UserRoles.Administrator)]
     [HttpPost(Name = "CreateAccessibility")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreateAccessibility([FromBody] AccessibilityForCreationDto accessibility)
@@ -48,7 +48,7 @@ public class AccessibilityController : ControllerBase
         return CreatedAtRoute("GetAccessibilityById", new { id = createdAccessibility.Id }, createdAccessibility);
     }
 
-    [Authorize(Roles = UserRoles.Administrator)]
+    //[Authorize(Roles = UserRoles.Administrator)]
     [HttpDelete("{id:guid}", Name = "DeleteAccessibility")]
     public async Task<IActionResult> DeleteAccessibility(Guid id)
     {
@@ -56,7 +56,7 @@ public class AccessibilityController : ControllerBase
         return NoContent();
     }
 
-    [Authorize(Roles = UserRoles.Administrator)]
+    //[Authorize(Roles = UserRoles.Administrator)]
     [HttpPut("{id:guid}", Name = "UpdateAccessibility")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdateAccessibility(Guid id, [FromBody] AccessibilityForUpdateDto accessibility)

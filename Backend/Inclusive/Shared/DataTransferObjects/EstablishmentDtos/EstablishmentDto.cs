@@ -33,4 +33,6 @@ public record EstablishmentDto
     public IEnumerable<AccessibilityDto>? Accessibilitys { get; init; }
 
     public IEnumerable<ReviewDto>? Reviews { get; init; }
+
+    public double AverageRating { get; set; }
 }

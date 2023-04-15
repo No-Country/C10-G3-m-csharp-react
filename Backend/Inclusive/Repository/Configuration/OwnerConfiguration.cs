@@ -21,7 +21,7 @@ public class OwnerConfiguration : IEntityTypeConfiguration<Owner>
                 BirthDate = DateTime.Now,
                 PhoneCode = "123",
                 PhoneNumber = "12345678A",
-                MaritalStatus = MaritalStatusEnum.Single,
+                MaritalStatus = MaritalStatusEnum.Soltero,
                 Pep = false
             }
         );
