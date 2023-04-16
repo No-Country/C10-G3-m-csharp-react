@@ -7,41 +7,41 @@ export default function RegisterOwner() {
     const [anios, setAnios] = useState([]);
 
     useEffect(() => {
-
-        function getDiasDelMes() {
-
-            const fechaActual = new Date();
-
-            const diasEnElMes = new Date(
-
-                fechaActual.getFullYear(),
-                fechaActual.getMonth() + 1,
-                0
-
-            ).getDate();
-
-            return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
-
+        function getDiasDelMes(mes, anio) {
+          const diasEnElMes = new Date(anio, mes, 0).getDate();
+          return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
         }
-
+      
         function getNombresDeMeses() {
-
-            return ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-
+          return [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+          ];
         }
-
+      
         function getAnios() {
-
-            const anioActual = new Date().getFullYear();
-            return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
-
+          const anioActual = new Date().getFullYear();
+          return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
         }
-
-        setDias(getDiasDelMes());
+      
         setMeses(getNombresDeMeses());
         setAnios(getAnios());
-
-    }, []);
+      
+        // obtener días del mes actual
+        const fechaActual = new Date();
+        setDias(getDiasDelMes(fechaActual.getMonth() + 1, fechaActual.getFullYear()));
+      
+      }, []);
 
     return (
         <>

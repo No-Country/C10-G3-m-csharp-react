@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+const API = 'https://inclusive-001-site1.atempurl.com/api/accessibility';
+
 
 export default function index() {
-
+    
     const [showTextArea, setShowTextArea] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [accessibilityData, setAccessibilityData] = useState(null);
 
     const handleShowTextArea = (event) => {
 
@@ -18,6 +21,29 @@ export default function index() {
         }, 300)
 
     }
+
+    useEffect(() => {
+
+
+        async function fetchData() {
+
+            try {
+
+                const response = await fetch(API);
+                const data = await response.json();
+                setAccessibilityData(data);
+
+            } catch {
+                
+                console.log('Error');
+
+            }
+
+        }
+
+        fetchData();
+
+    }, [])
 
     return (
         
@@ -51,75 +77,14 @@ export default function index() {
 
                         <div className="checkHijo">
 
-                            <div className='typeCheck'>
+                            {accessibilityData && accessibilityData.map(item => (
+                                <div className='typeCheck' key={item.id}>
 
-                                <input type="checkbox" id="cbox1" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox1">Rampa</label>
+                                    <input type="checkbox" id="cbox1" value="first_checkbox" />
+                                    <label className="labelCheck" for="cbox1">{item.name}</label>
 
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox2" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox2">Ángulo de rampa</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox3" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox3">Mobiliario</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox4" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox4">Personal asistente</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox5" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox5">Ancho de pasillo (mínimo 140 cm)</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox6" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox6">Ascensor</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox7" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox7">Baño accesible</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox8" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox8">Altura de mostrador</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox9" value="first_checkbox" />
-                                <label className="labelCheck" for="cbox9">Estacionamiento adaptado</label>
-
-                            </div>
-
-                            <div className='typeCheck'>
-
-                                <input type="checkbox" id="cbox10" value="first_checkbox" onClick={handleShowTextArea}/>
-                                <label className="labelCheck" for="cbox10" htmlFor="cbox10">Otros (Escribelo)</label>
-
-                            </div>
+                                </div>
+                            ))}          
 
                             <div className="containerShow">
 
