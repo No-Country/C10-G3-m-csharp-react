@@ -32,10 +32,10 @@ function Landing() {
               <Link href="/">Quienes somos</Link>
             </li>
             <li>
-              <Link href="/">Contacto</Link>
+              <Link href="/contact">Contacto</Link>
             </li>
             <li>
-              <Link href="/">Preguntas Frecuentes</Link>
+              <Link href="/faq">Preguntas Frecuentes</Link>
             </li>
           </ul>
         </nav>
@@ -81,7 +81,9 @@ function Landing() {
               está al alcance de todos.
             </p>
 
-            <button>Conéctate</button>
+            <button>
+              <Link href="/login">Conéctate</Link>
+            </button>
           </div>
         </section>
 
@@ -97,7 +99,9 @@ function Landing() {
               Explora por
               <br /> <strong>categorías</strong>
             </h2>
-            <RightArrowLogo />
+            <Link href="/">
+              <RightArrowLogo />
+            </Link>
           </div>
         </section>
 
@@ -134,7 +138,9 @@ function Landing() {
               comentarios. Juntos podemos hacer la diferencia.
             </p>
 
-            <button>Contribuir</button>
+            <button>
+              <Link href="/register-service">Contribuir</Link>
+            </button>
           </div>
         </section>
 
@@ -144,11 +150,13 @@ function Landing() {
             <br /> frecuentes
           </h2>
           <p>
-            Encuentra respuestas a tus preguntas sobre <strong>Inclusive</strong>. Aprende cómo
-            agregar nuevos lugares, evaluar su accesibilidad y colaborar con la
-            comunidad.
+            Encuentra respuestas a tus preguntas sobre{" "}
+            <strong>Inclusive</strong>. Aprende cómo agregar nuevos lugares,
+            evaluar su accesibilidad y colaborar con la comunidad.
           </p>
-          <button>Explorar</button>
+          <button>
+            <Link href="/faq">Explorar</Link>
+          </button>
         </section>
       </div>
     </div>
