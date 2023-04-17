@@ -8,6 +8,7 @@ import Img3 from "../../../public/img/landing/landing-img-3.png";
 import Img4 from "../../../public/img/landing/landing-img-4.png";
 import SearchLogo from "@/components/searchLogo/searchLogo";
 import RightArrowLogo from "@/components/rightArrowLogo/rightArrowLogo";
+import TopTenCardList from "@/components/topTenCardList/topTenCardList";
 
 function Landing() {
   return (
@@ -109,15 +110,7 @@ function Landing() {
           <h2>Descubre los lugares mejor valorados</h2>
           <h3>TOP 10 lugares accesibles cerca de ti</h3>
           <div className={styles.topten_cardcontainer}>
-            <div className={styles.topten_cardlist}>
-              {[...Array(10)].map((e, idx) => {
-                return (
-                  <div className={styles.topten_card} key={idx}>
-                    <div className={styles.topten_card_label}>Categoria</div>
-                  </div>
-                );
-              })}
-            </div>
+            <TopTenCardList />
           </div>
         </section>
 
