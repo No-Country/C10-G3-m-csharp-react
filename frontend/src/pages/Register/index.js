@@ -24,7 +24,9 @@ const {
   termsBox,
   checkRounded,
   errorMsg,
-  reveal_psw
+  pswInputContainer,
+  reveal_psw,
+  pswInput
 } = styles;
 
 const schema = yup
@@ -127,14 +129,15 @@ export default function Register() {
           {errors.userName && (
             <div className={errorMsg}>{errors.userName.message}</div>
           )}
-          <div>
+          <div className={pswInputContainer}>
             <input
               {...register("password")}
               type="password"
               placeholder="Contraseña"
-              className={signInInputOutlined}
+              className={pswInput}
+              
             ></input>
-            <Image src={Eye} width={10} height={10} alt='reveal psw'/>
+            <Image src={Eye} className={reveal_psw} alt='reveal psw'/>
           </div>
 
           {errors.password && (
