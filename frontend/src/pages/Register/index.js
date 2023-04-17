@@ -26,7 +26,7 @@ const {
   errorMsg,
   pswInputContainer,
   reveal_psw,
-  pswInput
+  pswInput,
 } = styles;
 
 const schema = yup
@@ -70,6 +70,14 @@ export default function Register() {
       },
       body: JSON.stringify(data),
     });
+  };
+
+  const changeTypeAndImg = () => {
+    let pswInput = document.getElementById("pswInput");
+
+    pswInput.type === "text"
+      ? (pswInput.type = "password")
+      : (pswInput.type = "text");
   };
 
   return (
@@ -135,9 +143,14 @@ export default function Register() {
               type="password"
               placeholder="Contraseña"
               className={pswInput}
-              
+              id="pswInput"
             ></input>
-            <Image src={Eye} className={reveal_psw} alt='reveal psw'/>
+            <Image
+              src={Eye}
+              className={reveal_psw}
+              alt="reveal psw"
+              onClick={changeTypeAndImg}
+            />
           </div>
 
           {errors.password && (
