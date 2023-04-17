@@ -161,15 +161,22 @@ export default function RegisterOwner() {
                                     <select name="nacionalidad" id="nacionalidad" className="selectNacionalidad">
 
                                         <option value="argentina">Argentina</option>
-                                        <option value="uruguay">Uruguay</option>
+                                        <option value="uruguay">Bolivia</option>
+                                        <option value="paraguay">Brasil</option>
+                                        <option value="paraguay">Chile</option>
+                                        <option value="paraguay">Colombia</option>
+                                        <option value="paraguay">Ecuador</option>
                                         <option value="paraguay">Paraguay</option>
+                                        <option value="paraguay">Perú</option>
+                                        <option value="paraguay">Uruguay</option>
+                                        <option value="paraguay">Venezuela</option>
 
                                     </select>
 
                                     <select name="civil" id="civil" className="selectCivil">
 
-                                        <option value="soltero">Soltero</option>
-                                        <option value="casado">Casado</option>
+                                        <option value="soltero">Casado</option>
+                                        <option value="casado">Soltero</option>
                                         <option value="divorciado">Divorciado</option>
                                         <option value="viudo">Viudo</option>
                                         <option value="separado">Separado</option>
