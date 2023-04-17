@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../../public/img/loginSingIn/Logo.png";
 import Image from "next/image";
 import styles from "../../scss/views/barrel_views.module.scss";
 import Button from "@/components/Buttons/Button";
 import Blockline from "../../../public/img/loginSingIn/Blockline.png";
 import GoogleButton from "@/components/Buttons/GoogleButton";
-import Eye from "../../../public/images/eye-off.png";
+import Eye from "../../../public/images/eye.png";
+import EyeOff from "../../../public/images/eye-off.png";
 import AppleButton from "@/components/Buttons/AppleButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -50,6 +51,11 @@ const schema = yup
   .required();
 
 export default function Register() {
+  const [passwordImage, setPasswordImage] = useState({
+    src: EyeOff,
+    alt: "EyeOff",
+  });
+
   const {
     register,
     formState: { errors },
@@ -74,10 +80,21 @@ export default function Register() {
 
   const changeTypeAndImg = () => {
     let pswInput = document.getElementById("pswInput");
+    let pswInput2 = document.getElementById("pswInput2");
 
-    pswInput.type === "text"
-      ? (pswInput.type = "password")
-      : (pswInput.type = "text");
+    pswInput.type === "password"
+      ? ((pswInput.type = "text"),
+        (pswInput2.type = "text"),
+        setPasswordImage({
+          src: Eye,
+          alt: "Mostrar contraseña",
+        }))
+      : ((pswInput.type = "password"),
+        (pswInput2.type = "password"),
+        setPasswordImage({
+          src: EyeOff,
+          alt: "Ocultar contraseña",
+        }));
   };
 
   return (
@@ -96,7 +113,6 @@ export default function Register() {
       <Image src={Blockline} alt="blockline" />
       <div>
         <h5 className={subTitleh5}>Llena el formulario de registro</h5>
-
         <form className={inputContainer} onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("firstName")}
@@ -146,9 +162,10 @@ export default function Register() {
               id="pswInput"
             ></input>
             <Image
-              src={Eye}
+              src={passwordImage.src}
               className={reveal_psw}
-              alt="reveal psw"
+              alt={passwordImage.alt}
+              id="revealEye"
               onClick={changeTypeAndImg}
             />
           </div>
@@ -157,15 +174,32 @@ export default function Register() {
             <div className={errorMsg}>{errors.password.message}</div>
           )}
 
-          <input
+          {/*           <input
             {...register("repeat_password")}
             type="password"
             placeholder="Repetir contraseña"
             className={signInInputOutlined}
-          />
+          /> */}
+
+          <div className={pswInputContainer}>
+            <input
+              {...register("repeat_password")}
+              type="password"
+              placeholder="Repetir constraseña"
+              className={pswInput}
+              id="pswInput2"
+            ></input>
+            <Image
+              src={passwordImage.src}
+              className={reveal_psw}
+              alt={passwordImage.alt}
+              onClick={changeTypeAndImg}
+            />
+          </div>
           {errors.repeat_password && (
             <div className={errorMsg}>{errors.repeat_password.message}</div>
           )}
+
           <div className={termsBox}>
             <input
               type="radio"
@@ -173,7 +207,7 @@ export default function Register() {
               className={checkRounded}
               {...register("terms")}
             />
-            <label for="Acepto los terminos y condiciones">
+            <label htmlFor="Acepto los terminos y condiciones">
               Acepto los terminos y condiciones
             </label>
           </div>
