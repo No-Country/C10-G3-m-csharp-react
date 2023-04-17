@@ -5,6 +5,7 @@ import styles from "../../scss/views/barrel_views.module.scss";
 import Button from "@/components/Buttons/Button";
 import Blockline from "../../../public/img/loginSingIn/Blockline.png";
 import GoogleButton from "@/components/Buttons/GoogleButton";
+import Eye from "../../../public/images/eye-off.png";
 import AppleButton from "@/components/Buttons/AppleButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,6 +24,7 @@ const {
   termsBox,
   checkRounded,
   errorMsg,
+  reveal_psw
 } = styles;
 
 const schema = yup
@@ -55,22 +57,18 @@ export default function Register() {
   });
 
   const onSubmit = (data) => {
-
     console.log(data);
 
     let endpoint =
-      "https://inclusive-001-site1.atempurl.com/api/Authentication/register";    
-      fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })      
-    };
-
-    
-  
+      "https://inclusive-001-site1.atempurl.com/api/Authentication/register";
+    fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  };
 
   return (
     <div className={container}>
@@ -129,12 +127,16 @@ export default function Register() {
           {errors.userName && (
             <div className={errorMsg}>{errors.userName.message}</div>
           )}
-          <input
-            {...register("password")}
-            type="password"
-            placeholder="Contraseña"
-            className={signInInputOutlined}
-          />
+          <div>
+            <input
+              {...register("password")}
+              type="password"
+              placeholder="Contraseña"
+              className={signInInputOutlined}
+            ></input>
+            <Image src={Eye} width={10} height={10} alt='reveal psw'/>
+          </div>
+
           {errors.password && (
             <div className={errorMsg}>{errors.password.message}</div>
           )}
