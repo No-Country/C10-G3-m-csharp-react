@@ -22,7 +22,7 @@ function CategoryList() {
   if (isLoading) {
     return (
       <>
-        {[...Array(8)].map((idx) => {
+        {[...Array(8)].map((e, idx) => {
           return (
             <li key={idx}>
               <CategorySkeleton />
