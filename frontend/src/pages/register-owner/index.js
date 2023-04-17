@@ -7,41 +7,41 @@ export default function RegisterOwner() {
     const [anios, setAnios] = useState([]);
 
     useEffect(() => {
-
-        function getDiasDelMes() {
-
-            const fechaActual = new Date();
-
-            const diasEnElMes = new Date(
-
-                fechaActual.getFullYear(),
-                fechaActual.getMonth() + 1,
-                0
-
-            ).getDate();
-
-            return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
-
+        function getDiasDelMes(mes, anio) {
+          const diasEnElMes = new Date(anio, mes, 0).getDate();
+          return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
         }
-
+      
         function getNombresDeMeses() {
-
-            return ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-
+          return [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+          ];
         }
-
+      
         function getAnios() {
-
-            const anioActual = new Date().getFullYear();
-            return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
-
+          const anioActual = new Date().getFullYear();
+          return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
         }
-
-        setDias(getDiasDelMes());
+      
         setMeses(getNombresDeMeses());
         setAnios(getAnios());
-
-    }, []);
+      
+        // obtener días del mes actual
+        const fechaActual = new Date();
+        setDias(getDiasDelMes(fechaActual.getMonth() + 1, fechaActual.getFullYear()));
+      
+      }, []);
 
     return (
         <>
@@ -161,15 +161,22 @@ export default function RegisterOwner() {
                                     <select name="nacionalidad" id="nacionalidad" className="selectNacionalidad">
 
                                         <option value="argentina">Argentina</option>
-                                        <option value="uruguay">Uruguay</option>
+                                        <option value="uruguay">Bolivia</option>
+                                        <option value="paraguay">Brasil</option>
+                                        <option value="paraguay">Chile</option>
+                                        <option value="paraguay">Colombia</option>
+                                        <option value="paraguay">Ecuador</option>
                                         <option value="paraguay">Paraguay</option>
+                                        <option value="paraguay">Perú</option>
+                                        <option value="paraguay">Uruguay</option>
+                                        <option value="paraguay">Venezuela</option>
 
                                     </select>
 
                                     <select name="civil" id="civil" className="selectCivil">
 
-                                        <option value="soltero">Soltero</option>
-                                        <option value="casado">Casado</option>
+                                        <option value="soltero">Casado</option>
+                                        <option value="casado">Soltero</option>
                                         <option value="divorciado">Divorciado</option>
                                         <option value="viudo">Viudo</option>
                                         <option value="separado">Separado</option>

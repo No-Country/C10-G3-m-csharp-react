@@ -1,0 +1,106 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+@use "../../utilities/gradients" as *;
+
+.header {
+  height: f.toRem(278);
+  background: $bg-gradient;
+  font-family: $font-inter;
+  padding-top: f.toRem(30);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  .logoContainer {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin: auto 0 auto 0;
+  }
+
+  .auth {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    color: $lightGrey;
+    justify-content: center;
+    text-align: center;
+    font-size: f.toRem(14);
+
+    a {
+        height: fit-content;
+        align-self: center;
+    }
+  }
+
+  .navbar {
+    font-size: f.toRem(14);
+    color: $lightGrey;
+    grid-column: span 3;
+    grid-row: 3;
+
+    ul {
+      display: flex;
+
+      li {
+        border: 1px solid $lightGrey;
+        border-bottom: none;
+        padding: f.toRem(10);
+        text-align: center;
+        line-height: f.toRem(14);
+      }
+    }
+  }
+}
+
+.welcome {
+    position: relative;
+    
+    .img {
+        z-index: 0;
+    }
+
+    h1 {
+        position: absolute;
+        bottom: f.toRem(24);
+        z-index: 1;
+        font-family: $font-inter;
+        font-size: f.toRem(45);
+        font-weight: 900;
+        line-height: f.toRem(50);
+        margin-left: f.toRem(26);
+        color: #FFF3F3;
+        text-shadow: 0px 1px 4px #00000066;
+    }
+
+    .form {
+        position: absolute;
+        top: f.toRem(27);
+        left: f.toRem(24);
+        right: f.toRem(24);
+        z-index: 1;
+    }
+
+    input {
+        position: absolute;
+        z-index: 1;
+        height: f.toRem(48);
+        padding: f.toRem(14.5) f.toRem(10);
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    input::placeholder {
+        color: #8BB9FF;
+        font-size: f.toRem(16);
+    }
+
+    svg {
+        width: fit-content;
+        position: absolute;
+        right: f.toRem(15);
+        top: f.toRem(15);
+        z-index: 1;
+    }
+
+}
