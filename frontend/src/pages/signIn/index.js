@@ -30,9 +30,7 @@ const schema = yup
       .string()
       .required("Este campo es obligatorio")
       .email("Debe ser un formato válido"),
-    password: yup
-      .string()
-      .required("Este campo es obligatorio"),
+    password: yup.string().required("Este campo es obligatorio"),
   })
   .required();
 
@@ -45,7 +43,22 @@ export default function index() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    let endpoint =
+      "https://inclusive-001-site1.atempurl.com/api/Authentication/login";
+
+    let response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    console.log(response.status);
+  };
 
   return (
     <div className={container}>
@@ -73,7 +86,7 @@ export default function index() {
 
         <div className={signInBoxRestoreAndButton}>
           <h5 className={subTitleh5}>¿Olvidó su contraseña?</h5>
-          <Button value="Ingresar" type="submit" styles={{marginLeft:'5%'}} />
+          <Button value="Ingresar" type="submit" />
         </div>
       </form>
 

@@ -65,18 +65,20 @@ export default function register() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
 
     let endpoint =
       "https://inclusive-001-site1.atempurl.com/api/Authentication/register";
-    fetch(endpoint, {
+    let response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
+
+    console.log(response.status);
   };
 
   const changeTypeAndImg = () => {
