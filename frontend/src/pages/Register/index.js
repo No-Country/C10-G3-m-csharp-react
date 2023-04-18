@@ -11,6 +11,7 @@ import AppleButton from "@/components/Buttons/AppleButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Link from "next/link";
 
 const {
   container,
@@ -50,7 +51,7 @@ const schema = yup
   })
   .required();
 
-export default function Register() {
+export default function register() {
   const [passwordImage, setPasswordImage] = useState({
     src: EyeOff,
     alt: "EyeOff",
@@ -174,13 +175,6 @@ export default function Register() {
             <div className={errorMsg}>{errors.password.message}</div>
           )}
 
-          {/*           <input
-            {...register("repeat_password")}
-            type="password"
-            placeholder="Repetir contraseña"
-            className={signInInputOutlined}
-          /> */}
-
           <div className={pswInputContainer}>
             <input
               {...register("repeat_password")}
@@ -211,7 +205,9 @@ export default function Register() {
               Acepto los terminos y condiciones
             </label>
           </div>
-          <Button type="submit" value="Aceptar" />
+          <Link href="./signIn">
+            <Button type="submit" value="Aceptar" />
+          </Link>
         </form>
       </div>
     </div>

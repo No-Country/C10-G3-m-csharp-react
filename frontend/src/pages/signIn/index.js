@@ -73,7 +73,7 @@ export default function index() {
 
         <div className={signInBoxRestoreAndButton}>
           <h5 className={subTitleh5}>¿Olvidó su contraseña?</h5>
-          <Button value="Ingresar" type="submit" />
+          <Button value="Ingresar" type="submit" styles={{marginLeft:'5%'}} />
         </div>
       </form>
 
