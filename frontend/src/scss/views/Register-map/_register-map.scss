@@ -1,0 +1,94 @@
+@use '../../utilities/barrelUtilities.scss'as *;
+
+.contenedorRegister__map{
+
+    .contenedor__preview{
+
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .hijo__preview{
+
+            margin-top: 1rem;
+            background-color: #F4C242;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: toRem(312);
+            border-radius: toRem(6);
+            height: toRem(35);
+            padding: toRem(9.6);
+
+            .tituloRegistrar__prev{
+
+                color: $white;
+                font-size: 1rem;
+
+            }
+
+        }
+
+    }
+
+    .containerMap__view{
+
+        .hijoMap__view{
+
+            padding: 1.4rem;
+
+        }
+
+    }
+
+    .containerButtons{
+
+        .buttonsFlex{
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            .hijoButtons{
+
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                .button__editar{
+
+                    background-color: $white;
+                    color: $blue-200;
+                    border: 1px solid $blue-200;
+                    border-radius: toRem(6);
+                    width: toRem(202);
+                    height: toRem(62);
+                    font-size: 1rem;
+                    margin-top: 1rem;
+
+                }
+
+                .button__continuar{
+
+                    background-color: $colorBoton;
+                    color: $white;
+                    border: 1px solid $blue-200;
+                    border-radius: toRem(6);
+                    width: toRem(202);
+                    height: toRem(62);
+                    font-size: 1rem;
+                    margin-top: 1rem;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -22,7 +22,7 @@ function ServiceCard({ fullCard, position, imageSrc, name, address, hours, featu
       <div className={styles.showMoreCard}>
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}>
-            {imageSrc && <Image alt={`place photo`} src={imageSrc} width={140} height={80} />}
+            {imageSrc && <Image alt={`place photo`} src={imageSrc} width={140} height={80} style={{width: '100%'}}/>}
           </div>
           <div className={styles.showMore__map}>
             <div className={styles.showMore__spinnerContainer}>

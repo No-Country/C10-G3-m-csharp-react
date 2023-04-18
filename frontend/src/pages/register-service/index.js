@@ -1,132 +1,169 @@
 import Image from "next/image";
+import React, { useState, useEffect } from 'react';
 
 export default function RegisterService() {
 
+    const [hours, setHours] = useState([]);
+
     const handleFileSelect = () => {
-        
+
         document.getElementById("archivo").click();
 
     }
 
+    useEffect(() => {
+
+        const allHours = [];
+        
+        for (let i = 1; i <= 12; i++) {
+
+            allHours.push(`${i.toString().padStart(2, '0')}:00 AM`);
+
+        }
+        for (let i = 1; i <= 12; i++) {
+
+            allHours.push(`${i.toString().padStart(2, '0')}:00 PM`);
+
+        }
+
+        const sortedHours = [...allHours.slice(0, 12), ...allHours.slice(12).sort()];
+
+        const formattedHours = sortedHours.map(hour => {
+
+            const [h, m] = hour.split(':'); // Separa las horas y los minutos de la cadena de la hora
+            return `${h.padStart(2, '0')}:${m.padEnd(2, '0')}`; // Devuelve la hora en el formato deseado HH:mm
+
+        });
+
+        setHours(formattedHours);
+
+        console.log(allHours);
+
+    }, []);
+
+
     return (
-      <>
-      
-        <div className='contenedorPadre__local'>
-  
-            <div className="hijoRegistrar">
-  
-                <div className="hijoRegistrar__cont">
+        <>
 
-                    <h1 className="tituloRegistrar__local">REGISTRA TU LOCAL</h1>
-                    <box-icon type='solid' name='x-circle' color='white' size='sm'></box-icon>
-                    
-                </div>
-  
-            </div>
+            <div className='contenedorPadre__local'>
 
-            <div className='hijoTexto'>
+                <div className="hijoRegistrar">
 
-                <h2 className="hijoTexto-inclusive">Sumá tu comercio a Inclusive (solo personas físicas)</h2>
+                    <div className="hijoRegistrar__cont">
 
-            </div>
-
-            <div className="line"></div>
-
-            <div className='contenedorDatos__estable'>
-
-                <div className='contenedorInputs__estable'>
-
-                    <h2 className='contenedorInputs__titulo'>Datos de establecimiento</h2>
-
-                    <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre'/>
-
-                    <input type="text" placeholder="Dirección" className='contenedorInputs__direc'/>
-
-                </div>
-
-                <div className="contenedorHorarios__padre">
-
-                    <h2 className="contenedorHorarios__titulo">Horario de atención al público</h2>
-
-                    <div className='contenedorDias'>
-
-                        <select name="dias" id="dias" className="selectDias">
-
-                            <option value="fines">Solo fines de semana</option>
-                            <option value="lunyvie">Lunes a viernes</option>
-                            <option value="todos">Todos los días</option>
-
-                        </select>
+                        <h1 className="tituloRegistrar__local">REGISTRA TU LOCAL</h1>
+                        <box-icon type='solid' name='x-circle' color='white' size='sm'></box-icon>
 
                     </div>
 
-                    <div className="contenedorSelects">
+                </div>
 
-                        <div className="hijoSelects">
+                <div className='hijoTexto'>
 
+                    <h2 className="hijoTexto-inclusive">Sumá tu comercio a Inclusive (solo personas físicas)</h2>
 
-                            <select name="provincia" id="provincia" className="selectStyle">
+                </div>
 
-                                <option value="00:00">00:00</option>
-                                <option value="01:00">01:00</option>
-                                <option value="02:00">02:00</option>
+                <div className="line"></div>
 
-                            </select>
+                <div className='contenedorDatos__estable'>
 
-                            <p className="textoA">a</p>
+                    <div className='contenedorInputs__estable'>
 
-                            <select name="provincia" id="provincia" className="selectStyle">
+                        <h2 className='contenedorInputs__titulo'>Datos de establecimiento</h2>
 
-                                <option value="00:00">00:00</option>
-                                <option value="00:00">01:00</option>
-                                <option value="00:00">02:00</option>
+                        <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre' />
+
+                        <input type="text" placeholder="Dirección" className='contenedorInputs__direc' />
+
+                    </div>
+
+                    <div className="contenedorHorarios__padre">
+
+                        <h2 className="contenedorHorarios__titulo">Horario de atención al público</h2>
+
+                        <div className='contenedorDias'>
+
+                            <select name="dias" id="dias" className="selectDias">
+
+                                <option value="fines">Solo fines de semana</option>
+                                <option value="lunyvie">Lunes a viernes</option>
+                                <option value="todos">Todos los días</option>
 
                             </select>
 
                         </div>
 
-                    </div>
+                        <div className="contenedorSelects">
+
+                            <div className="hijoSelects">
 
 
-                </div>
+                                <select name="provincia" id="provincia" className="selectStyle">
 
-                <div className="contenedorFile__button">
+                                    {hours.map((hour,index) => (
+                                        <option key={index}>
+                                            {hour}
+                                        </option>
+                                    ))}
 
-                    <div className="contenedorTexto__portada">
+                                </select>
 
-                        <h2 className="textoPortada">Foto de Portada (Opcional)</h2>
+                                <p className="textoA">a</p>
 
-                    </div>
+                                <select name="provincia" id="provincia" className="selectStyle">
 
-                    <div className="hijoFile" onClick={handleFileSelect}>
+                                    {hours.map((hour, index) => (
+                                        <option key={index}>
+                                            {hour}
+                                        </option>
+                                    ))}
 
-                        
-                        <div className="contenedorArchivo">
+                                </select>
 
-                            <label htmlFor="archivo" className="subirArchivo">Subir Archivo</label>
-                            <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover" alt=""/>
-                            
+                            </div>
+
                         </div>
-                        
-                        <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*"/>
+
 
                     </div>
 
-                    
-                    <div className="hijoButton">
+                    <div className="contenedorFile__button">
 
-                        <button className="botonCont">Continuar</button>
+                        <div className="contenedorTexto__portada">
+
+                            <h2 className="textoPortada">Foto de Portada (Opcional)</h2>
+
+                        </div>
+
+                        <div className="hijoFile" onClick={handleFileSelect}>
+
+
+                            <div className="contenedorArchivo">
+
+                                <label htmlFor="archivo" className="subirArchivo">Subir Archivo</label>
+                                <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover" alt="" />
+
+                            </div>
+
+                            <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*" />
+
+                        </div>
+
+
+                        <div className="hijoButton">
+
+                            <button className="botonCont">Continuar</button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
             </div>
-  
-        </div>
-  
-      </>
+
+        </>
     )
-  }
-  
-  
+}
+
