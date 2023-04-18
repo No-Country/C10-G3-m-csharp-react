@@ -28,8 +28,8 @@
     font-size: f.toRem(14);
 
     a {
-        height: fit-content;
-        align-self: center;
+      height: fit-content;
+      align-self: center;
     }
   }
 
@@ -54,53 +54,287 @@
 }
 
 .welcome {
-    position: relative;
-    
-    .img {
-        z-index: 0;
+  position: relative;
+
+  .img {
+    z-index: 0;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: f.toRem(24);
+    z-index: 1;
+    font-family: $font-inter;
+    font-size: f.toRem(45);
+    font-weight: 900;
+    line-height: f.toRem(50);
+    margin-left: f.toRem(26);
+    color: #fff3f3;
+    text-shadow: 0px 1px 4px #00000066;
+  }
+
+  .form {
+    position: absolute;
+    top: f.toRem(27);
+    left: f.toRem(24);
+    right: f.toRem(24);
+    z-index: 1;
+  }
+
+  input {
+    position: absolute;
+    z-index: 1;
+    height: f.toRem(48);
+    padding: f.toRem(14.5) f.toRem(10);
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: #8bb9ff;
+    font-size: f.toRem(16);
+  }
+
+  svg {
+    width: fit-content;
+    position: absolute;
+    right: f.toRem(15);
+    top: f.toRem(15);
+    z-index: 1;
+  }
+}
+
+.intro {
+  padding: f.toRem(24);
+
+  .intro_img {
+    margin: f.toRem(24);
+  }
+
+  .intro_text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 600;
+      font-size: f.toRem(30);
+      margin-bottom: f.toRem(24);
     }
 
-    h1 {
-        position: absolute;
-        bottom: f.toRem(24);
-        z-index: 1;
-        font-family: $font-inter;
-        font-size: f.toRem(45);
-        font-weight: 900;
-        line-height: f.toRem(50);
-        margin-left: f.toRem(26);
-        color: #FFF3F3;
-        text-shadow: 0px 1px 4px #00000066;
+    p {
+      margin-bottom: f.toRem(24);
+      color: #666666;
+      line-height: f.toRem(22);
+
+      strong {
+        font-weight: 600;
+      }
     }
 
-    .form {
-        position: absolute;
-        top: f.toRem(27);
-        left: f.toRem(24);
-        right: f.toRem(24);
-        z-index: 1;
+    button {
+      background-color: #2e83ff;
+      color: white;
+      font-size: f.toRem(16);
+      border: 2px solid #8bb9ff;
+      padding: f.toRem(21) f.toRem(61);
+      border-radius: 6px;
+      width: fit-content;
+      align-self: center;
     }
+  }
+}
 
-    input {
-        position: absolute;
-        z-index: 1;
-        height: f.toRem(48);
-        padding: f.toRem(14.5) f.toRem(10);
-        border-radius: 6px;
-        width: 100%;
-    }
+.explore {
+  position: relative;
 
-    input::placeholder {
-        color: #8BB9FF;
-        font-size: f.toRem(16);
+  image {
+    z-index: 0;
+  }
+
+  .explore_text {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: flex;
+    padding-inline: f.toRem(24);
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: f.toRem(31);
+
+    h2 {
+      font-size: f.toRem(30);
+      font-weight: 700;
+      color: white;
+      line-height: f.toRem(33);
+
+      strong {
+        color: #6aa7ff;
+      }
     }
 
     svg {
-        width: fit-content;
-        position: absolute;
-        right: f.toRem(15);
-        top: f.toRem(15);
-        z-index: 1;
+      align-self: flex-end;
+      width: fit-content;
+    }
+  }
+}
+
+.topten {
+  padding-block: f.toRem(24);
+  background-color: #e5eefb;
+  // overflow: hidden;
+
+  h2 {
+    font-size: f.toRem(30);
+    font-weight: 700;
+    line-height: f.toRem(33);
+    margin-bottom: f.toRem(24);
+    margin-inline: f.toRem(24);
+  }
+
+  h3 {
+    color: #666666;
+    margin-bottom: f.toRem(24);
+    margin-inline: f.toRem(24);
+  }
+
+  .topten_cardcontainer::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .topten_cardcontainer::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .topten_cardcontainer::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 10px;
+    border-radius: 5px;
+  }
+
+  @media screen and (min-width: 500px) {
+    .topten_cardcontainer::-webkit-scrollbar {
+      width: 1px;
     }
 
+    .topten_cardcontainer::-webkit-scrollbar-track {
+      background: white;
+      width: 1px;
+    }
+
+    .topten_cardcontainer::-webkit-scrollbar-thumb {
+      background: grey;
+      width: 1px;
+      border-radius: 6px;
+    }
+  }
+
+  .topten_cardcontainer {
+    overflow-x: auto;
+
+    // .topten_cardlist {
+    //   height: f.toRem(140);
+    //   width: max-content;
+    //   margin-bottom: f.toRem(16);
+    //   display: flex;
+    //   gap: f.toRem(8);
+    //   overflow: hidden;
+    //   padding-inline: f.toRem(24);
+
+    //   .topten_card {
+    //     width: f.toRem(140);
+    //     height: 100%;
+    //     background-color: grey;
+    //     border-radius: 6px;
+    //     position: relative;
+
+    //     .topten_card_label {
+    //       position: absolute;
+    //       bottom: 0;
+    //       padding: f.toRem(8);
+    //       width: fit-content;
+    //       background-color: #b042f4;
+    //       border-radius: 6px;
+    //       color: white;
+    //       font-size: f.toRem(12);
+    //       font-weight: 700;
+    //     }
+    //   }
+    // }
+  }
+}
+
+.contribute {
+  padding: f.toRem(24);
+  background-color: #f4f5f7;
+
+  .contribute_img {
+    margin: f.toRem(24);
+  }
+
+  .contribute_text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 600;
+      font-size: f.toRem(30);
+      margin-bottom: f.toRem(24);
+    }
+
+    p {
+      margin-bottom: f.toRem(24);
+      color: #666666;
+      line-height: f.toRem(22);
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    button {
+      background-color: #2e83ff;
+      color: white;
+      font-size: f.toRem(16);
+      border: 2px solid #8bb9ff;
+      padding: f.toRem(21) f.toRem(61);
+      border-radius: 6px;
+      width: fit-content;
+      align-self: center;
+    }
+  }
+}
+
+.faq {
+  padding: f.toRem(24);
+  background-color: E5EEFB;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-weight: 700;
+    font-size: f.toRem(30);
+    line-height: f.toRem(33);
+    margin-bottom: f.toRem(24);
+  }
+
+  p {
+    color: #666666;
+    margin-bottom: f.toRem(24);
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  button {
+    background-color: #2e83ff;
+    color: white;
+    font-size: f.toRem(16);
+    border: 2px solid #8bb9ff;
+    padding: f.toRem(21) f.toRem(61);
+    border-radius: 6px;
+    width: fit-content;
+    align-self: center;
+  }
 }

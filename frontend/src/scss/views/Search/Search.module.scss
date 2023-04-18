@@ -1,0 +1,11 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.searchList {
+    margin: f.toRem(24);
+    display: grid;
+    gap: f.toRem(32);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}

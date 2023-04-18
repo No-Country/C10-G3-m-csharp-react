@@ -1,0 +1,42 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.topten_cardlist {
+  height: f.toRem(140);
+  width: max-content;
+  margin-bottom: f.toRem(16);
+  display: flex;
+  gap: f.toRem(8);
+  overflow: hidden;
+  padding-inline: f.toRem(24);
+
+  .topten_card {
+    width: f.toRem(140);
+    height: 100%;
+    background-color: grey;
+    border-radius: 6px;
+    position: relative;
+
+    img {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .topten_card_label {
+      position: absolute;
+      bottom: 0;
+      padding: f.toRem(8);
+      width: fit-content;
+      background-color: #b042f4;
+      border-radius: 6px 6px 6px 0;
+      color: white;
+      font-size: f.toRem(12);
+      font-weight: 700;
+      z-index: 1;
+    }
+  }
+}
