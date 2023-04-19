@@ -1,29 +1,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 
-function RegisterService() {
-
-    const [establishment, setEstablishment] = useState({
-
-        steps: 1,
-        id: "",
-        name: "",
-        address: "",
-        latitude: "",
-        longitude: "",
-        phoneNumber: "",
-        openingTime: "",
-        closingTime: "",
-        webSite: null,
-        image: "",
-        requestedDate: "",
-        requestStatus: 0,
-        approvedDate: "",
-        approvalUserId: null,
-        categoryId: "",
-        accessibilitys: []
-
-    });
+function Servicio({establishment,setEstablishment,onNextStep}) {
 
     const [hours, setHours] = useState([]);
 
@@ -63,6 +41,43 @@ function RegisterService() {
 
     }, []);
 
+    const handleName = (name) => {
+
+        setEstablishment({ ...establishment, name: name });
+
+    }
+
+    const handleAddress = (address) => {
+
+        setEstablishment({ ...establishment, address: address });
+
+    }
+
+    const handleOpening = (openingTime) => {
+
+        setEstablishment({ ...establishment, openingTime: openingTime });
+
+    }
+
+    const handleClosing = (closingTime) => {
+
+        setEstablishment({ ...establishment, closingTime: closingTime });
+
+    }
+
+    const handleImage = (image) => {
+
+        setEstablishment({ ...establishment, image: image });
+
+    }
+
+    const handleNextClick = () => {
+
+        console.log(establishment);
+        onNextStep();
+
+    }
+
 
     return (
         <>
@@ -96,9 +111,9 @@ function RegisterService() {
 
                             <h2 className='contenedorInputs__titulo'>Datos de establecimiento</h2>
 
-                            <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre' />
+                            <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre' value={establishment.name} onChange={(e) => handleName(e.target.value)}/>
 
-                            <input type="text" placeholder="Dirección" className='contenedorInputs__direc' name="address" />
+                            <input type="text" placeholder="Dirección" className='contenedorInputs__direc' name="address" value={establishment.address} onChange={(e) => handleAddress(e.target.value)}/>
 
                         </div>
 
@@ -123,7 +138,7 @@ function RegisterService() {
                                 <div className="hijoSelects">
 
 
-                                    <select name="openingTime" id="provincia" className="selectStyle">
+                                    <select name="openingTime" id="provincia" className="selectStyle" value={establishment.openingTime} onChange={(e) => handleOpening(e.target.value)}>
 
                                         {hours?.map((hour, index) => (
                                             <option key={index}>
@@ -135,7 +150,7 @@ function RegisterService() {
 
                                     <p className="textoA">a</p>
 
-                                    <select name="closingTime" id="provincia" className="selectStyle">
+                                    <select name="closingTime" id="provincia" className="selectStyle" value={establishment.closingTime} onChange={(e) => handleClosing(e.target.value)}>
 
                                         {hours?.map((hour, index) => (
                                             <option key={index}>
@@ -170,7 +185,7 @@ function RegisterService() {
 
                                 </div>
 
-                                <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*" name="image"/>
+                                <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*" value={establishment.image} onChange={(e) => handleImage(e.target.value)}/>
 
 
                             </div>
@@ -178,7 +193,7 @@ function RegisterService() {
 
                             <div className="hijoButton">
 
-                                <button type="submit" className="botonCont">Continuar</button>
+                                <button className="botonCont" onClick={handleNextClick}>Continuar</button>
 
                             </div>
 
@@ -194,4 +209,4 @@ function RegisterService() {
     )
 }
 
-export default RegisterService;
+export default Servicio;

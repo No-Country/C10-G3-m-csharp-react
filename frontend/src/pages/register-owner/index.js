@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function RegisterOwner() {
+export default function RegisterOwner({ establishment, onNextStep, setEstabishment }) {
 
     const [dias, setDias] = useState([]);
     const [meses, setMeses] = useState([]);
@@ -8,40 +8,48 @@ export default function RegisterOwner() {
 
     useEffect(() => {
         function getDiasDelMes(mes, anio) {
-          const diasEnElMes = new Date(anio, mes, 0).getDate();
-          return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
+            const diasEnElMes = new Date(anio, mes, 0).getDate();
+            return Array.from({ length: diasEnElMes }, (_, i) => i + 1);
         }
-      
+
         function getNombresDeMeses() {
-          return [
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre",
-          ];
+            return [
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre",
+            ];
         }
-      
+
         function getAnios() {
-          const anioActual = new Date().getFullYear();
-          return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
+            const anioActual = new Date().getFullYear();
+            return Array.from({ length: anioActual - 1900 + 1 }, (_, i) => i + 1900);
         }
-      
+
         setMeses(getNombresDeMeses());
         setAnios(getAnios());
-      
+
         // obtener días del mes actual
         const fechaActual = new Date();
         setDias(getDiasDelMes(fechaActual.getMonth() + 1, fechaActual.getFullYear()));
-      
-      }, []);
+
+    }, []);
+
+    const handleEstablecimiento = () => {
+
+        setEstabishment(...establishment, )
+
+    }
+
+
 
     return (
         <>
@@ -73,7 +81,7 @@ export default function RegisterOwner() {
 
                         <h2 className='contenedorIn__ow-titulo'>Datos de establecimiento</h2>
 
-                        <input type="text" placeholder="Nombre del establecimiento" className='contenedorIn__ow-nombre' />
+                        <input type="text" placeholder="Nombre" className='contenedorIn__ow-nombre' />
 
                         <input type="text" placeholder="Dirección" className='contenedorIn__ow-direc' />
 
