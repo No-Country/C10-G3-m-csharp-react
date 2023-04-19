@@ -3,6 +3,7 @@ import HeaderFooter from "../HeaderFooter/HeaderFooter"
 import Facebook from "../Facebook/Facebook"
 import Twiter from "../Twiter/Twiter"
 import Instagram from "../Instagram/Instagram"
+import Link from "next/link"
 
 export default function isFooter() {
     return (
@@ -14,7 +15,9 @@ export default function isFooter() {
             </div>
             <div className={Footer.Container__texto}>
                 <h4 className={Footer.Container__TextoComplait}>
+                    <Link href="/frequent">
                     Preguntas frecuentes
+                    </Link> 
                     Terminos y condiciones
                     Politica de Privacidad
                     Contacto
