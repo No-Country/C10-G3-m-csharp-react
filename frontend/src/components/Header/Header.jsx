@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 export default function IsHeader() {
   const router = useRouter();
 
-export default function isHeader() {
+
     return (
         <header className={Header.headerContainer}>
             <div className={Header.Container}>
@@ -51,4 +51,5 @@ export default function isHeader() {
         </header>
 
     )
+
 }
