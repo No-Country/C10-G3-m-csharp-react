@@ -1,5 +1,7 @@
 /* Navegacion */
 
+
+
 $ItemsColor: #001c7e;
 $Close: #63a3fd;
 $White: #fff;
@@ -106,3 +108,37 @@ html,body{
   color: $InstagramColor;
 }
 
+//Acordion
+
+.Answers{
+  background-color: #001C7E;
+  width: 312px;
+  height: 32px;
+  border-radius: 6px;
+  color: $White ;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5rem;
+  margin-bottom: 25px;
+  
+}
+
+.Answersh1{
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 16px;
+ line-height: 19px;
+ text-transform: uppercase
+}
+
+
+
+/*Container Answer */
+
+.ContainerAnswers{
+  display: block;
+  margin: 0 auto;
+}

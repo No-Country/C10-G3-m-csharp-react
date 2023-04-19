@@ -3,7 +3,9 @@ import styles from "../../scss/views/Landing/Landing.module.scss";
 import Image from "next/image";
 import InclusiveLogo from "@/components/inclusiveLogo/inclusiveLogo";
 import Img1 from "../../../public/img/landing/landing-img-1.png";
+import Img2 from "../../../public/img/landing/disable.png"
 import SearchLogo from "@/components/searchLogo/searchLogo";
+
 
 function Landing() {
   return (
@@ -12,13 +14,7 @@ function Landing() {
         <div className={styles.logoContainer}>
           <InclusiveLogo width={121} height={146} />
         </div>
-        <div className={styles.auth}>
-          <Link href="/login">
-            Login/
-            <br />
-            Registro
-          </Link>
-        </div>
+        
         <nav className={styles.navbar}>
           <ul>
             <li>
@@ -35,13 +31,20 @@ function Landing() {
             </li>
           </ul>
         </nav>
+        <div className={styles.auth}>
+          <Link href="/login">
+            Login/
+            <br />
+            Registro
+          </Link>
+        </div>
       </header>
 
       <div>
         <section className={styles.welcome}>
           <Image
             src={Img1}
-            width={360}
+            width={380}
             height={278}
             alt="person in a wheelchair"
             priority
@@ -53,7 +56,21 @@ function Landing() {
 
           <h1>Bienvenidos a INCLUSIVE</h1>
         </section>
-        <section></section>
+        <section className={styles.ContainerAccess}>
+             <div className={styles.Access}>
+               <h2 className={styles.AccessTodo}>Accesibilidad para Todos</h2>
+               <p>En Inclusive, nuestra misión es hacer que la accesibilidad sea más accesible. Con nuestra aplicación, puedes encontrar los lugares más accesibles para ti con un solo clic. Bienvenides a Inclusive, donde la accesibilidad está al alcance de todos.</p>
+               <button className={styles.ButonAccess}>Contribuir</button>
+             </div>
+             <div>
+              <Image 
+              src={Img2}
+              width={553}
+              height={448}
+              alt="Accesibilidad"
+              />
+             </div>
+        </section>
         <section></section>
         <section></section>
         <section></section>
