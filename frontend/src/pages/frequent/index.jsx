@@ -48,7 +48,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Respuesta
+                      <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
                 
@@ -63,7 +63,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                       Respuesta
+                    <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
                 
@@ -78,7 +78,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Respuesta
+                    <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
                 
@@ -93,7 +93,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Respuesta
+                    <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
                 
@@ -108,7 +108,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Respuesta
+                    <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
                 
@@ -123,7 +123,7 @@ function frequent() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                       Respuesta
+                    <> <input type="text" placeholder="Respuesta" /> </> 
                     </Typography>
                 </AccordionDetails>
             </Accordion>
