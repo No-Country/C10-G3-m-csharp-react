@@ -2,6 +2,7 @@ import CategoryCard from "../categoryCard/categoryCard";
 import CategorySkeleton from "../categorySkeleton/categorySkeleton";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import styles from "../../scss/views/Categories/CategoryList.module.scss"
 
 function CategoryList() {
   const { data, isLoading, error } = useQuery({
@@ -37,7 +38,7 @@ function CategoryList() {
       {data &&
         data.map((e) => {
           return (
-            <li key={e.id}>
+            <li key={e.id} className={styles.categories}>
               <CategoryCard data={e} />
             </li>
           );
