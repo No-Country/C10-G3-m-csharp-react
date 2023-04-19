@@ -53,9 +53,9 @@ function FeaturedCard() {
             </div>
 
             <ul>
-              {[...Array(3)].map((e) => {
+              {[...Array(3)].map((e, idx) => {
                 return (
-                  <li key={e?.id}>
+                  <li key={idx}>
                     <CheckLogo /> <p>{e?.name}</p>
                   </li>
                 );

@@ -78,7 +78,7 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
                   </button>
                 );
               })}
-              <FinalRating rating={rating} />
+              <FinalRating rating={Math.trunc(rating)} />
             </div>
           )}
         </div>
