@@ -2,15 +2,15 @@ import CategoryCard from "../categoryCard/categoryCard";
 import CategorySkeleton from "../categorySkeleton/categorySkeleton";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import styles from "../../scss/views/Categories/CategoryList.module.scss"
 
 function CategoryList() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
       const response = await axios
-        .get("http://wachin93-001-site1.ftempurl.com/api/category")
+        .get("https://inclusive-001-site1.atempurl.com/api/category")
         .then((res) => res);
-
       return response.data;
     },
   });
@@ -38,7 +38,7 @@ function CategoryList() {
       {data &&
         data.map((e) => {
           return (
-            <li key={e.id}>
+            <li key={e.id} className={styles.categories}>
               <CategoryCard data={e} />
             </li>
           );

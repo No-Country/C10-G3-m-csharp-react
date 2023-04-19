@@ -60,6 +60,9 @@ $SearchBorder: #8BB9FF;
   justify-content: center;
   margin: 35px auto;
 
+  input {
+    padding-inline: 1rem;
+  }
 }
 
 .Search {
@@ -76,7 +79,6 @@ $SearchBorder: #8BB9FF;
 
 .Search::placeholder {
   color: $HeaderContainer3;
-  padding: 1rem;
 }
 
 

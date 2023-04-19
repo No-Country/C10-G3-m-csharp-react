@@ -11,7 +11,7 @@ const { container, loginImageCenter, loginButtonsContainer, linksWrapper } =
 export default function index() {
   return (
     <div className={container}>
-      <Image src={Logo} className={loginImageCenter} />
+      <Image src={Logo} className={loginImageCenter} alt="" />
 
       <div className={loginButtonsContainer}>
         <Link href="/signIn">

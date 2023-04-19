@@ -8,9 +8,11 @@
   display: flex;
 
   .img {
-    background-color: $grey;
+    flex-grow: 0;
+    flex-shrink: 0;
     height: 100%;
-    width: 47.43%;
+    width: f.toRem(140);
+    overflow: hidden;
   }
 
   .text {
@@ -44,6 +46,15 @@
   position: relative;
 
   .showMore__header {
+    .showMore__img {
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
     .showMore__img,
     .showMore__map {
       position: relative;
@@ -149,17 +160,26 @@
     }
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 750px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-inline: 240px;
+    margin-inline: 17.5%;
 
     .showMore__header {
       grid-column: span 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;     
+      gap: 16px;
+
+      .showMore__img {
+        img {
+          max-width: none;
+          object-fit: cover;
+          height: 100% !important;
+          width: 100%;
+        }
+      }
 
       .showMore__img,
       .showMore__map {
@@ -177,8 +197,6 @@
       .showMore__map {
         grid-column: 2;
       }
-
-
     }
 
     .showMore__text {

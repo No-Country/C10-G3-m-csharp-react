@@ -1,12 +1,17 @@
-import Header from "../../scss/views/Header/Header.module.scss"
-import Image from "next/image"
-import Navbar from "../Navbar/Navbar"
-import Link from "next/link"
-import LogoHeader from "../HeaderLogo/HeaderSvg"
-import LupaHeader from "../LupaSvg/Lupa"
-import MapaHeader from "../MapaSvg/Mapa"
+import Header from "../../scss/views/Header/Header.module.scss";
+import Image from "next/image";
+import Navbar from "../Navbar/Navbar";
+import Link from "next/link";
+import LogoHeader from "../HeaderLogo/HeaderSvg";
+import LupaHeader from "../LupaSvg/Lupa";
+import MapaHeader from "../MapaSvg/Mapa";
 
-export default function isHeader() {
+import { useRouter } from "next/router";
+
+export default function IsHeader() {
+  const router = useRouter();
+
+
     return (
         <header className={Header.headerContainer}>
             <div className={Header.Container}>
@@ -46,4 +51,5 @@ export default function isHeader() {
         </header>
 
     )
+
 }

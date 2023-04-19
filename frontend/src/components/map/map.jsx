@@ -5,6 +5,7 @@ import styles from "../../scss/views/Categories/MapCard.module.scss";
 import L from "leaflet";
 
 function Map({center}) {
+
   const position = center;
 
   const myIcon = L.icon({

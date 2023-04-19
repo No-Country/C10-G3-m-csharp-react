@@ -15,7 +15,7 @@ function HomeView() {
 
       <ul className={styles.list}>
 
-        <CategoryList/>
+        <CategoryList />
 
         <li className={styles.featured}>
           <FeaturedCard />

@@ -22,8 +22,13 @@
     padding: f.toRem(8);
     border-radius: 6px;
 
+    @media screen and (min-width: 750px) {
+      width: 25%;
+      align-self: center;
+    }
+
     svg {
-        width: fit-content;
+      width: fit-content;
     }
   }
 
@@ -40,5 +45,21 @@
 
   .nearyou {
     grid-row-start: 10;
+  }
+
+  @media screen and (min-width: 750px) {
+    .list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured {
+      grid-column: 3;
+      grid-row: 1 / 5;
+    }
+
+    .nearyou {
+      grid-column: 3;
+      grid-row: 5 / 9;
+    }
   }
 }
