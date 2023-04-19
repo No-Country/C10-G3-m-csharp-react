@@ -9,6 +9,10 @@ import AppleButton from "@/components/Buttons/AppleButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useRouter } from "next/router";
+
+
+
 
 const {
   container,
@@ -35,6 +39,8 @@ const schema = yup
   .required();
 
 export default function index() {
+
+  
   const {
     register,
     formState: { errors },
@@ -43,8 +49,12 @@ export default function index() {
     resolver: yupResolver(schema),
   });
 
+  const router = useRouter();
+
   const onSubmit = async (data) => {
-    console.log(data);
+
+
+    console.log(data);   
 
     let endpoint =
       "https://inclusive-001-site1.atempurl.com/api/Authentication/login";
@@ -57,8 +67,32 @@ export default function index() {
       body: JSON.stringify(data),
     });
 
-    console.log(response.status);
-  };
+    console.log(response.status)
+
+    
+    let status = response.status;
+
+
+    
+    
+    let token = response.json();  
+
+    token
+      .then((data) => {
+
+        localStorage.setItem("userToken", JSON.stringify(data.token));
+        console.log(data)
+
+        status === 200 
+        ? ( router.push("/") )
+        : ( console.log('Usuario no autorizado'))
+
+        /* token
+        ? (router.push("/"))
+        : (console.log('Usuario no autorizado')) */
+
+    
+  })}
 
   return (
     <div className={container}>
@@ -80,6 +114,7 @@ export default function index() {
           placeholder="Contraseña"
           className={signInInputOutlined}
         />
+
         {errors.password && (
           <div className={errorMsg}>{errors.password.message}</div>
         )}
@@ -100,5 +135,4 @@ export default function index() {
         </div>
       </div>
     </div>
-  );
-}
+  )}
