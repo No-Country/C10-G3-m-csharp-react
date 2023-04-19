@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.Models;
+using Entities.Models.Establishments;
 using Microsoft.EntityFrameworkCore;
 using Repository.Extensions;
 using Shared.RequestFeatures;
@@ -37,5 +38,14 @@ namespace Repository
                     trackChanges)
                 .SingleOrDefaultAsync();
 
+        //private async Task<Accessibility?> GetAccessibility(Guid id, bool trackChanges, string Ids) =>
+        //    await FindByCondition(a => Ids.Contains(a.Id)).Select(x => x.Id,
+        //            trackChanges)
+        //        .ToListAsync();
+
+        /*
+         *  var accessibilityIds = await _repository.Accessibilitys
+            .Where(a => establishment.AccessibilityIds.Contains(a.Id)).Select(x => x.Id).ToListAsync();
+         */
     }
 }

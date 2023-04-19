@@ -23,7 +23,7 @@ public class EstablishmentRepository : RepositoryBase<Establishment>,
             .Include(e => e.EstablishmentsAccessibilitys!)
             .ThenInclude(ea => ea.Accessibility)
             .Include(e => e.Reviews)
-            //.FilterGeneric(parameters.FilterColumn, parameters.FilterValue)
+            .FilterGeneric(parameters.FilterColumn, parameters.FilterValue)
             .SearchGeneric(parameters.SearchColumn, parameters.SearchTerm)
             .SortGeneric(parameters.SortColumn, parameters.SortOrder)
             .ToListAsync();

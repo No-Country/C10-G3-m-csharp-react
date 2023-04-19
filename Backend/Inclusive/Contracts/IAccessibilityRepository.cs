@@ -9,5 +9,7 @@ namespace Contracts
         void CreateAccessibility(Accessibility accessibility);
         Task<Accessibility?> GetAccessibilityByIdAsync(Guid id, bool trackChanges);
         void DeleteAccessibility(Accessibility accessibility);
+
+
     }
 }

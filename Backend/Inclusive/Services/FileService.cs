@@ -69,7 +69,6 @@ public class FileService : IFileService
         establishmentEntity!.Image = urlPath;
         await _repository.SaveAsync();
 
-
         var establishment = await _repository.Establishments.GetEstablishmentByIdAsync(fatherId, false);
         return _mapper.Map<EstablishmentDto>(establishment);
     }

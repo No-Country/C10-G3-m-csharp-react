@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Service.Contracts;
-using Services.Models;
 using Shared.DataTransferObjects.UserDtos;
 using Shared.Helper;
+using Shared.Models;
 
 namespace Services;
 
@@ -102,13 +102,12 @@ public sealed class AuthenticationService : IAuthenticationService
 
     private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, IEnumerable<Claim> claims)
     {
-        //var jwtSettings = _configuration.GetSection("JwtSettings");
         var tokenOptions = new JwtSecurityToken
         (
             issuer: _jWTSettings.ValidIssuer,
             audience: _jWTSettings.ValidAudience,
             claims: claims,
-            expires: DateTime.Now.AddMinutes(Convert.ToDouble(_jWTSettings.DurationInMinutes)),
+            expires: DateTime.UtcNow.AddDays(Convert.ToDouble(_jWTSettings.DurationInDays)),
             signingCredentials: signingCredentials
         );
         return tokenOptions;

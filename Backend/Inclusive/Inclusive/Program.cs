@@ -82,8 +82,8 @@ app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(s =>
 {
-    s.SwaggerEndpoint("/swagger/v1/swagger.json",
-        "Inclusive API V1");
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Inclusive API V1");
+    //s.RoutePrefix = string.Empty;
 });
 
 app.MapControllers();

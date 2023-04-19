@@ -1,6 +1,4 @@
 ﻿using System.Text.Json;
-using Entities.Models;
-using Entities.Models.Owners;
 using Inclusive.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +27,7 @@ public class EstablishmentController : ControllerBase
     {
         var pagedResult = await _service.EstablishmentService.GetEstablishmentsAsync(parameters, false);
         Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+
         return Ok(pagedResult.establishmentDtos);
     }
 
@@ -44,6 +43,9 @@ public class EstablishmentController : ControllerBase
 
     public async Task<IActionResult> CreateEstablishment([FromForm] EstablishmentForCreationDto establishment)
     {
+        // esto hay q sacarlo de JWT si pasamos de ronda
+        establishment.UserId = "29516888-6214-4FBB-A20B-7509B07F25CD";
+
         var path = Path.Combine(_webHostEnvironment.WebRootPath);
         var urlPath = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 

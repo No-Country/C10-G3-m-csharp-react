@@ -12,7 +12,7 @@ using Microsoft.OpenApi.Models;
 using Repository;
 using Service.Contracts;
 using Services;
-using Services.Models;
+using Shared.Models;
 
 namespace Inclusive.Extensions
 {

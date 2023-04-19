@@ -1,10 +1,10 @@
-﻿namespace Services.Models
+﻿namespace Shared.Models
 {
     public class JWTSettings
     {
         public string SecretKey { get; set; } = string.Empty;
         public string ValidIssuer { get; set; } = string.Empty;
         public string ValidAudience { get; set; } = string.Empty;
-        public double DurationInMinutes { get; set; }
+        public double DurationInDays { get; set; }
     }
 }
