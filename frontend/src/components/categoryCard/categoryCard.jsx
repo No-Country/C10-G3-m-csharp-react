@@ -11,7 +11,7 @@ function CategoryCard({data}) {
       <div className={styles.text}>
         <h3>{data.name}</h3>
         <p>{`${data.establishments.length} establecimientos`}</p>
-        <Link href={`/category/${data.name.toLowerCase()}`}>Ver listado</Link>
+        <Link href={`/category/${data.id}`}>Ver listado</Link>
       </div>
     </div>
   );

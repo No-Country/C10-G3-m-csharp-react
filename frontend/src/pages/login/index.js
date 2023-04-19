@@ -9,7 +9,7 @@ const { container, loginImageCenter,loginButtonsContainer } = styles;
 export default function Login() {
   return (
     <div className={container}>
-      <Image src={Logo} className={loginImageCenter} />
+      <Image src={Logo} className={loginImageCenter} alt="" />
 
       <div className={loginButtonsContainer}>
         <Button value='Ingresar'/>
