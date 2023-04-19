@@ -28,6 +28,7 @@ function Category(props) {
                 features={e.accessibilitys}
                 showRating
                 fullCard={isHighWidth}
+                rating={e.averageRating}
               />
             </li>
           );

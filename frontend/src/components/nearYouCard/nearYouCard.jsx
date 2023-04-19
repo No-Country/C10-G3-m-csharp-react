@@ -54,9 +54,9 @@ function NearYouCard() {
             </div>
 
             <ul>
-              {data?.accessibilitys?.map((e) => {
+              {data?.accessibilitys?.map((e, idx) => {
                 return (
-                  <li key={e.id}>
+                  <li key={idx}>
                     <CheckLogo /> <p>{e.name}</p>
                   </li>
                 );
