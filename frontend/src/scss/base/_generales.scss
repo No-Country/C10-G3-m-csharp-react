@@ -44,11 +44,11 @@ html,body{
   height: 100%;
   position: fixed;
   top: 0;
-  left: 100;
+  left: 100vw;
   overflow-y: hidden;
-  margin-left: 125px;
+  margin-left: 40%;
   padding: 1rem;
-  z-index: 100;
+  z-index: 900;
   transition: 0.3s ease all;
   
 }
