@@ -5,13 +5,13 @@ function MainLayout({ children }) {
 
   //
   const router = useRouter();
-  const routes = ["/login", "/signup", "/signIn", "/landing"]
+  const routes = ["/login", "/signup", "/signIn", "/landing" , "/frequent"]
 
   return (
     <>
       {routes.includes(router.pathname) ? "" : <Header/>}
       <main>{children}</main>
-      <Footer/>
+      {routes.includes(router.pathname) ? "" :  <Footer/>}
     </>
   );
 }

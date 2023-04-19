@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 const API = 'https://inclusive-001-site1.atempurl.com/api/accessibility';
 
 
-export default function Index() {
+export default function RegisterCara() {
     
     const [showTextArea, setShowTextArea] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);

@@ -11,49 +11,45 @@ import { useRouter } from "next/router";
 export default function IsHeader() {
   const router = useRouter();
 
-  return (
-    <header className={Header.headerContainer}>
-      <div className={Header.Container}>
-        <div className={Header.Container__Dates}>
-          <div>
-            <LogoHeader />
-          </div>
-        </div>
-        <div className={Header.Texto}>
-          <h1 className={Header.Texto__Welcome}> Hola Pedro Pascal </h1>
-          <h2 className={Header.Texto__date}>Viernes 24 de marzo</h2>
-        </div>
-        <Navbar />
-      </div>
 
-      <form
-        className={Header.form}
-        onSubmit={(e) => {
-          e.preventDefault();
-          const searchTerm = e.target.children[0].children[0].value;
-          router.push(`/search?term=${searchTerm}`);
-        }}
-      >
-        <label htmlFor="text">
-          <input
-            id="text"
-            className={Header.Search}
-            type="text"
-            placeholder="Buscar establecimiento"
-          />
-        </label>
-        <div className={Header.lupa}>
-          <LupaHeader />
-        </div>
-      </form>
-      <div className={Header.mapa}>
-        <div>
-          <MapaHeader />
-        </div>
-        <Link href="/" className={Header.mapa__letter}>
-          Buscar en el mapa
-        </Link>
-      </div>
-    </header>
-  );
+    return (
+        <header className={Header.headerContainer}>
+            <div className={Header.Container}>
+                <div className={Header.Container__Dates}>
+                    <div>
+                        <LogoHeader/>
+                    </div>
+                </div>
+                <div className={Header.Texto}>
+                    <h1 className={Header.Texto__Welcome}> Hola Pedro Pascal </h1>
+                    <h2 className={Header.Texto__date}>Viernes 24 de marzo</h2>
+                </div>
+                <Navbar />
+            </div>
+
+            <form className={Header.form}>
+                <label htmlFor="text">
+                    <input
+                        id="text"
+                        className={Header.Search}
+                        type="text"
+                        placeholder="Buscar establecimiento" />
+                </label>
+                <div className={Header.lupa}>
+                <LupaHeader/>
+                </div>
+            </form>
+            <div className={Header.mapa}>
+                <div>
+                <MapaHeader/>
+
+                </div>
+                <Link href="/" className={Header.mapa__letter}> Buscar en el mapa </Link>
+            </div>
+
+
+        </header>
+
+    )
+
 }
