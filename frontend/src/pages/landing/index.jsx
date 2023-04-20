@@ -30,7 +30,7 @@ function Landing() {
               <Link href="/">Categorias de lugares</Link>
             </li>
             <li>
-              <Link href="/">Quienes somos</Link>
+              <Link href="/somos">Quienes somos</Link>
             </li>
             <li>
               <Link href="/contact">Contacto</Link>
