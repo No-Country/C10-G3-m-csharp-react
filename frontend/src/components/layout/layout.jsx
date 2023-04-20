@@ -5,7 +5,7 @@ function MainLayout({ children }) {
 
   //
   const router = useRouter();
-  const routes = ["/login", "/signup", "/signIn", "/landing" , "/frequent"]
+  const routes = ["/login", "/signup", "/signIn", "/landing", "/register"]
 
   return (
     <>
