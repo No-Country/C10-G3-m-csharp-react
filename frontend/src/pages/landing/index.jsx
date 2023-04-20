@@ -5,7 +5,6 @@ import InclusiveLogo from "@/components/inclusiveLogo/inclusiveLogo";
 import Instagram from "../../components/Instagram/Instagram"
 import Twiter from "../../components/Twiter/Twiter"
 import Facebook from "../../components/Facebook/Facebook"
-
 import Img1 from "../../../public/img/landing/landing-img-1.png";
 import Img2 from "../../../public/img/landing/landing-img-2.png";
 import Img3 from "../../../public/img/landing/landing-img-3.png";
@@ -17,7 +16,6 @@ import SearchLogo from "@/components/searchLogo/searchLogo";
 import RightArrowLogo from "@/components/rightArrowLogo/rightArrowLogo";
 import TopTenCardList from "@/components/topTenCardList/topTenCardList";
 
-import Footer from "../../components/Footer/Footer"
 
 function Landing() {
   return (
