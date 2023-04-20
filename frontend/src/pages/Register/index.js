@@ -12,7 +12,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
+import { userAgent } from "next/server";
 
 const {
   container,
@@ -53,8 +54,7 @@ const schema = yup
   .required();
 
 export default function register() {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const [passwordImage, setPasswordImage] = useState({
     src: EyeOff,
@@ -70,34 +70,33 @@ export default function register() {
   });
 
   const onSubmit = async (data) => {
+
     console.log(data);
+
+    let userData = {
+      "firstName": data.firstName ,
+      "lastName": data.lastName,
+      "email": data.email,
+      "userName": data.userName,
+      "password": data.repeat_password
+    }
 
     let endpoint =
       "https://inclusive-001-site1.atempurl.com/api/Authentication/register";
+
     let response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
-    });
-
+      body: JSON.stringify(userData),
+    })
 
     let responseStatus = response.status;
 
-    responseStatus === 200
-    ? ( router.push("/") )
-    : (alert('Usuario no registrado'))
-
-    let userCreated = response.json();
-
-    console.log(userCreated);
-
-
-
-
-
-    console.log(response.status);
+    responseStatus === 201
+    ? (router.push("/signIn"))
+    : (console.log('Usuario no autorizado'))    
   };
 
   const changeTypeAndImg = () => {
@@ -226,9 +225,9 @@ export default function register() {
               Acepto los terminos y condiciones
             </label>
           </div>
-          <Link href="./signIn">
-            <Button type="submit" value="Aceptar" />
-          </Link>
+          {/* <Link href="./signIn"> */}
+          <Button type="submit" value="Aceptar" />
+          {/* </Link> */}
         </form>
       </div>
     </div>
