@@ -17,7 +17,9 @@ export default function IsHeader() {
             <div className={Header.Container}>
                 <div className={Header.Container__Dates}>
                     <div>
+                        <Link href="/landing">
                         <LogoHeader/>
+                        </Link>
                     </div>
                 </div>
                 <div className={Header.Texto}>
