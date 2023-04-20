@@ -3,6 +3,21 @@
 @use "../../utilities/functions" as f;
 @use "../../utilities/gradients" as *;
 
+$LetterColor : #fff;
+$Container: #2976E9;
+
+@mixin Container-Flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
 .header {
   height: f.toRem(278);
   background: $bg-gradient;
@@ -60,12 +75,12 @@
     z-index: 0;
   }
 
-  h1 {
+  .title {
     position: absolute;
     bottom: f.toRem(24);
     z-index: 1;
     font-family: $font-inter;
-    font-size: f.toRem(45);
+    font-size: f.toRem(52);
     font-weight: 900;
     line-height: f.toRem(50);
     margin-left: f.toRem(26);
@@ -337,4 +352,258 @@
     width: fit-content;
     align-self: center;
   }
+}
+
+.Container2{
+  background-color: $Container;
+  width: 100%;
+  height: 400px;
+  gap: 2.5rem;
+
+&__texto{
+  color: $LetterColor;
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+ 
+  
+  &__img{
+    position: relative;
+    left: -130px;
+    bottom: -10px;
+    margin-bottom: 40px;
+  }
+
+  &__TextoComplait{
+    margin-bottom: 20px;
+  }
+
+
+
+ 
+}
+
+
+.isContainer{
+  width: 32px;
+  height: 32px;
+  background-color: $LetterColor;
+  @include Container-Flex;
+  border-radius: 50%;
+  
+}
+
+
+.RedesSociales{
+  @include Container-Flex;
+  gap: 3rem;
+  margin-bottom: 25px;
+}
+
+.Copyrigth{
+  @include Container-Flex;
+}
+
+.imagesNew , .imagesNew2 , .imagesNew3{
+  display: none;
+}
+
+@media screen and (min-width: 1200px ){
+
+  
+  
+  .header{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 9rem;
+  }
+
+  .logoContainer{
+    position: relative;
+    bottom: -50px;
+  }
+
+  .navbar{
+    position: relative;
+    bottom: -100px;
+  }
+
+  .auth{
+    position: relative;
+    bottom: -100px;
+  }
+
+  .inputValue{
+    width: 300px;
+    position: relative;
+    left: 500px;
+    bottom: -400px;
+  }
+  .form{
+    width: 400px;
+   background-color: red;
+  }
+
+  .lupa{
+    position: relative;
+    left: 500px;
+    bottom: -350px;
+  }
+
+  .tituloGeneral{
+    position: relative;
+    left: 400px;
+    bottom: 200px;
+    width: 500px;
+    
+  }
+
+  .title{
+    display: block;
+  }
+  
+
+  .images0{
+    display: none;
+  }
+
+  .explore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagesNew{
+    width: 500px;
+    margin-bottom: 50px;
+  }
+
+ .texto{
+    position: relative;
+    bottom: 150px;
+    left: 50%;
+  }
+
+  .link{
+    position: relative;
+    bottom: 130px;
+    left: -25%;
+  }
+
+  .imagesNew2{
+    width: 200px;
+    height: 335px;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .imagesNew3{
+    width: 200px;
+    height: 335px;
+    position: relative;
+    bottom: 20px;
+  }
+
+
+
+
+     .images{
+         width: 100vw;
+         height: 500px;
+     }
+
+     /* Acomodar */
+     .InputValue{
+      width: 200px;
+      margin: 40px auto;
+     }
+
+     .intro{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+
+     .intro_text{
+      width: 370px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+     }
+
+     .buttonLogin{
+      position: relative;
+      left: -80px;
+     }
+
+     .images2{
+      width: 553px;
+      height: 448px;
+     }
+
+     /* Contributy  */
+
+     .contribute_text{
+      width: 370px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+     }
+
+     .contribute{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+
+     .image3{
+      width: 553px;
+      height: 467px;
+     }
+   
+     .buttonService{
+      position: relative;
+      left: -80px;
+     }
+
+     /*Preguntas */
+
+     .faq{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+     }
+
+     .Answer{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: .5rem;
+     }
+
+     .ParrafoAnswer{
+      width: 600px;
+      height: 56px;
+     }
+
+     .footers{
+      display: flex;
+      align-items: center;
+     }
+
+
+     .Container2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        gap: 4rem;
+     }
+
+
+
 }
