@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const {
   container,
@@ -52,6 +53,9 @@ const schema = yup
   .required();
 
 export default function register() {
+
+  const router = useRouter()
+
   const [passwordImage, setPasswordImage] = useState({
     src: EyeOff,
     alt: "EyeOff",
@@ -77,6 +81,21 @@ export default function register() {
       },
       body: JSON.stringify(data),
     });
+
+
+    let responseStatus = response.status;
+
+    responseStatus === 200
+    ? ( router.push("/") )
+    : (alert('Usuario no registrado'))
+
+    let userCreated = response.json();
+
+    console.log(userCreated);
+
+
+
+
 
     console.log(response.status);
   };

@@ -65,33 +65,18 @@ export default function index() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    });
-
-    console.log(response.status)
-
+    })
     
-    let status = response.status;
 
-
-    
-    
+    console.log(response.status)    
+     
     let token = response.json();  
 
     token
       .then((data) => {
-
         localStorage.setItem("userToken", JSON.stringify(data.token));
         console.log(data)
-
-        status === 200 
-        ? ( router.push("/") )
-        : ( console.log('Usuario no autorizado'))
-
-        /* token
-        ? (router.push("/"))
-        : (console.log('Usuario no autorizado')) */
-
-    
+        router.push("/")                
   })}
 
   return (
