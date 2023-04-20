@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 const API = 'https://inclusive-001-site1.atempurl.com/api/accessibility';
 
 
-export default function RegisterCara() {
+export default function RegisterCara({handleNextStep,establishment,setEstablishment}) {
     
     const [showTextArea, setShowTextArea] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -45,6 +45,20 @@ export default function RegisterCara() {
 
     }, [])
 
+    const handleContinuar = () => {
+
+        setEstablishment(establishment => ({
+
+            ...establishment
+
+        }));
+
+        handleNextStep();
+
+        console.log(establishment);
+
+    }
+
     return (
         
         <>
@@ -78,7 +92,7 @@ export default function RegisterCara() {
                         <div className="checkHijo">
 
                             {accessibilityData && accessibilityData.map(item => (
-                                <div className='typeCheck' key={item.id}>
+                                <div className='typeCheck' key={item.id} value={establishment.accessibilityIds || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, accessibilityIds: e.target.value}))}>
 
                                     <input type="checkbox" id="cbox1" value="first_checkbox" />
                                     <label className="labelCheck" for="cbox1">{item.name}</label>
@@ -93,6 +107,16 @@ export default function RegisterCara() {
                             </div>
 
                         </div>
+
+                    </div>
+
+                </div>
+
+                <div className="containerButton">
+
+                    <div className='hijoButton'>
+
+                        <button className="buttonCara" onClick={handleContinuar}>Continuar</button>
 
                     </div>
 
