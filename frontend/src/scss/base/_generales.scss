@@ -1,9 +1,18 @@
 /* Navegacion */
 
+
+
 $ItemsColor: #001c7e;
 $Close: #63a3fd;
 $White: #fff;
+$InstagramColor : #2976E9;
 
+html,body{
+  overflow-x: hidden;
+  color:black;
+  font-family:'Opens Sans',helvetica;  
+  
+}
 
 
 .items.open {
@@ -22,6 +31,8 @@ $White: #fff;
   position: relative;
   left: 55%;
   top: 20px;
+  border-radius: 2px;
+
   
 }
 
@@ -33,14 +44,23 @@ $White: #fff;
   height: 100%;
   position: fixed;
   top: 0;
-  bottom: 0;
-  right: 0;
-  margin-left: 125px;
-  left: 100%;
-  z-index: 100;
+  left: 100vw;
+  overflow-y: hidden;
+  margin-left: 40%;
+  padding: 1rem;
+  z-index: 900;
   transition: 0.3s ease all;
-  overflow-x: hidden;
-  display: block;
+  
+}
+.CloseClose:hover{
+  overflow-y: auto;
+}
+.CloseClose::-webkit-scrollbar{
+  width: 8px;
+}
+
+.CloseClose::-webkit-scrollbar-thumb{
+  background-color: red;
 }
 
 .CloseClose.open{
@@ -85,5 +105,40 @@ $White: #fff;
 }
 
 .bxl-instagram-alt{
-  color: #2976E9;
+  color: $InstagramColor;
+}
+
+//Acordion
+
+.Answers{
+  background-color: #001C7E;
+  width: 312px;
+  height: 32px;
+  border-radius: 6px;
+  color: $White ;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5rem;
+  margin-bottom: 25px;
+  
+}
+
+.Answersh1{
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 16px;
+ line-height: 19px;
+ text-transform: uppercase
+}
+
+
+
+/*Container Answer */
+
+.ContainerAnswers{
+  display: block;
+  margin: 0 auto;
 }

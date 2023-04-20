@@ -3,14 +3,15 @@ import {useRouter} from 'next/router';
 import Footer from "../Footer/Footer"
 function MainLayout({ children }) {
 
+  //
   const router = useRouter();
-  const routes = ["/login", "/signup", "/signIn", "/landing"]
+  const routes = ["/login", "/signup", "/signIn", "/landing", "/register"]
 
   return (
     <>
       {routes.includes(router.pathname) ? "" : <Header/>}
       <main>{children}</main>
-      <Footer/>
+      {routes.includes(router.pathname) ? "" :  <Footer/>}
     </>
   );
 }

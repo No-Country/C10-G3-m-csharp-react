@@ -3,30 +3,39 @@ $LetterColor : #fff;
 $Container: #2976E9;
 
 @mixin Container-Flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .Container{
-   background-color: $Container;
-    @include Container-Flex;
-    width: 360px;
+    background-color: $Container;
+    width: 100%;
     height: 302px;
-    gap: 1rem;
+    gap: 2.5rem;
 
   &__texto{
     color: $LetterColor;
-    width: 200px;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+  }
    
     
+    &__img{
+      position: relative;
+      left: -130px;
+      bottom: -10px;
+      margin-bottom: 40px;
+    }
 
-  }
+    &__TextoComplait{
+      margin-bottom: 20px;
+    }
 
-  &__TextoComplait{
-     margin-bottom: 25px;
-  }
+ 
+
    
 }
 
@@ -37,12 +46,13 @@ $Container: #2976E9;
     background-color: $LetterColor;
     @include Container-Flex;
     border-radius: 50%;
+    
 }
 
 
 .RedesSociales{
     @include Container-Flex;
-    gap: 2rem;
+    gap: 3rem;
     margin-bottom: 25px;
 }
 
