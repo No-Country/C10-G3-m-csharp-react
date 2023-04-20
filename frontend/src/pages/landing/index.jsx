@@ -36,7 +36,7 @@ function Landing() {
               <Link href="/contact">Contacto</Link>
             </li>
             <li>
-              <Link href="/faq">Preguntas Frecuentes</Link>
+              <Link href="/frequent">Preguntas Frecuentes</Link>
             </li>
           </ul>
         </nav>
@@ -148,7 +148,7 @@ function Landing() {
             evaluar su accesibilidad y colaborar con la comunidad.
           </p>
           <button>
-            <Link href="/faq">Explorar</Link>
+            <Link href="/frequent">Explorar</Link>
           </button>
         </section>
       </div>
