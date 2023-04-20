@@ -56,7 +56,9 @@ const displayDate = `${days[date.getDay()]} ${date.getDate()} de ${months[date.g
             <div className={Header.Container}>
                 <div className={Header.Container__Dates}>
                     <div>
+                        <Link href="/landing">
                         <LogoHeader/>
+                        </Link>
                     </div>
                 </div>
                 <div className={Header.Texto}>

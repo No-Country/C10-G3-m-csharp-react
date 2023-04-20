@@ -8,10 +8,10 @@ import Link from "next/link";
 const { container, loginImageCenter, loginButtonsContainer, linksWrapper } =
   styles;
 
-export default function index() {
+export default function Login() {
   return (
     <div className={container}>
-      <Image src={Logo} className={loginImageCenter} alt="" />
+      <Image src={Logo} className={loginImageCenter} alt="logo" />
 
       <div className={loginButtonsContainer}>
         <Link href="/signIn">
