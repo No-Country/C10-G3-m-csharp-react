@@ -1,6 +1,8 @@
 import Header from "../Header/Header"
 import {useRouter} from 'next/router';
 import Footer from "../Footer/Footer"
+
+
 function MainLayout({ children }) {
 
   //
