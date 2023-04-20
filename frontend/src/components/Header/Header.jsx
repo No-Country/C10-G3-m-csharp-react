@@ -7,9 +7,48 @@ import LupaHeader from "../LupaSvg/Lupa";
 import MapaHeader from "../MapaSvg/Mapa";
 
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function IsHeader() {
   const router = useRouter();
+
+  const date = new Date()
+
+  const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+  const days = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+
+const displayDate = `${days[date.getDay()]} ${date.getDate()} de ${months[date.getMonth()]}`
+
+    const [displayName, setdisplayName] = useState("Extraño")
+
+
+  useEffect(() => {
+    
+    const user = localStorage.getItem("userToken")
+
+    if(user){
+        function parseJwt(token){
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        
+            return JSON.parse(jsonPayload);
+        }
+    
+        const userName = parseJwt(user)
+    
+        setdisplayName(userName.name)
+    } else {
+        return;
+    }
+
+
+    
+
+  }, [])
+  
 
 
     return (
@@ -21,8 +60,8 @@ export default function IsHeader() {
                     </div>
                 </div>
                 <div className={Header.Texto}>
-                    <h1 className={Header.Texto__Welcome}> Hola Pedro Pascal </h1>
-                    <h2 className={Header.Texto__date}>Viernes 24 de marzo</h2>
+                    <h1 className={Header.Texto__Welcome}> Hola {displayName} </h1>
+                    <h2 className={Header.Texto__date}>{displayDate}</h2>
                 </div>
                 <Navbar />
             </div>
