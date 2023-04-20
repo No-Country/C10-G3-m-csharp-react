@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   const queryClient = new QueryClient();
 
   return (
-   <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <MainLayout>
         <Head>
           <title>Create Next App</title>
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
             rel="stylesheet"
           ></link>
           <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-        </Head>
+        </Head>   
         <Component {...pageProps} />
       </MainLayout>
     </QueryClientProvider>

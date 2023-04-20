@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function RegisterOwner({ establishment, onNextStep, setEstabishment }) {
+export default function RegisterOwner({ handleNextStep, establishment, setEstablishment }) {
 
     const [dias, setDias] = useState([]);
     const [meses, setMeses] = useState([]);
@@ -43,13 +43,19 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
     }, []);
 
-    const handleEstablecimiento = () => {
+    const handleContinuar = () => {
 
-        setEstabishment(...establishment, )
+        setEstablishment(establishment => ({
+
+            ...establishment
+
+        }));
+
+        handleNextStep();
+
+        console.log(establishment);
 
     }
-
-
 
     return (
         <>
@@ -81,15 +87,47 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                         <h2 className='contenedorIn__ow-titulo'>Datos de establecimiento</h2>
 
-                        <input type="text" placeholder="Nombre" className='contenedorIn__ow-nombre' />
+                        <input type="text" placeholder="Nombres" className='contenedorIn__ow-nombre' value={establishment.owner.name || ''} onChange={(e) =>
+                            setEstablishment((establishment) => ({
+                                ...establishment,
+                                owner: {
+                                    ...establishment.owner,
+                                    name: e.target.value,
+                                },
+                            }))
+                        } />
 
-                        <input type="text" placeholder="Dirección" className='contenedorIn__ow-direc' />
+                        <input type="text" placeholder="Apellidos" className='contenedorIn__ow-nombre' value={establishment.owner.surNames || ''} onChange={(e) =>
+                            setEstablishment((establishment) => ({
+                                ...establishment,
+                                owner: {
+                                    ...establishment.owner,
+                                    surNames: e.target.value,
+                                },
+                            }))
+                        } />
 
                         <div className="contDni__genero">
 
-                            <input type="text" placeholder="DNI" className='input__dni' maxLength="8" />
+                            <input type="text" placeholder="DNI" className='input__dni' maxLength="8" value={establishment.owner.dni || ''} onChange={(e) =>
+                                setEstablishment((establishment) => ({
+                                    ...establishment,
+                                    owner: {
+                                        ...establishment.owner,
+                                        dni: e.target.value,
+                                    },
+                                }))
+                            } />
 
-                            <select name="genero" id="genero" className="selectGenero">
+                            <select name="genero" id="genero" className="selectGenero" value={establishment.owner.gender || ''} onChange={(e) =>
+                                setEstablishment((establishment) => ({
+                                    ...establishment,
+                                    owner: {
+                                        ...establishment.owner,
+                                        gender: e.target.value,
+                                    },
+                                }))
+                            }>
 
                                 <option value="masculino">Masculino</option>
                                 <option value="femenino">Femenino</option>
@@ -100,7 +138,15 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
                         </div>
 
                         <div className='markContainer'>
-                            <input type="text" placeholder="Número de trámite" className='inputTramite' />
+                            <input type="text" placeholder="Número de trámite" className='inputTramite' value={establishment.owner.tramitNumber || ''} onChange={(e) =>
+                                setEstablishment((establishment) => ({
+                                    ...establishment,
+                                    owner: {
+                                        ...establishment.owner,
+                                        tramitNumber: e.target.value,
+                                    },
+                                }))
+                            } />
                             <span className='icon bx bx-question-mark'></span>
                         </div>
 
@@ -111,7 +157,15 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                             <div className='hijoSelect__Fecha'>
 
-                                <div className='selectMes__anio'>
+                                <div className='selectMes__anio' value={establishment.owner.birthDate || ''} onChange={(e) =>
+                                    setEstablishment((establishment) => ({
+                                        ...establishment,
+                                        owner: {
+                                            ...establishment.owner,
+                                            birthDate: e.target.value,
+                                        },
+                                    }))
+                                }>
 
                                     <select name="fecha" id="fecha" className="selectFecha">
 
@@ -159,14 +213,38 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                                 <div className="containerInputTelefono">
 
-                                    <input type="text" className="inputCod" placeholder="Cod." />
-                                    <input type="text" className="inputTelefono" placeholder="Teléfono" />
+                                    <input type="text" className="inputCod" placeholder="Cod." value={establishment.owner.phoneCode || ''} onChange={(e) =>
+                                        setEstablishment((establishment) => ({
+                                            ...establishment,
+                                            owner: {
+                                                ...establishment.owner,
+                                                phoneCode: e.target.value,
+                                            },
+                                        }))
+                                    } />
+                                    <input type="text" className="inputTelefono" placeholder="Teléfono" value={establishment.owner.phoneNumber || ''} onChange={(e) =>
+                                        setEstablishment((establishment) => ({
+                                            ...establishment,
+                                            owner: {
+                                                ...establishment.owner,
+                                                phoneNumber: e.target.value,
+                                            },
+                                        }))
+                                    } />
 
                                 </div>
 
                                 <div className='containerEstado-nacion'>
 
-                                    <select name="nacionalidad" id="nacionalidad" className="selectNacionalidad">
+                                    <select name="nacionalidad" id="nacionalidad" className="selectNacionalidad" value={establishment.owner.nationality || ''} onChange={(e) =>
+                                        setEstablishment((establishment) => ({
+                                            ...establishment,
+                                            owner: {
+                                                ...establishment.owner,
+                                                nationality: e.target.value,
+                                            },
+                                        }))
+                                    }>
 
                                         <option value="argentina">Argentina</option>
                                         <option value="uruguay">Bolivia</option>
@@ -181,7 +259,15 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                                     </select>
 
-                                    <select name="civil" id="civil" className="selectCivil">
+                                    <select name="civil" id="civil" className="selectCivil" value={establishment.owner.maritalStatus || ''} onChange={(e) =>
+                                        setEstablishment((establishment) => ({
+                                            ...establishment,
+                                            owner: {
+                                                ...establishment.owner,
+                                                maritalStatus: e.target.value,
+                                            },
+                                        }))
+                                    }>
 
                                         <option value="soltero">Casado</option>
                                         <option value="casado">Soltero</option>
@@ -208,7 +294,15 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                         <h2 className='tituloRadio'>¿Sos una persona políticamente expuesta?</h2>
 
-                        <div className='hijoRadio'>
+                        <div className='hijoRadio' value={establishment.owner.pep || ''} onChange={(e) =>
+                            setEstablishment((establishment) => ({
+                                ...establishment,
+                                owner: {
+                                    ...establishment.owner,
+                                    pep: e.target.value,
+                                },
+                            }))
+                        }>
 
                             <label for="radio1" className='labelRadio'>Si</label>
                             <input type="radio" name="politica" id="politica" value="Si" className='styleSi' />
@@ -222,7 +316,7 @@ export default function RegisterOwner({ establishment, onNextStep, setEstabishme
 
                     <div className="buttonOwner">
 
-                        <button className="botonContinuar">Continuar</button>
+                        <button type='button' className="botonContinuar" onClick={handleContinuar}>Continuar</button>
 
                     </div>
 

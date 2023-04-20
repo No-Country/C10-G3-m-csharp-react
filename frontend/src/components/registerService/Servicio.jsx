@@ -1,15 +1,42 @@
+import { EstablishmentContext } from "@/pages/register-service";
 import Image from "next/image";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+const API_CAT = 'https://inclusive-001-site1.atempurl.com/api/category';
 
-function Servicio({establishment,setEstablishment,onNextStep}) {
+function Servicio({handleNextStep,establishment,setEstablishment}) {
 
     const [hours, setHours] = useState([]);
+    const [categoryData, setCategoryData] = useState(null);
 
     const handleFileSelect = () => {
 
         document.getElementById("archivo").click();
 
     }
+
+    const handleContinuar = () => {
+
+        setEstablishment(establishment => ({
+
+            ...establishment
+
+        }));
+
+        handleNextStep();
+
+        console.log(establishment);
+
+    }
+
+
+    useEffect(() => {
+
+        fetch(API_CAT)
+        .then(response => response.json())
+        .then(data => setCategoryData(data))
+
+
+    }, []);
 
     useEffect(() => {
 
@@ -40,43 +67,6 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
         console.log(allHours);
 
     }, []);
-
-    const handleName = (name) => {
-
-        setEstablishment({ ...establishment, name: name });
-
-    }
-
-    const handleAddress = (address) => {
-
-        setEstablishment({ ...establishment, address: address });
-
-    }
-
-    const handleOpening = (openingTime) => {
-
-        setEstablishment({ ...establishment, openingTime: openingTime });
-
-    }
-
-    const handleClosing = (closingTime) => {
-
-        setEstablishment({ ...establishment, closingTime: closingTime });
-
-    }
-
-    const handleImage = (image) => {
-
-        setEstablishment({ ...establishment, image: image });
-
-    }
-
-    const handleNextClick = () => {
-
-        console.log(establishment);
-        onNextStep();
-
-    }
 
 
     return (
@@ -111,9 +101,17 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
 
                             <h2 className='contenedorInputs__titulo'>Datos de establecimiento</h2>
 
-                            <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre' value={establishment.name} onChange={(e) => handleName(e.target.value)}/>
+                            <input type="text" placeholder="Nombre del establecimiento" className='contenedorInputs__nombre' value={establishment.name || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, name: e.target.value}))}/>
 
-                            <input type="text" placeholder="Dirección" className='contenedorInputs__direc' name="address" value={establishment.address} onChange={(e) => handleAddress(e.target.value)}/>
+                            <select className="contenedorInputs__nombre"  value={establishment.categoryId || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, categoryId: e.target.value}))}>
+
+                            {categoryData && categoryData.map(item => (
+                                <option key={item.id}>{item.name}</option>
+                            ))}
+
+                            </select>
+
+                            <input type="text" placeholder="Dirección" className='contenedorInputs__direc' name="address"  value={establishment.address || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, address: e.target.value}))}/>
 
                         </div>
 
@@ -138,7 +136,7 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
                                 <div className="hijoSelects">
 
 
-                                    <select name="openingTime" id="provincia" className="selectStyle" value={establishment.openingTime} onChange={(e) => handleOpening(e.target.value)}>
+                                    <select name="openingTime" id="provincia" className="selectStyle"  value={establishment.openingTime || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, openingTime: e.target.value}))}>
 
                                         {hours?.map((hour, index) => (
                                             <option key={index}>
@@ -150,7 +148,7 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
 
                                     <p className="textoA">a</p>
 
-                                    <select name="closingTime" id="provincia" className="selectStyle" value={establishment.closingTime} onChange={(e) => handleClosing(e.target.value)}>
+                                    <select name="closingTime" id="provincia" className="selectStyle"  value={establishment.closingTime || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, closingTime: e.target.value}))}>
 
                                         {hours?.map((hour, index) => (
                                             <option key={index}>
@@ -185,7 +183,7 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
 
                                 </div>
 
-                                <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*" value={establishment.image} onChange={(e) => handleImage(e.target.value)}/>
+                                <input type="file" id="archivo" alt='Imagen para subir archivo' placeholder="Subir archivo" accept="image/*"  value={establishment.image || ''} onChange={(e) => setEstablishment(establishment => ({...establishment, image: e.target.value}))}/>
 
 
                             </div>
@@ -193,7 +191,7 @@ function Servicio({establishment,setEstablishment,onNextStep}) {
 
                             <div className="hijoButton">
 
-                                <button className="botonCont" onClick={handleNextClick}>Continuar</button>
+                                <button className="botonCont" onClick={handleContinuar}>Continuar</button>
 
                             </div>
 

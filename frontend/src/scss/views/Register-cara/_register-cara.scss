@@ -126,4 +126,29 @@
 
     }
 
+    .containerButton {
+
+        .hijoButton {
+
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 1.5rem;
+
+            .buttonCara {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: toRem(202);
+                height: toRem(62);
+                border-radius: toRem(6);
+                background-color: $colorBoton;
+                color: $white;
+                border: 2px solid #8BB9FF
+            }
+
+        }
+
+    }
+
 }
