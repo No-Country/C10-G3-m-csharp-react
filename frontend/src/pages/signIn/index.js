@@ -38,7 +38,7 @@ const schema = yup
   })
   .required();
 
-export default function index() {
+export default function SignIn() {
 
   
   const {
@@ -82,7 +82,7 @@ export default function index() {
   return (
     <div className={container}>
       <div className={logoAndTitleContainer}>
-        <Image src={Logo} className={signInLogoSized} alt="" />
+        <Image src={Logo} className={signInLogoSized} alt="logo" />
         <h4 className={signInTitleBold}>INICIAR SESIÓN</h4>
       </div>
       <form className={inputContainer} onSubmit={handleSubmit(onSubmit)}>

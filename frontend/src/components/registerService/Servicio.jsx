@@ -179,7 +179,7 @@ function Servicio({handleNextStep,establishment,setEstablishment}) {
                                 <div className="contenedorArchivo">
 
                                     <label htmlFor="archivo" className="subirArchivo">Subir Archivo</label>
-                                    <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover" alt="" />
+                                    <Image src='/img/register-service/file/file-upload.png' quality={100} height={50} width={60} loading="lazy" objectFit="cover" alt='asd' />
 
                                 </div>
 
