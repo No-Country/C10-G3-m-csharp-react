@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useQuery } from "@tanstack/react-query";
+import { CircularProgress } from "@mui/material";
 import styles from "../../scss/views/Search/Search.module.scss"
 import axios from "axios";
 import PlaceCard from "@/components/placeCard/placeCard";
@@ -28,9 +29,17 @@ function Search() {
 
   if (isLoading) {
     return (
-      <>
-        <p>Loading...</p>
-      </>
+      <div className={styles.loadingSpinner}>
+       <CircularProgress />
+      </div>
+    );
+  }
+
+  if (data.length === 0) {
+    return (
+      <div className={styles.loadingSpinner}>
+       <h1>Esta búsqueda no ha generado resultados.</h1>
+      </div>
     );
   }
 
