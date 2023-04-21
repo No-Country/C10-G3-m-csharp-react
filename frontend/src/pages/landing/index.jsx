@@ -5,6 +5,7 @@ import InclusiveLogo from "@/components/inclusiveLogo/inclusiveLogo";
 import Instagram from "../../components/Instagram/Instagram"
 import Twiter from "../../components/Twiter/Twiter"
 import Facebook from "../../components/Facebook/Facebook"
+import Footer from "../../components/Footer/Footer"
 import Img1 from "../../../public/img/landing/landing-img-1.png";
 import Img2 from "../../../public/img/landing/landing-img-2.png";
 import Img3 from "../../../public/img/landing/landing-img-3.png";
@@ -15,9 +16,11 @@ import img7 from "../../../public/img/landing/women3.png"
 import SearchLogo from "@/components/searchLogo/searchLogo";
 import RightArrowLogo from "@/components/rightArrowLogo/rightArrowLogo";
 import TopTenCardList from "@/components/topTenCardList/topTenCardList";
-
+import { useRouter } from "next/router";
 
 function Landing() {
+  const router = useRouter();
+  
   return (
     <div className={styles.Container}>
       <header className={styles.header}>
@@ -31,13 +34,13 @@ function Landing() {
               <Link href="/">Categorias de lugares</Link>
             </li>
             <li>
-              <Link href="/">Quienes somos</Link>
+              <Link href="/somos">Quienes somos</Link>
             </li>
             <li>
               <Link href="/contact">Contacto</Link>
             </li>
             <li>
-              <Link href="/faq">Preguntas Frecuentes</Link>
+              <Link href="/frequent">Preguntas Frecuentes</Link>
             </li>
           </ul>
         </nav>
@@ -52,7 +55,7 @@ function Landing() {
       </header>
 
       <div>
-        <section className={styles.welcome}>
+        <section className={styles.welcome}>  
           <Image
             className={styles.images}
             src={Img1}
@@ -62,18 +65,16 @@ function Landing() {
             priority
             />
           <div className={styles.form}>
-            <input className={styles.inputValue} type="text" placeholder="Buscar lugares accesibles" />
-            <div className={styles.lupa}> 
+            <input type="text" placeholder="Buscar lugares accesibles" />
             <SearchLogo />
 
             </div>
+            </section>
           </div>
           <div className={styles.tituloGeneral}>
             <h1 className={styles.title}>Bienvenidos a INCLUSIVE</h1>
 
           </div>
-
-        </section>
 
         <section className={styles.intro}>
           
@@ -188,58 +189,20 @@ function Landing() {
             evaluar su accesibilidad y colaborar con la comunidad.
           </p>
           <button>
-            <Link href="/faq">Explorar</Link>
+            <Link href="/frequent">Explorar</Link>
           </button>
         </section>
-      </div>
-    
-      <footer className={styles.Container2}>
-           
-           <div className={styles.Container__img}>
-           <InclusiveLogo width={121} height={146} />
-           </div>
-           <div className={styles.Container__texto}>
-               <h4 className={styles.Container__TextoComplait}>
-                   Preguntas frecuentes
-                   Terminos y condiciones
-                   Politica de Privacidad
-                   Contacto
+     
+    <div>
+      <Footer/>
+    </div>
+       
 
-               </h4>
-               <div className={styles.RedesSociales}>
-
-
-                   <section>
-                       <Instagram />
-                   </section>
-
-                   <section>
-                       <Twiter />
-                   </section>
-
-                   <section>
-                       <Facebook />
-                   </section>
-               </div>
-
-               <div className={styles.Copyrigth}>
-                     
-                         <div>
-                         <i className='bx bx-copyright' ></i>
-                         </div>
-                         <h4>
-                           2023 Inclusive Inc
-                         </h4>
-                     
-               </div>
-
-           </div>
-       </footer>
-
-
-      
+       
+     
     </div>
   );
+  
 }
 
 export default Landing;

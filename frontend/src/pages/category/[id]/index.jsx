@@ -6,13 +6,13 @@ import useHighWidth from "@/utils/useHighWidth";
 function Category(props) {
   const places = props?.category?.establishments;
 
-  const isHighWidth = useHighWidth()
+  const isHighWidth = useHighWidth();
 
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <h2>{props?.category?.name}</h2>
-        <CloseLogo />
+          <CloseLogo />
       </div>
 
       <ul className={styles.list}>
@@ -24,11 +24,11 @@ function Category(props) {
                 imageSrc={e.image}
                 name={e.name}
                 address={e.address}
-                hours={"11:30am - 11:00pm"}
+                hours={`${e.openingTime} - ${e.closingTime}`}
                 features={e.accessibilitys}
                 showRating
                 fullCard={isHighWidth}
-                rating={e.averageRating}
+                rating={Math.trunc(e.averageRating)}
               />
             </li>
           );

@@ -3,9 +3,8 @@ import {useRouter} from 'next/router';
 import Footer from "../Footer/Footer"
 function MainLayout({ children }) {
 
-  //
   const router = useRouter();
-  const routes = ["/login", "/signup", "/signIn", "/landing", "/register"]
+  const routes = ["/login", "/signup", "/signIn", "/landing", "/register" , "/frequent"]
 
   return (
     <>

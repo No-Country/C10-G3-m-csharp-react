@@ -11,27 +11,30 @@ $Container: #2976E9;
 
 .Container{
     background-color: $Container;
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 302px;
-    gap: 2.5rem;
+    height: 350px;
+
 
   &__texto{
     color: $LetterColor;
     width: 250px;
     display: block;
     margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
   }
    
     
     &__img{
-      position: relative;
-      left: -130px;
-      bottom: -10px;
-      margin-bottom: 40px;
+     margin-bottom: 10px ;
+     padding: 1rem;
     }
 
     &__TextoComplait{
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
  
@@ -53,9 +56,36 @@ $Container: #2976E9;
 .RedesSociales{
     @include Container-Flex;
     gap: 3rem;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .Copyrigth{
     @include Container-Flex;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .Container{
+   display: grid;
+   place-items: center;
+   grid-template-columns: repeat(3 ,1fr);
+  
+}
+
+
+.Redes{
+ flex-direction: row;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ justify-content: center
+ 
+}
+
+.RedesSociales{
+  display: flex;
+  flex-direction: column;
+}
+
 }

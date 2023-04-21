@@ -7,11 +7,12 @@ $Close: #63a3fd;
 $White: #fff;
 $InstagramColor : #2976E9;
 
-html,body{
+html,
+body {
   overflow-x: hidden;
-  color:black;
-  font-family:'Opens Sans',helvetica;  
-  
+  color: black;
+  font-family: 'Opens Sans', helvetica;
+
 }
 
 
@@ -29,15 +30,15 @@ html,body{
   align-items: center;
   justify-content: center;
   position: relative;
-  left: 55%;
+  left: 48%;
   top: 20px;
   border-radius: 2px;
-  
+
 }
 
 
 
-.CloseClose{
+.CloseClose {
   background-color: $ItemsColor;
   width: 100%;
   height: 100%;
@@ -47,25 +48,27 @@ html,body{
   overflow-y: hidden;
   margin-left: 40%;
   padding: 1rem;
-  z-index: 10000;
+  z-index: 1000;
   transition: 0.3s ease all;
-  
+
 }
-.CloseClose:hover{
+
+.CloseClose:hover {
   overflow-y: auto;
 }
-.CloseClose::-webkit-scrollbar{
+
+.CloseClose::-webkit-scrollbar {
   width: 8px;
 }
 
-.CloseClose::-webkit-scrollbar-thumb{
+.CloseClose::-webkit-scrollbar-thumb {
   background-color: red;
 }
 
-.CloseClose.open{
-    left: 0;
-    opacity: 1;
-    z-index: 10000;
+.CloseClose.open {
+  left: 0;
+  opacity: 1;
+  z-index: 10000;
 }
 
 .itemsListas {
@@ -80,7 +83,7 @@ html,body{
   color: $White;
 }
 
-.Hamburger{
+.Hamburger {
   position: relative;
 }
 
@@ -90,8 +93,7 @@ html,body{
   top: 0;
   left: 0;
   right: 0;
-  height: 2250px ;
-  z-index: 100;
+  z-index: 200;
   display: none;
 }
 
@@ -99,17 +101,17 @@ html,body{
   display: block;
 }
 
-.Ayuda{
+.Ayuda {
   margin-bottom: 30px;
 }
 
-.bxl-instagram-alt{
+.bxl-instagram-alt {
   color: $InstagramColor;
 }
 
 //Acordion
 
-.Answers{
+.Answers {
   background-color: #001C7E;
   width: 312px;
   height: 32px;
@@ -121,23 +123,144 @@ html,body{
   justify-content: center;
   gap: 4.5rem;
   margin-bottom: 25px;
-  
+
 }
 
-.Answersh1{
- font-family: 'Inter';
- font-style: normal;
- font-weight: 700;
- font-size: 16px;
- line-height: 19px;
- text-transform: uppercase
+.Answersh1 {
+  font-family: 'Inter';
+  font-style: normal;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase
 }
 
-
+.Text {
+  color: #6B6B6B;
+}
 
 /*Container Answer */
-
-.ContainerAnswers{
+.ContainerAnswers {
   display: block;
   margin: 0 auto;
+}
+
+.ContainerHeader {
+  display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .MenuNavbar {
+    display: none;
+  }
+
+  .ContainerHeader {
+    width: 100%;
+    display: block;
+    height: 150px;
+    background: conic-gradient(from 180.65deg at 19.03% 59%, #0056DB 0deg, #2E83FF 98.84deg, #69A8FF 151.72deg, #0056DB 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+
+
+  }
+
+  .ContenedorListas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    position: relative;
+    bottom: -40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    /* or 107% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
+  .LogoHeader {
+    display: block;
+    width: 100px;
+    position: relative;
+
+  }
+
+  .RutaLogin {
+    position: relative;
+    bottom: -40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    /* or 107% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
+  .Cuadrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border: solid 1px white;
+
+  }
+
+  .Answers {
+    display: none;
+  }
+
+  .ImagenAnswer {
+    position: absolute;
+
+  }
+
+  .SvgCapa {
+    width: 1550px ;
+    height: 550px;
+    background: #63A3FD;
+    opacity: 0.35;
+  }
+
+  .AcordionGeneral {
+    text-align: center;
+  }
+
+  .Text {
+    display: block;
+    margin: 0 auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    letter-spacing: 0.03em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+
+    color: #000000;
+  }
+
+  .Parrafo {
+    width: 700px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
 }

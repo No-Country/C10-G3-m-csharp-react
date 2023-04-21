@@ -23,13 +23,15 @@ export default function isFooter() {
                     Contacto
 
                 </h4>
+                
+            </div>
                 <div className={Footer.RedesSociales}>
 
-
+                     <div className={Footer.Redes}> 
                     <section>
-                        <Instagram />
+                        <Instagram/>
+            
                     </section>
-
                     <section>
                         <Twiter />
                     </section>
@@ -37,20 +39,24 @@ export default function isFooter() {
                     <section>
                         <Facebook />
                     </section>
+                    </div>
+
+                    <div className={Footer.Copyrigth}>
+                      
+                      <div>
+                      <i className='bx bx-copyright' ></i>
+                      </div>
+                      <h4>
+                        2023 Inclusive Inc
+                      </h4>
+                  
+                    </div>
+
+
                 </div>
 
-                <div className={Footer.Copyrigth}>
-                      
-                          <div>
-                          <i className='bx bx-copyright' ></i>
-                          </div>
-                          <h4>
-                            2023 Inclusive Inc
-                          </h4>
-                      
-                </div>
+              
 
-            </div>
         </footer>
     )
 }

@@ -1,5 +1,4 @@
 import Header from "../../scss/views/Header/Header.module.scss";
-import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
 import Link from "next/link";
 import LogoHeader from "../HeaderLogo/HeaderSvg";
