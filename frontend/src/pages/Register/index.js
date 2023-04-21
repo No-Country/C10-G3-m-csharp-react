@@ -12,6 +12,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/router";
+import { useSelector } from'react-redux';
+
 
 
 const {
@@ -53,6 +55,12 @@ const schema = yup
   .required();
 
 export default function Register() {
+
+  const cleanRegister = useSelector((state) => state);
+
+
+  console.log(cleanRegister)
+
   const router = useRouter();
 
   const [passwordImage, setPasswordImage] = useState({
