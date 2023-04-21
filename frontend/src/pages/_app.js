@@ -4,12 +4,10 @@ import "../scss/views/barrelService.scss";
 import Head from "next/head";
 import MainLayout from "@/components/layout/layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import "boxicons/css/boxicons.min.css";
 
 export default function App({ Component, pageProps }) {
   const queryClient = new QueryClient();
-
- 
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -21,12 +19,7 @@ export default function App({ Component, pageProps }) {
           
           <link rel="icon" href="/favicon.ico" />
 
-          <link
-
-            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-            rel="stylesheet"
-          ></link>
-          <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+          
           
         </Head>
         <Component {...pageProps} />
