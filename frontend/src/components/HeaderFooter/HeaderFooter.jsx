@@ -25,8 +25,8 @@ export default function LogoHeader () {
         <path d="M53.617 67.557C52.8151 67.557 52.1761 67.4067 51.7 67.106C51.2238 66.8052 50.883 66.3717 50.6776 65.8054C50.4721 65.239 50.3693 64.5574 50.3693 63.7605V59.2273C50.3693 58.1799 50.67 57.388 51.2715 56.8517C51.8729 56.3104 52.6998 56.0398 53.7523 56.0398C55.9174 56.0398 57 57.1023 57 59.2273V60.0468C57 61.0391 56.99 61.7057 56.9699 62.0465H53.0607V64.2266C53.0607 64.4271 53.0732 64.6251 53.0983 64.8205C53.1233 65.011 53.1785 65.1689 53.2637 65.2942C53.3539 65.4195 53.4967 65.4821 53.6922 65.4821C53.9728 65.4821 54.1483 65.3618 54.2184 65.1213C54.2886 64.8757 54.3237 64.5574 54.3237 64.1665V63.0839H57V63.723C57 64.5649 56.8948 65.2716 56.6843 65.843C56.4788 66.4093 56.1279 66.8378 55.6318 67.1285C55.1406 67.4142 54.469 67.557 53.617 67.557ZM53.0457 60.7083H54.3237V59.1897C54.3237 58.7838 54.2736 58.4931 54.1733 58.3177C54.0731 58.1373 53.9227 58.047 53.7223 58.047C53.5067 58.047 53.3388 58.1322 53.2186 58.3026C53.1033 58.473 53.0457 58.7687 53.0457 59.1897V60.7083Z" fill="white"/>
         </g>
         <defs>
-        <filter id="filter0_d_107_934" x="11.5903" y="0.5" width="35.8193" height="56.228" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <filter id="filter0_d_107_934" x="11.5903" y="0.5" width="35.8193" height="56.228" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="1.5"/>
         <feGaussianBlur stdDeviation="1"/>
@@ -35,8 +35,8 @@ export default function LogoHeader () {
         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_107_934"/>
         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_107_934" result="shape"/>
         </filter>
-        <filter id="filter1_d_107_934" x="0" y="52.7281" width="59" height="18.3289" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <filter id="filter1_d_107_934" x="0" y="52.7281" width="59" height="18.3289" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="1.5"/>
         <feGaussianBlur stdDeviation="1"/>

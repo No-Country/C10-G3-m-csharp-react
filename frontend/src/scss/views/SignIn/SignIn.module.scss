@@ -1,7 +1,6 @@
-@use '../../utilities/colors' as *;
-@use '../../utilities/gradients' as *;
-@use '../../utilities/functions' as *;
-
+@use "../../utilities/colors" as *;
+@use "../../utilities/gradients" as *;
+@use "../../utilities/functions" as *;
 
 .container {
   background: $bg-gradient;
@@ -27,9 +26,9 @@
 }
 
 .signInLogoSized {
-  width:toRem(85.12);
+  width: toRem(85.12);
   height: toRem(103);
-  margin-top:toRem(95);
+  margin-top: toRem(95);
 }
 
 .signInTitleBold {
@@ -40,32 +39,31 @@
   color: $white;
 }
 
-.signInInputOutlined{
-    margin:1.5%;
-    background: transparent;
-    width: toRem(312);
-    height: toRem(48);
-    border-radius: toRem(6);
-    padding: toRem(10);
-    gap: toRem(10);
-    color:$blue-200;
-    border: toRem(1.5) solid $blue-200;
+.signInInputOutlined {
+  margin: 1.5%;
+  background: transparent;
+  width: toRem(312);
+  height: toRem(48);
+  border-radius: toRem(6);
+  padding: toRem(10);
+  gap: toRem(10);
+  color: $blue-200;
+  border: toRem(1.5) solid $blue-200;
 }
 
-
-.subTitleh5{
-  color:$lightWhite;
+.subTitleh5 {
+  color: $lightWhite;
   text-align: center;
 }
 
-.signInBoxRestoreAndButton{
-  display:flex;
+.signInBoxRestoreAndButton {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.signInFastContainer{
+.signInFastContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,24 +71,51 @@
   margin-bottom: toRem(20);
 }
 
-.fastSignInButtonsCtn{
+.fastSignInButtonsCtn {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
 }
 
+.pswInputContainer {
+  margin: 1.5%;
+  background: transparent;
+  width: toRem(312);
+  height: toRem(48);
+  border-radius: toRem(6);
+  padding: toRem(10);
+  gap: toRem(10);
+  color: $blue-200;
+  border: toRem(1.5) solid $blue-200;
+  display: flex;
+}
+
+
+.pswInput{
+  background-color: transparent;
+  width: 85%;
+}
 
 /* register style */
 
-.termsBox{
+.termsBox {
   display: flex;
   justify-content: center;
   gap: toRem(15);
-  color:$white;
-  margin-top: toRem(12);  
+  color: $lightWhite;
+  margin-top: toRem(12);
 }
 
-.checkRounded{
+.checkRounded {
   border-radius: 50%;
 }
 
+.errorMsg {
+  color: $lightWhite;
+  font-size: toRem(14);
+}
+
+.reveal_psw {
+  width: toRem(20px);
+  height: toRem(14.55px);
+}

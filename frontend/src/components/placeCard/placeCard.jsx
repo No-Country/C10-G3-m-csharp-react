@@ -10,7 +10,17 @@ import MapCard from "../map/CardMap";
 import { CircularProgress } from "@mui/material";
 import Image from "next/image";
 
-function PlaceCard({ fullCard, position, imageSrc, name, address, hours, features, rating, showRating }) {
+function PlaceCard({
+  fullCard,
+  position,
+  imageSrc,
+  name,
+  address,
+  hours,
+  features,
+  rating,
+  showRating,
+}) {
   const [showMore, setShowMore] = useState(fullCard);
 
   const handleClick = () => {
@@ -22,7 +32,14 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
       <div className={styles.showMoreCard}>
         <div className={styles.showMore__header}>
           <div className={styles.showMore__img}>
-            {imageSrc && <Image alt={`place photo`} src={imageSrc} width={140} height={80} />}
+            {imageSrc && (
+              <Image
+                alt={`place photo`}
+                src={imageSrc}
+                width={140}
+                height={80}
+              />
+            )}
           </div>
           <div className={styles.showMore__map}>
             <div className={styles.showMore__spinnerContainer}>
@@ -56,7 +73,8 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
               {features.map((e, idx) => {
                 return (
                   <li key={idx}>
-                    <CheckLogo/><p>{e.name}</p>
+                    <CheckLogo />
+                    <p>{e.name}</p>
                   </li>
                 );
               })}
@@ -84,19 +102,21 @@ function PlaceCard({ fullCard, position, imageSrc, name, address, hours, feature
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className={styles.card}>
+        <div className={styles.img}>
+          {imageSrc && (
+            <Image alt={`place photo`} src={imageSrc} width={140} height={80} />
+          )}
+        </div>
+        <div className={styles.text}>
+          <h3>{name}</h3>
+          <button onClick={handleClick}>Ver datos</button>
+        </div>
+      </div>
+    );
   }
-
-  return (
-    <div className={styles.card}>
-      <div className={styles.img}>
-      {imageSrc && <Image alt={`place photo`} src={imageSrc} width={140} height={80} />}
-      </div>
-      <div className={styles.text}>
-        <h3>{name}</h3>
-        <button onClick={handleClick}>Ver datos</button>
-      </div>
-    </div>
-  );
 }
 
 export default PlaceCard;
