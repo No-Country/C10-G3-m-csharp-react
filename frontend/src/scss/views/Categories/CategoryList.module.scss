@@ -1,0 +1,14 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+@media screen and (min-width: 750px) {
+  .categories {
+    grid-column: 1 / 3;
+
+
+  }
+
+
+
+}

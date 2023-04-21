@@ -1,0 +1,303 @@
+@use '../../utilities/barrelUtilities.scss'as *;
+
+.contenedorPadre__ow {
+
+    background-color: $fondoRegistro;
+
+    .hijoOwner {
+
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__title {
+
+            margin-top: 1rem;
+            background-color: $cuadroRegistro;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 19.5rem;
+            border-radius: 6px;
+            height: 35px;
+            padding: .6rem;
+
+            .titleRegister {
+
+                color: $white;
+                font-size: 1rem;
+
+            }
+
+        }
+
+    }
+
+    .containerTexto {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        &__title {
+
+            @if ($textoComercio==rgba(46, 131, 255, 1)) {
+
+                color: $textoComercio;
+                text-align: center;
+                margin-bottom: 1rem;
+
+            }
+
+            @else if($textoComercio==rgba(119, 119, 119, 1)) {
+
+                color: $textoEstable;
+                text-align: justify;
+                margin-bottom: 1rem;
+
+            }
+
+        }
+
+    }
+
+    .line {
+
+        border: 1px solid;
+        border-color: $line;
+
+    }
+
+    .contenedorHorarios__ow {
+
+        margin-top: 1rem;
+
+        .contenedorIn__ow {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-top: 1rem;
+
+            &-titulo {
+
+                margin-bottom: 1rem;
+                text-align: center;
+                color: $textoEstable;
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.1rem
+            }
+
+            &-nombre {
+
+                @include Inputs;
+
+            }
+
+            &-direc {
+
+                @include Inputs;
+
+
+            }
+
+            .markContainer {
+
+                position: relative;
+
+                .icon {
+
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 11px;
+                    font-size: 1.5rem;
+                    color: $blue-200;
+                    border: 1px solid $blue-200;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                }
+
+            }
+
+            .contDni__genero {
+
+                display: flex;
+                gap: 0.8rem;
+
+                .input__dni {
+
+                    @include Inputs;
+                    width: 9.3rem;
+
+                }
+
+                .selectGenero {
+
+                    @include Inputs;
+                    width: 9.3rem;
+
+                }
+
+            }
+
+            .inputTramite {
+
+                @include Inputs;
+
+            }
+
+            .tituloNacimiento {
+
+                color: $blue-200;
+
+            }
+
+            .containerSelect__Fecha {
+
+                .selectFecha {
+
+                    @include Inputs;
+                    width: 6rem;
+
+
+                }
+
+                .selectMes {
+
+                    @include Inputs;
+                    width: 6rem;
+
+
+                }
+
+                .selectAnio {
+
+                    @include Inputs;
+                    width: 6rem;
+
+                }
+
+                .hijoSelect__Fecha {
+
+                    .selectMes__anio {
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 1rem;
+                        color: $blue-200;
+
+                    }
+
+                    .containerInputTelefono {
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+
+                        .inputCod {
+
+                            @include Inputs;
+                            width: 6rem;
+                            color: $blue-200;
+
+                        }
+
+                        .inputTelefono {
+
+                            @include Inputs;
+                            width: 13rem;
+                            color: $blue-200;
+
+                        }
+
+                    }
+
+                    .containerEstado-nacion {
+
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 1rem;
+
+                        .selectNacionalidad {
+
+                            @include Selects;
+                            width: 13rem;
+
+                        }
+
+                        .selectCivil {
+
+                            @include Selects;
+                            width: 13rem;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+        .containerRadios {
+
+            margin-top: 1.5rem;
+
+            .tituloRadio {
+
+                color: $blue-200;
+                text-align: center;
+            }
+
+            .hijoRadio {
+
+
+                display: flex;
+                justify-content: center;
+                padding: 1rem;
+                gap: 1.8rem;
+                color: $blue-200;
+
+            }
+
+        }
+
+        .buttonOwner {
+
+            display: flex;
+            justify-content: center;
+
+            .botonContinuar {
+
+                background-color: $colorBoton;
+                border: 3rem;
+                border: 2px solid $bordeColor;
+                height: 3rem;
+                width: 12rem;
+                color: $white;
+                border-radius: 0.3rem;
+                margin-bottom: 1rem;
+
+            }
+
+        }
+
+
+    }
+
+}

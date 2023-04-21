@@ -1,0 +1,85 @@
+@use "../../utilities/_colors" as *;
+@use "../../base/_fonts" as *;
+@use "../../utilities/functions" as f;
+
+.header {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  height: f.toRem(500);
+
+  img {
+    position: relative;
+    z-index: 0;
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+    background-color: #63a3fd;
+    z-index: 50;
+  }
+
+  h1 {
+    position: relative;
+    margin-inline: 2rem;
+    top: 70%;
+    font-size: f.toRem(40);
+    font-weight: 900;
+    text-align: left;
+    color: white;
+    z-index: 100;
+
+    @media screen and (min-width: 750px) {
+      font-size: f.toRem(80);
+    }
+  }
+}
+
+.first,
+.second {
+  margin-bottom: 1rem;
+
+  p {
+    margin-bottom: 1rem;
+    margin-inline: 0.5rem;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    margin: 0 f.toRem(140);
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.subtitle {
+  font-size: f.toRem(30);
+  font-weight: 600;
+  text-align: center;
+}
+
+.third {
+  img {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    display: flex;
+
+    .third_banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: f.toRem(48);
+        
+    }
+  }
+}

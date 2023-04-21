@@ -1,0 +1,98 @@
+$whith :#fff;
+$Container: #F4F5F7;
+$HeaderContainer: #0056DB;
+$HeaderContainer2: #2E83FF;
+$HeaderContainer3: #69A8FF;
+$HeaderContainer4: #0056DB;
+$Search: #FFFFFF;
+$SearchBorder: #8BB9FF;
+
+
+@mixin create-Flex {
+  display: flex;
+  align-items: center;
+}
+
+
+.headerContainer {
+  width: 100%;
+  height: 300px;
+  background-color: $Container;
+}
+
+.Container {
+  width: 100%;
+  height: 132px;
+  @include create-Flex;
+  justify-content: space-around;
+  background: conic-gradient(from 180.32deg at 52.08% 172.32%, $HeaderContainer 0deg, $HeaderContainer2 98.84deg, $HeaderContainer3 151.72deg, $HeaderContainer4 360deg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+
+  &__Dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+
+}
+
+.Texto {
+  font-weight: 700;
+  text-align: center;
+  color: $whith;
+
+  &__Welcome {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__date {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+}
+
+.form {
+  @include create-Flex;
+  justify-content: center;
+  margin: 35px auto;
+
+  input {
+    padding-inline: 1rem;
+  }
+}
+
+.Search {
+  width: 312px;
+  height: 48px;
+  background: $Search;
+  border: 1.5px solid $SearchBorder;
+  border-radius: 6px;
+}
+
+.lupa {
+  margin-left: -30px;
+}
+
+.Search::placeholder {
+  color: $HeaderContainer3;
+}
+
+
+
+.mapa {
+  @include create-Flex;
+  justify-content: center;
+  gap: .5rem;
+
+
+  &__letter {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.36px;
+    color: $SearchBorder;
+  }
+}
