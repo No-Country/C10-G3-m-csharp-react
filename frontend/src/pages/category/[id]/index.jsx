@@ -6,15 +6,15 @@ import useHighWidth from "@/utils/useHighWidth";
 function Category(props) {
   const places = props?.category?.establishments;
 
-  const isHighWidth = useHighWidth()
+  const isHighWidth = useHighWidth();
 
-  console.log(`MOBILE: ${!isHighWidth}`, places)
+  console.log(`MOBILE: ${!isHighWidth}`, places);
 
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <h2>{props?.category?.name}</h2>
-        <CloseLogo />
+          <CloseLogo />
       </div>
 
       <ul className={styles.list}>

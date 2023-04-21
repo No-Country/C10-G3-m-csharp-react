@@ -45,7 +45,7 @@ function Search() {
               imageSrc={e.image}
               name={e.name}
               address={e.address}
-              hours={"11:30am - 11:00pm"}
+              hours={`${e.openingTime} - ${e.closingTime}`}
               features={e.accessibilitys}
               showRating
               fullCard={isHighWidth}

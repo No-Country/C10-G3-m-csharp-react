@@ -12,10 +12,26 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 
+  @media screen and (min-width: 750px) {
+    height: f.toRem(148);
+    background: rgb(105, 168, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(105, 168, 255, 1) 0%,
+      rgba(0, 86, 219, 1) 38%
+    );
+  }
+
   .logoContainer {
     grid-column: 2;
     grid-row: 1 / 3;
     margin: auto 0 auto 0;
+
+    @media screen and (min-width: 750px) {
+      grid-column: 1;
+      grid-row: span 4;
+      transform: scale(0.6);
+    }
   }
 
   .auth {
@@ -27,6 +43,11 @@
     text-align: center;
     font-size: f.toRem(14);
 
+    @media screen and (min-width: 750px) {
+      grid-column: 3;
+    grid-row: 3;
+    }
+
     a {
       height: fit-content;
       align-self: center;
@@ -34,13 +55,20 @@
   }
 
   .navbar {
+    width: 100%;
     font-size: f.toRem(14);
     color: $lightGrey;
     grid-column: span 3;
     grid-row: 3;
 
+    @media screen and (min-width: 750px) {
+      grid-column: 2 / 3;
+      grid-row: 3;
+    }
+
     ul {
       display: flex;
+      width: 100%;
 
       li {
         border: 1px solid $lightGrey;
@@ -48,6 +76,12 @@
         padding: f.toRem(10);
         text-align: center;
         line-height: f.toRem(14);
+        flex: 1 1 100%;
+
+        @media screen and (min-width: 750px) {
+          border-top: none;
+          padding: f.toRem(10) f.toRem(44);
+        }
       }
     }
   }
@@ -56,8 +90,14 @@
 .welcome {
   position: relative;
 
-  .img {
-    z-index: 0;
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+
+    @media screen and (min-width: 750px) {
+      height: 500px;
+    }
   }
 
   h1 {
@@ -71,6 +111,14 @@
     margin-left: f.toRem(26);
     color: #fff3f3;
     text-shadow: 0px 1px 4px #00000066;
+
+    @media screen and (min-width: 750px) {
+      font-size: f.toRem(80);
+      bottom: f.toRem(260);
+      left: f.toRem(180);
+      width: f.toRem(512);
+      line-height: f.toRem(90);
+    }
   }
 
   .form {
@@ -88,6 +136,14 @@
     padding: f.toRem(14.5) f.toRem(10);
     border-radius: 6px;
     width: 100%;
+
+    @media screen and (min-width: 750px) {
+      width: 43%;
+      top: f.toRem(337);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
   }
 
   input::placeholder {
@@ -108,7 +164,8 @@
   padding: f.toRem(24);
 
   .intro_img {
-    margin: f.toRem(24);
+    margin: f.toRem(24) auto;
+    width:fit-content;
   }
 
   .intro_text {
@@ -119,6 +176,7 @@
       font-weight: 600;
       font-size: f.toRem(30);
       margin-bottom: f.toRem(24);
+      text-align: center;
     }
 
     p {
@@ -142,12 +200,44 @@
       align-self: center;
     }
   }
+
+  @media screen and (min-width: 750px) {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: f.toRem(20) f.toRem(200);
+    gap: 2rem;
+
+    .intro_img {
+      width: 70%;
+      height: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .intro_text {
+      width: 60%;
+
+      h2 {
+        font-size: f.toRem(40);
+      }
+
+      p {
+        font-size: f.toRem(20);
+      }
+
+      button {
+        align-self: flex-start;
+      }
+    }
+  }
 }
 
 .explore {
   position: relative;
 
-  image {
+  img {
     z-index: 0;
   }
 
@@ -177,12 +267,31 @@
       width: fit-content;
     }
   }
+
+  @media screen and (min-width: 750px) {
+    margin-bottom: 2rem;
+
+    img {
+      object-fit: contain;
+      margin: 0 auto;
+      width: 30%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .explore_text {
+      left: 0;
+      right: 0;
+      margin: 5rem auto;
+      width: fit-content;
+      gap: 2rem;
+    }
+  }
 }
 
 .topten {
   padding-block: f.toRem(24);
   background-color: #e5eefb;
-  // overflow: hidden;
 
   h2 {
     font-size: f.toRem(30);
@@ -208,59 +317,43 @@
 
   .topten_cardcontainer::-webkit-scrollbar-thumb {
     background: transparent;
-    width: 10px;
+    height: 5px;
     border-radius: 5px;
   }
 
   @media screen and (min-width: 500px) {
     .topten_cardcontainer::-webkit-scrollbar {
-      width: 1px;
+      height: 7px;
     }
 
     .topten_cardcontainer::-webkit-scrollbar-track {
       background: white;
-      width: 1px;
     }
 
     .topten_cardcontainer::-webkit-scrollbar-thumb {
       background: grey;
-      width: 1px;
+      height: 5px;
       border-radius: 6px;
     }
   }
 
   .topten_cardcontainer {
     overflow-x: auto;
+  }
 
-    // .topten_cardlist {
-    //   height: f.toRem(140);
-    //   width: max-content;
-    //   margin-bottom: f.toRem(16);
-    //   display: flex;
-    //   gap: f.toRem(8);
-    //   overflow: hidden;
-    //   padding-inline: f.toRem(24);
+  @media screen and (min-width: 750px) {
+    padding-left: f.toRem(100);
+    padding-block: f.toRem(50);
 
-    //   .topten_card {
-    //     width: f.toRem(140);
-    //     height: 100%;
-    //     background-color: grey;
-    //     border-radius: 6px;
-    //     position: relative;
+    h2 {
+      width: fit-content;
+      margin: f.toRem(25) auto;
+    }
 
-    //     .topten_card_label {
-    //       position: absolute;
-    //       bottom: 0;
-    //       padding: f.toRem(8);
-    //       width: fit-content;
-    //       background-color: #b042f4;
-    //       border-radius: 6px;
-    //       color: white;
-    //       font-size: f.toRem(12);
-    //       font-weight: 700;
-    //     }
-    //   }
-    // }
+    h3 {
+      width: fit-content;
+      margin: f.toRem(25) auto;
+    }
   }
 }
 
@@ -303,11 +396,43 @@
       align-self: center;
     }
   }
+
+  @media screen and (min-width: 750px) {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: f.toRem(20) f.toRem(200);
+    background-color: #ffffff;
+
+    .contribute_img {
+      width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .contribute_text {
+      width: 60%;
+
+      h2 {
+        font-size: f.toRem(28);
+      }
+
+      p {
+        font-size: f.toRem(20);
+      }
+      
+      button {
+        align-self: flex-start;
+      }
+    }
+  }
 }
 
 .faq {
   padding: f.toRem(24);
-  background-color: E5EEFB;
+  background-color: #E5EEFB;
   display: flex;
   flex-direction: column;
 
@@ -336,5 +461,11 @@
     border-radius: 6px;
     width: fit-content;
     align-self: center;
+  }
+  
+  @media screen and (min-width: 750px){
+    align-items: center;
+    padding-inline: 10rem;
+    text-align: center;
   }
 }
