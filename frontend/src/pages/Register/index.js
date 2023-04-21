@@ -12,7 +12,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/router";
-import { useSelector } from'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { registerUser } from "@/redux/features/user/userActions";
 
 
 
@@ -61,7 +62,8 @@ export default function Register() {
 
   console.log(cleanRegister)
 
-  const router = useRouter();
+/*   const router = useRouter(); */
+  const dispatch = useDispatch();
 
   const [passwordImage, setPasswordImage] = useState({
     src: EyeOff,
@@ -88,7 +90,14 @@ export default function Register() {
       "password": data.repeat_password
     }
 
-    let endpoint =
+
+    dispatch(registerUser(userData))
+
+
+
+
+
+/*     let endpoint =
       "https://inclusive-001-site1.atempurl.com/api/Authentication/register";
 
     let response = await fetch(endpoint, {
@@ -104,7 +113,8 @@ export default function Register() {
     responseStatus === 201
     ? (router.push("/signIn"))
     : (console.log('Usuario no autorizado'))    
-  };
+  }; */
+  }
 
   const changeTypeAndImg = () => {
     let pswInput = document.getElementById("pswInput");
