@@ -8,8 +8,6 @@ function Category(props) {
 
   const isHighWidth = useHighWidth();
 
-  console.log(`MOBILE: ${!isHighWidth}`, places);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -30,7 +28,7 @@ function Category(props) {
                 features={e.accessibilitys}
                 showRating
                 fullCard={isHighWidth}
-                rating={e.averageRating}
+                rating={Math.trunc(e.averageRating)}
               />
             </li>
           );
