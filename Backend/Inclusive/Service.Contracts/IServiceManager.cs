@@ -8,9 +8,13 @@ namespace Service.Contracts
 {
     public interface IServiceManager
     {
+        IEstablishmentService EstablishmentService { get; }
         ICategoryService CategoryService { get; }
         IOwnerService OwnerService { get; }
         IAuthenticationService AuthenticationService { get; }
         IFileService FileService { get; }
+        IUserService UserService { get; }
+        IAccessibilityService AccessibilityService { get; }
+        IReviewService ReviewService { get; }
     }
 }

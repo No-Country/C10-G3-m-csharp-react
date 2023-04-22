@@ -9,20 +9,12 @@ public interface IEstablishmentService
         EstablishmentParameters parameters,
         bool trackChanges);
 
-    Task<EstablishmentDto> GetEstablishmentByIdAsync(Guid id,
+    Task<EstablishmentDto> GetEstablishmentByIdAsync(Guid id, bool trackChanges);
+
+    Task<EstablishmentDto> CreateEstablishmentAsync(EstablishmentForCreationDto establishment,
         bool trackChanges);
 
-    Task<EstablishmentDto> CreateEstablishmentAsync(Guid ownerId,
-        EstablishmentForCreationDto establishment,
-        bool trackChanges);
+    Task DeleteEstablishmentAsync(Guid id, bool trackChanges);
 
-    Task DeleteEstablishmentAsync(Guid ownerId,
-        Guid id,
-        bool trackChanges);
-
-    Task UpdateEstablishmentAsync(Guid ownerId,
-        Guid id,
-        EstablishmentForUpdateDto establishment,
-        bool ownerTrackChanges,
-        bool trackChanges);
+    Task UpdateEstablishmentAsync(Guid id, EstablishmentForUpdateDto establishment, bool trackChanges);
 }

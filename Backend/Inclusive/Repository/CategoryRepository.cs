@@ -31,9 +31,10 @@ public class CategoryRepository : RepositoryBase<Category>,
 
     public async Task<Category?> GetCategoryByIdAsync(Guid id,
         bool trackChanges) =>
-        await FindByCondition(d => d.Id.Equals(id),
-                trackChanges)
-            .Include(c=> c.Establishments)
+        await FindByCondition(d => d.Id.Equals(id), trackChanges)
+            .Include(c=> c.Establishments!)
+            .ThenInclude(e => e.EstablishmentsAccessibilitys!)
+            .ThenInclude(ea => ea.Accessibility) 
             .SingleOrDefaultAsync();
 
     public void CreateCategory(Category category) =>

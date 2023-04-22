@@ -9,7 +9,7 @@ public class Review
     [Column("ReviewId")] public Guid Id { get; set; }
 
     [Required(ErrorMessage = "Rating is required")]
-    [Range(0, 100, ErrorMessage = "Rating must be between 0 and 100")]
+    [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
     public int? Rating { get; set; }
 
     [MaxLength(500, ErrorMessage = "Comment cannot exceed 500 characters")]
@@ -22,4 +22,6 @@ public class Review
 
     [ForeignKey(nameof(User))] public string? UserId { get; set; }
     public User? User { get; set; }
+
+    public DateTime Created { get; set; }
 }

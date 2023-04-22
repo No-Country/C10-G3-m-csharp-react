@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using NLog;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,7 +49,8 @@ builder.Services.AddControllers(config =>
         config.InputFormatters.Insert(0,
             GetJsonPatchInputFormatter());
     })
-    .AddApplicationPart(typeof(Inclusive.Presentation.AssemblyReference).Assembly);
+    .AddApplicationPart(typeof(Inclusive.Presentation.AssemblyReference).Assembly)
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 // builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
@@ -80,8 +82,8 @@ app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(s =>
 {
-    s.SwaggerEndpoint("/swagger/v1/swagger.json",
-        "Inclusive API V1");
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Inclusive API V1");
+    //s.RoutePrefix = string.Empty;
 });
 
 app.MapControllers();

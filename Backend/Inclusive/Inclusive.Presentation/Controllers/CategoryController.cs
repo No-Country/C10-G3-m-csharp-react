@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects.CategoryDtos;
+using Shared.Helper;
 using Shared.RequestFeatures;
 
 namespace Inclusive.Presentation.Controllers;
@@ -26,6 +27,7 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> GetCategories([FromQuery] CategoryParameters parameters)
     {
         var pagedResult = await _service.CategoryService.GetCategoriesAsync(parameters, false);
+
         Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
         return Ok(pagedResult.categories);
     }
@@ -52,7 +54,7 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id:guid}", Name = "DeleteCategory")]
     public async Task<IActionResult> DeleteCategory(Guid id)
     {
-        _service.FileService.DeleteFile(Path.Combine(_webHostEnvironment.WebRootPath), id);
+        await _service.FileService.DeleteFile(Path.Combine(_webHostEnvironment.WebRootPath), FilePath.Categories, id);
         await _service.CategoryService.DeleteCategoryAsync(id, false);
         return NoContent();
     }

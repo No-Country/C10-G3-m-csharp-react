@@ -13,7 +13,7 @@ public class CategoryService : ICategoryService
     private readonly IRepositoryManager _repository;
     private readonly IMapper _mapper;
     private readonly ILoggerManager _logger;
-
+    
     public CategoryService(IRepositoryManager repository,
         IMapper mapper,
         ILoggerManager logger)
@@ -34,12 +34,15 @@ public class CategoryService : ICategoryService
         return (categoriesDto, categoriesWithMetaData.MetaData);
     }
 
-    public async Task<CategoryDto> GetCategoryByIdAsync(Guid id,
-        bool trackChanges)
+    public async Task<CategoryDto> GetCategoryByIdAsync(Guid id, bool trackChanges)
     {
-        var category = await GetCategoryAndCheckIfItExists(id: id,
-            trackChanges: trackChanges);
-        return _mapper.Map<CategoryDto>(category);
+        var category = await GetCategoryAndCheckIfItExists(id: id, trackChanges: trackChanges);
+
+        var categoryDto = _mapper.Map<CategoryDto>(category);
+        // no se si esta bien usar _repository.Establishments aca
+        await _repository.Establishments.GetEstablishmentAverageRatingAsync(categoryDto.Establishments!);  
+
+        return categoryDto;
     }
 
     public async Task<CategoryDto> CreateCategoryAsync(CategoryForCreationDto category)

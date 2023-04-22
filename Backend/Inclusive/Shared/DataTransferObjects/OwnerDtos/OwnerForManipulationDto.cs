@@ -50,5 +50,5 @@ public abstract record OwnerForManipulationDto
 
 
     [Required(ErrorMessage = "PEP is required")]
-    public char? Pep { get; init; }
+    public bool Pep { get; init; }
 }

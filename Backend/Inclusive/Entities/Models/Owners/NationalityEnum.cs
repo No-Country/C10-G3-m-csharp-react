@@ -14,3 +14,18 @@ public enum NationalityEnum
     Venezuela,
     Other
 }
+/*
+--NationalityEnum--
+Argentina
+Bolivia
+Brasil
+Chile
+Colombia
+Ecuador
+Paraguay
+Perú
+Uruguay
+Venezuela
+Otros
+ *
+ */

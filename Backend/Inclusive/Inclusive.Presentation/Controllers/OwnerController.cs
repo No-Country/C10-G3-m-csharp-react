@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Entities.Models;
 using Inclusive.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
@@ -18,6 +19,7 @@ public class OwnerController : ControllerBase
         _services = services;
     }
 
+
     [HttpGet(Name = "GetOwners")]
     public async Task<IActionResult> GetOwners([FromQuery] OwnerParameters ownerParameters)
     {
@@ -28,6 +30,7 @@ public class OwnerController : ControllerBase
         return Ok(pagedResult.ownerDtos);
     }
 
+
     [HttpGet("{id:guid}",
         Name = "GetOwnerById")]
     public async Task<IActionResult> GetOwnerById(Guid id)
@@ -37,18 +40,24 @@ public class OwnerController : ControllerBase
         return Ok(owner);
     }
 
+
     [HttpPost(Name = "CreateOwner")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
-    public async Task<IActionResult> CreateOwner([FromForm] OwnerForCreationDto ownerDto)
+
+    public async Task<IActionResult> CreateOwner([FromBody] OwnerForCreationDto ownerDto)
     {
         var owner = await _services.OwnerService.CreateOwnerAsync(ownerDto);
-        return CreatedAtRoute("GetOwnerById",
-            new
-            {
-                id = owner.Id
-            },
-            owner);
+        return CreatedAtRoute("GetOwnerById", new{ id = owner.Id}, owner);
     }
+
+
+    [HttpDelete("{id:guid}", Name = "DeleteOwner")]
+    public async Task<IActionResult> DeleteOwner(Guid id)
+    {
+        await _services.OwnerService.DeleteOwnerAsync(id, false);
+        return NoContent();
+    }
+
 
     [HttpPut]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
